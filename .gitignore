@@ -4,3 +4,8 @@ node_modules/
 .vscode/
 .idea/
 *.log
+
+# Heavy media — hosted externally
+*.MOV
+/locação-climatizador.PNG
+/locação-climatizador-Maringá.PNG

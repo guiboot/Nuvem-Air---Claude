@@ -97,7 +97,7 @@
 
   // Reveal on scroll
   const targets = document.querySelectorAll(
-    '.section-head, .product, .pillar, .process__list li, .review, .coverage__list li, .faq__item, .cta__form, .footer__col, .hbadge, .hero__duo-card'
+    '.section-head, .product, .pillar, .process__list li, .review, .reviews__carousel, .coverage__list li, .faq__item, .cta__form, .footer__col, .hbadge, .hero__duo-card'
   );
   targets.forEach((t) => t.classList.add('reveal'));
 
@@ -143,6 +143,22 @@
       idx = (idx + 1) % words.length;
     }, 2400);
   }
+
+  // Reviews carousel navigation
+  document.querySelectorAll('[data-reviews-carousel]').forEach((carousel) => {
+    const track = carousel.querySelector('[data-reviews-track]');
+    const prev = carousel.querySelector('[data-reviews-prev]');
+    const next = carousel.querySelector('[data-reviews-next]');
+    if (!track) return;
+    const step = () => {
+      const slide = track.querySelector('.reviews__slide');
+      if (!slide) return track.clientWidth * 0.8;
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '0') || 0;
+      return slide.getBoundingClientRect().width + gap;
+    };
+    prev?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    next?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+  });
 
   // Keep only one FAQ open
   const faqItems = document.querySelectorAll('.faq__item');
