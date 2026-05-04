@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10845759978"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-10845759978');
+  </script>
+
   <!-- SEO · Primary -->
   <title>Nuvem Air · Aluguel de Climatizadores e Aquecedores | Locação Industrial e para Eventos</title>
   <meta name="description" content="Aluguel de climatizadores evaporativos e aquecedores a gás para indústrias, galpões, eventos e espaços comerciais. Locação em Maringá, Londrina, Curitiba, São Paulo e todo o Brasil. Orçamento em até 2 horas." />
@@ -818,5 +827,21 @@
   </a>
 
   <script src="assets/js/app.js"></script>
+
+  <!-- Google Ads · Conversão "Solicitar cotação" -->
+  <script>
+    (function () {
+      function fireConversion() {
+        if (typeof gtag !== 'function') return;
+        gtag('event', 'ads_conversion_Solicitar_cota_o_1', {});
+      }
+      document.addEventListener('click', function (e) {
+        var link = e.target.closest('a[href*="wa.me"]');
+        if (link) fireConversion();
+      });
+      var form = document.querySelector('.cta__form');
+      if (form) form.addEventListener('submit', fireConversion);
+    })();
+  </script>
 </body>
 </html>
