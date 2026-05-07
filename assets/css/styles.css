@@ -388,6 +388,13 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 .hero__word-item[data-word="warm"]  { color: #c64a1a; }
 .hero__word-item[data-word="event"] { color: #6a3ba8; }
 
+.hero__word-static {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: #6a3ba8;
+}
+
 .hero__row--mid {
   align-items: flex-end;
   gap: 40px;
