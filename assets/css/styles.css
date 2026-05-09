@@ -1350,12 +1350,12 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 .product--tech:hover { border-color: var(--tech-1); }
 
 .product__cta--tech {
-  background: var(--tech-1);
+  background: var(--ink);
   color: #fff;
   gap: 10px;
 }
 .product__cta--tech:hover {
-  background: var(--tech-2);
+  background: #000;
   transform: translateY(-1px);
 }
 
@@ -1375,11 +1375,11 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   gap: 6px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--tech-1);
+  color: var(--ink);
   transition: color .2s ease, transform .2s ease;
 }
 .product__detail-link svg { transition: transform .2s ease; }
-.product__detail-link:hover { color: var(--tech-2); }
+.product__detail-link:hover { color: #000; }
 .product__detail-link:hover svg { transform: translateX(3px); }
 
 /* =========================================================
