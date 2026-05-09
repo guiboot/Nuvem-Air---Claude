@@ -1346,7 +1346,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   color: var(--tech-1);
   background: rgba(106, 59, 168, .12);
 }
-.product--tech ul li::before { border-color: var(--tech-1); }
+.product--tech ul li::before { border-color: var(--primary); }
 .product--tech:hover { border-color: var(--tech-1); }
 
 .product__cta--tech {
