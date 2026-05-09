@@ -1340,14 +1340,14 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   color: inherit;
 }
 .product--tech .product__img {
-  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f1ebff 100%);
+  background: radial-gradient(circle at 50% 50%, #fff, var(--paper-3));
 }
 .product--tech .product__tag {
-  color: var(--tech-1);
-  background: rgba(106, 59, 168, .12);
+  color: var(--primary);
+  background: rgba(30,42,120,.08);
 }
 .product--tech ul li::before { border-color: var(--primary); }
-.product--tech:hover { border-color: var(--tech-1); }
+.product--tech:hover { border-color: var(--primary-light); }
 
 .product__cta--tech {
   background: var(--ink);
