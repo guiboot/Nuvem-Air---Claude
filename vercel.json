@@ -1,0 +1,11 @@
+{
+  "cleanUrls": false,
+  "rewrites": [
+    { "source": "/painel-de-led", "destination": "/painel-de-led.html" }
+  ],
+  "redirects": [
+    { "source": "/totem-de-led.html", "destination": "/painel-de-led", "permanent": true },
+    { "source": "/totem-de-led", "destination": "/painel-de-led", "permanent": true },
+    { "source": "/painel-de-led.html", "destination": "/painel-de-led", "permanent": true }
+  ]
+}
