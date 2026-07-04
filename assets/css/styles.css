@@ -449,7 +449,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 
 .hero__strip-track {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   gap: 14px;
 }
 .hero__strip-track--single {
@@ -1281,7 +1281,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   .hero__row--top { padding-bottom: 10px; }
   .hero__meta span:last-child { display: none; }
   .hero__strip-track {
-    grid-template-columns: 72% 72% 72% 72% 72% 72% 72%;
+    grid-template-columns: 72% 72% 72% 72% 72% 72% 72% 72% 72%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
