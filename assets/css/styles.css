@@ -499,20 +499,17 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   transition: transform .4s ease;
 }
 .hero__tile:hover img { transform: scale(1.04); }
-/* Larger equipment photos on desktop */
+/* Larger, uniformly aligned equipment photos on desktop */
 @media (min-width: 981px) {
-  .hero__tile img {
-    max-height: 84%;
-    max-width: 96%;
+  /* Reserve a clear label zone at the bottom so photos never overlap the text */
+  .hero__tile {
+    padding: 34px 18px 66px;
   }
-  /* Extra-large photos for tiles 01, 02, 03, 06, 07 */
-  .hero__tile:nth-child(1) img,
-  .hero__tile:nth-child(2) img,
-  .hero__tile:nth-child(3) img,
-  .hero__tile:nth-child(6) img,
-  .hero__tile:nth-child(7) img {
-    max-height: 100%;
-    max-width: 100%;
+  .hero__tile img {
+    max-height: 92%;
+    max-width: 92%;
+    /* Softer shadow so it doesn't bleed onto the label below */
+    filter: drop-shadow(0 8px 14px rgba(10,15,44,.14));
   }
 }
 .hero__tile-num {
