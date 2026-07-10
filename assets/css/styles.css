@@ -499,6 +499,13 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   transition: transform .4s ease;
 }
 .hero__tile:hover img { transform: scale(1.04); }
+/* Larger equipment photos on desktop */
+@media (min-width: 981px) {
+  .hero__tile img {
+    max-height: 74%;
+    max-width: 90%;
+  }
+}
 .hero__tile-num {
   position: absolute;
   top: 14px;
