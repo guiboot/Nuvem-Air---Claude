@@ -505,6 +505,15 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
     max-height: 84%;
     max-width: 96%;
   }
+  /* Extra-large photos for tiles 01, 02, 03, 06, 07 */
+  .hero__tile:nth-child(1) img,
+  .hero__tile:nth-child(2) img,
+  .hero__tile:nth-child(3) img,
+  .hero__tile:nth-child(6) img,
+  .hero__tile:nth-child(7) img {
+    max-height: 100%;
+    max-width: 100%;
+  }
 }
 .hero__tile-num {
   position: absolute;
