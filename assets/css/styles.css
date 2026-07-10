@@ -502,8 +502,8 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 /* Larger equipment photos on desktop */
 @media (min-width: 981px) {
   .hero__tile img {
-    max-height: 74%;
-    max-width: 90%;
+    max-height: 84%;
+    max-width: 96%;
   }
 }
 .hero__tile-num {
