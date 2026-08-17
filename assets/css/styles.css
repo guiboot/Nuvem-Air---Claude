@@ -101,6 +101,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 }
 .nav.scrolled .nav__bar { background: var(--nav-bg-scrolled); }
 
+.nav__logo { min-width: max-content; }
 .nav__logo img { height: 44px; width: auto; display: block; }
 
 .nav__menu {
@@ -138,6 +139,20 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   transform: rotate(180deg);
 }
 .nav__link--plain { padding: 11px 16px; }
+
+/* Link cruzado entre os sites (locação <-> vendas) */
+.nav__link--cross {
+  padding: 11px 16px;
+  margin-left: 10px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 12px;
+  white-space: nowrap;
+}
+.nav__link--cross:hover {
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.6);
+}
 
 .nav__actions {
   display: flex;
@@ -1232,11 +1247,27 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 .reveal.is-visible { opacity: 1; transform: none; }
 
 /* ---------- RESPONSIVE ---------- */
-@media (max-width: 1100px) {
+
+/* Nav: com 6 seções + "Quero comprar" + CTA a barra encolhe em etapas
+   até virar menu hamburguer. Cada faixa foi medida para não estourar. */
+@media (max-width: 1360px) {
+  .nav__phone { display: none; }
+}
+@media (max-width: 1240px) {
   .nav__bar { padding-left: 20px; gap: 16px; }
   .nav__menu { gap: 0; }
   .nav__link { padding: 11px 11px; font-size: 13.5px; }
+  .nav__link--cross { margin-left: 6px; padding: 11px 12px; }
   .nav__cta-btn { padding: 14px 18px; font-size: 12px; }
+}
+@media (max-width: 1060px) {
+  .nav__bar { gap: 12px; padding-left: 16px; }
+  .nav__link { padding: 11px 8px; font-size: 12.5px; }
+  .nav__link--cross { margin-left: 4px; padding: 11px 10px; }
+  .nav__cta-btn { padding: 13px 14px; font-size: 11px; letter-spacing: .08em; }
+}
+
+@media (max-width: 1100px) {
   .nav__panel-inner { grid-template-columns: 1fr 1fr 1fr; }
   .nav__panel-col--wide { grid-column: span 3; max-width: 100%; margin-bottom: 8px; }
 }
@@ -1258,7 +1289,8 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   .cta__inner { grid-template-columns: 1fr; gap: 40px; }
   .faq__inner { grid-template-columns: 1fr; gap: 40px; }
 }
-@media (max-width: 780px) {
+/* Troca para o menu hamburguer — a barra completa não cabe abaixo disso */
+@media (max-width: 980px) {
   .nav { top: 12px; left: 12px; right: 12px; }
   .nav__bar {
     grid-template-columns: auto 1fr auto;
@@ -1268,6 +1300,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   .nav__menu, .nav__actions { display: none; }
   .nav__toggle { display: flex; }
   .nav__panel { display: none; }
+  .nav__logo { min-width: 0; }
 
   .nav.is-open .nav__bar { border-radius: 22px 22px 0 0; }
   .nav.is-open .nav__menu {
@@ -1290,7 +1323,13 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
     padding: 14px 14px;
     border-radius: 10px;
     color: #fff;
+    font-size: 14.5px;
   }
+  .nav.is-open .nav__menu .nav__link--cross {
+    margin: 8px 0 0;
+    justify-content: center;
+  }
+  .nav__phone { display: inline-flex; }
   .nav.is-open .nav__actions {
     display: flex;
     padding: 14px;
@@ -1299,7 +1338,8 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
     background: var(--nav-bg-scrolled);
     backdrop-filter: blur(18px);
   }
-
+}
+@media (max-width: 780px) {
   .hero { padding: 110px 0 48px; }
   .hero__title { font-size: clamp(44px, 14vw, 80px); }
   .hero__row--top { padding-bottom: 10px; }
