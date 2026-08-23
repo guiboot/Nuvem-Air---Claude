@@ -1,0 +1,9 @@
+{
+  "name": "nuvem-air-site",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node tools/gerar-loja.js",
+    "test": "node --test tests/*.test.js"
+  }
+}

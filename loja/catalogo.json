@@ -1,0 +1,201 @@
+{
+  "moeda": "BRL",
+  "descontoPixPercentual": 5,
+  "parcelamentoMax": 4,
+  "produtos": {
+    "NI21BS": {
+      "nome": "Climatizador Industrial NI21BS",
+      "slug": "ni21bs",
+      "tag": "Teto · NI21BS",
+      "categoria": "climatizadores-fixos",
+      "precoDeCentavos": null,
+      "precoCentavos": null,
+      "pesoKg": 72,
+      "imagem": "/loja/assets/img/ni21bs.webp",
+      "resumo": "Modelo de teto com saída de ar lateral, para distribuir ar resfriado ao longo de corredores, linhas de produção e galpões amplos.",
+      "specs": [
+        "Vazão de 21.000 m³/h",
+        "Cobertura de 150 a 180 m²",
+        "Motor trifásico 1.500 W (220V)",
+        "Painel digital, controle remoto e sensor de água",
+        "Reservatório de 30 L · 72 kg"
+      ]
+    },
+    "NI23DS": {
+      "nome": "Climatizador Industrial NI23DS",
+      "slug": "ni23ds",
+      "tag": "Teto · NI23DS",
+      "categoria": "climatizadores-fixos",
+      "precoDeCentavos": null,
+      "precoCentavos": null,
+      "pesoKg": 72,
+      "imagem": "/loja/assets/img/industrial-inferior.webp",
+      "resumo": "Modelo de teto com direção do ar para baixo, para resfriamento direto sobre linhas de produção e postos de trabalho.",
+      "specs": [
+        "Vazão de 23.000 m³/h",
+        "Cobertura de 180 a 200 m²",
+        "Motor trifásico 1.500 W (220V)",
+        "Painel digital, controle remoto e sensor de água",
+        "Reservatório de 30 L · 72 kg"
+      ]
+    },
+    "NI56DS": {
+      "nome": "Climatizador Industrial NI56DS",
+      "slug": "ni56ds",
+      "tag": "Alta vazão · NI56DS",
+      "categoria": "climatizadores-fixos",
+      "precoDeCentavos": null,
+      "precoCentavos": null,
+      "pesoKg": 119,
+      "imagem": "/loja/assets/img/industrial-frontal.webp",
+      "resumo": "O mais potente da linha, para grandes galpões e centros de distribuição de alto pé-direito que exigem máxima renovação de ar.",
+      "specs": [
+        "Vazão de 56.000 m³/h",
+        "Cobertura de 350 a 400 m²",
+        "Motor trifásico 3.500 W (220V)",
+        "Reservatório de 60 L · hélice balanceada",
+        "119 kg"
+      ]
+    },
+    "NI9PRO": {
+      "nome": "Climatizador Portátil NI9PRO",
+      "slug": "ni9pro",
+      "tag": "Linha PRO · NI9PRO",
+      "precoDeCentavos": 490000,
+      "precoCentavos": 420000,
+      "pesoKg": null,
+      "imagem": "/loja/assets/img/climatizador-compacto.webp",
+      "resumo": "Portátil robusto da Linha PRO, resistente ao uso intenso, com conexão à rede hidráulica para abastecimento contínuo.",
+      "specs": [
+        "Vazão de 9.000 m³/h · 50–70 m²",
+        "Reservatório de 100 L",
+        "Alimentação manual ou rede hidráulica",
+        "Estrutura reforçada · 110V ou 220V"
+      ],
+      "categoria": "portateis"
+    },
+    "NI18": {
+      "nome": "Climatizador Móvel Big Tank NI18",
+      "slug": "ni18",
+      "tag": "Big Tank · NI18",
+      "precoDeCentavos": 550000,
+      "precoCentavos": 449000,
+      "pesoKg": 30,
+      "imagem": "/loja/assets/img/model-industrial-compacto.webp",
+      "resumo": "Versão móvel compacta com reservatório de 150 L, fácil de deslocar entre ambientes e pronta para uso imediato.",
+      "specs": [
+        "Vazão de 18.000 m³/h · 50–80 m²",
+        "Reservatório de 150 L",
+        "Móvel com duto e rodízios",
+        "Motor fase simples · 750 W"
+      ],
+      "categoria": "portateis"
+    },
+    "NI23": {
+      "nome": "Climatizador Móvel Big Tank NI23",
+      "slug": "ni23",
+      "tag": "Big Tank · NI23",
+      "precoDeCentavos": 810000,
+      "precoCentavos": 749000,
+      "pesoKg": null,
+      "imagem": "/loja/assets/img/model-industrial.webp",
+      "resumo": "Móvel com duto direcionável e reservatório de 300 L — alta autonomia para áreas grandes sem ponto de água próximo.",
+      "specs": [
+        "Vazão de 23.000 m³/h · 180–200 m²",
+        "Reservatório Big Tank de 300 L",
+        "Rodízios e duto direcionável inclusos",
+        "Motor trifásico 1.500 W · 220V"
+      ],
+      "categoria": "portateis"
+    },
+    "AQ-CHAPEU-INOX": {
+      "nome": "Aquecedor Torre Chapéu a Gás — Inox",
+      "slug": "aquecedor-chapeu-inox",
+      "tag": "Torre Chapéu · Inox",
+      "categoria": "aquecedores",
+      "precoCentavos": null,
+      "pesoKg": null,
+      "imagem": "/loja/assets/img/aquecedor-chapeu-inox.webp",
+      "resumo": "Refletor de calor 360° e alto rendimento térmico — para restaurantes, áreas externas e eventos com grande circulação de pessoas.",
+      "specs": [
+        "Potência de até 13 kW",
+        "Refletor de calor 360°",
+        "Cilindro de gás GLP embutido (P13)",
+        "Sistema de segurança antiqueda",
+        "Acendimento eletrônico (piezoelétrico)",
+        "Altura: 2,21 m · Diâmetro do chapéu: 81 cm"
+      ]
+    },
+    "AQ-CHAPEU-PRETO": {
+      "nome": "Aquecedor Torre Chapéu a Gás — Preto",
+      "slug": "aquecedor-chapeu-preto",
+      "tag": "Torre Chapéu · Preto",
+      "categoria": "aquecedores",
+      "precoCentavos": null,
+      "pesoKg": null,
+      "imagem": "/loja/assets/img/aquecedor-chapeu-preto.webp",
+      "resumo": "Refletor de calor 360° e alto rendimento térmico — para restaurantes, áreas externas e eventos com grande circulação de pessoas.",
+      "specs": [
+        "Potência de até 13 kW",
+        "Refletor de calor 360°",
+        "Cilindro de gás GLP embutido (P13)",
+        "Sistema de segurança antiqueda",
+        "Acendimento eletrônico (piezoelétrico)",
+        "Altura: 2,21 m · Diâmetro do chapéu: 81 cm"
+      ]
+    },
+    "AQ-PIRAMIDE-INOX": {
+      "nome": "Aquecedor Torre Pirâmide a Gás — Inox",
+      "slug": "aquecedor-piramide-inox",
+      "tag": "Pirâmide · Inox",
+      "categoria": "aquecedores",
+      "precoCentavos": null,
+      "pesoKg": null,
+      "imagem": "/loja/assets/img/aquecedor-piramide-inox.webp",
+      "resumo": "Chama viva decorativa em tubo de vidro temperado — calor e design para casamentos, bares e restaurantes ao ar livre.",
+      "specs": [
+        "Chama viva real em tubo de vidro temperado",
+        "Potência de até 11 kW",
+        "Raio de aquecimento de 4 metros",
+        "Cilindro de gás GLP embutido (P13)",
+        "Acendimento seguro e estável",
+        "Altura: 2,28 m · Base: 52 cm × 52 cm"
+      ]
+    },
+    "AQ-PIRAMIDE-PRETO": {
+      "nome": "Aquecedor Torre Pirâmide a Gás — Preto",
+      "slug": "aquecedor-piramide-preto",
+      "tag": "Pirâmide · Preto",
+      "categoria": "aquecedores",
+      "precoCentavos": null,
+      "pesoKg": null,
+      "imagem": "/loja/assets/img/aquecedor-piramide-preto.webp",
+      "resumo": "Chama viva decorativa em tubo de vidro temperado — calor e design para casamentos, bares e restaurantes ao ar livre.",
+      "specs": [
+        "Chama viva real em tubo de vidro temperado",
+        "Potência de até 11 kW",
+        "Raio de aquecimento de 4 metros",
+        "Cilindro de gás GLP embutido (P13)",
+        "Acendimento seguro e estável",
+        "Altura: 2,28 m · Base: 52 cm × 52 cm"
+      ]
+    }
+  },
+  "frete": {
+    "faixas": []
+  },
+  "categorias": {
+    "climatizadores-fixos": {
+      "titulo": "Climatizadores fixos",
+      "resumo": "Modelos de teto para galpões e linhas de produção. Instalação e montagem por conta da Nuvem Air."
+    },
+    "portateis": {
+      "titulo": "Portáteis e móveis",
+      "resumo": "Com rodízios e reservatório próprio. Chegam prontos para usar, sem obra."
+    },
+    "aquecedores": {
+      "titulo": "Aquecedores a gás",
+      "resumo": "Torres a gás GLP para áreas externas, com cilindro P13 embutido."
+    }
+  }
+}

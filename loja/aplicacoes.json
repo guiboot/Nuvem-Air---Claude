@@ -1,0 +1,111 @@
+{
+  "_leia_me": "Uma página por ambiente. Só crie uma nova quando o problema for realmente diferente dos que já existem — página quase igual a outra não ranqueia, canibaliza. 'modelos' referencia SKUs do catalogo.json.",
+  "aplicacoes": [
+    {
+      "slug": "climatizador-para-galpao",
+      "titulo": "Climatizador para galpão industrial",
+      "h1": "Climatizador para galpão: como resfriar área grande sem ar-condicionado",
+      "resumo": "Galpões acumulam calor no telhado e devolvem esse calor o dia inteiro para quem trabalha embaixo. Climatizador evaporativo resolve porque troca o ar, em vez de tentar refrigerar um volume que não fecha.",
+      "problema": [
+        "Telhado metálico esquenta e irradia calor para baixo a tarde inteira, mesmo depois que o sol cai.",
+        "Pé-direito alto faz o ar quente subir e ficar parado, criando uma camada abafada logo acima das pessoas.",
+        "Portões abertos o tempo todo tornam o ar-condicionado inviável: você refrigeraria a rua.",
+        "Área grande demais para ventilador resolver — ventilador move ar quente, não resfria."
+      ],
+      "solucao": "O climatizador evaporativo puxa ar de fora, passa por painéis encharcados e devolve ar mais frio e renovado. Em galpão isso é vantagem dupla: além de baixar a temperatura, troca o ar viciado por ar novo. E, ao contrário do ar-condicionado, ele <strong>funciona melhor com o ambiente aberto</strong> — portão aberto deixa de ser problema e vira parte do projeto.",
+      "modelos": ["NI56DS", "NI23DS", "NI21BS", "NI23"],
+      "dimensionamento": "Comece pela área em m² e pelo pé-direito. Acima de 6 metros de altura ou com fontes de calor no processo (forno, solda, prensa), conte com mais equipamentos do que a metragem sozinha sugere. O ideal é distribuir vários pontos ao longo do galpão em vez de concentrar um só — ar parado num canto não resfria o outro.",
+      "faq": [
+        ["Climatizador evaporativo funciona com o portão aberto?", "Funciona, e é justamente onde ele ganha do ar-condicionado. O evaporativo depende de renovação de ar: ele insufla ar novo e o ar quente precisa sair por algum lugar. Galpão fechado demais reduz o efeito."],
+        ["Quantos climatizadores meu galpão precisa?", "Depende da área, do pé-direito e das fontes de calor. Um NI56DS cobre de 350 a 400 m²; um NI23DS, de 180 a 200 m². Mande a metragem e o pé-direito no WhatsApp que fazemos o dimensionamento sem custo."],
+        ["Precisa de obra para instalar?", "Os modelos de teto precisam de fixação e ponto de água e energia — nossa equipe faz a instalação e a montagem. Os modelos móveis Big Tank chegam prontos: têm reservatório próprio e rodízios, sem obra nenhuma."],
+        ["Gasta muita energia?", "Bem menos que ar-condicionado de capacidade equivalente, porque não há compressor: o consumo é essencialmente o do motor do ventilador e da bomba d'água. O NI23DS, por exemplo, tem motor de 1.500 W."],
+        ["Funciona em dia úmido?", "O rendimento cai quando a umidade do ar já está alta, porque o resfriamento vem da evaporação da água. No Paraná e no Centro-Oeste, o período mais quente costuma ser também o mais seco — que é quando o equipamento rende mais."]
+      ]
+    },
+    {
+      "slug": "climatizador-para-igreja",
+      "titulo": "Climatizador para igreja e templo",
+      "h1": "Climatizador para igreja: conforto para muita gente junta, sem obra",
+      "resumo": "Igreja tem um problema específico: o ambiente fica lotado por duas horas e vazio o resto do dia. Investir em ar-condicionado central para esse uso raramente fecha a conta.",
+      "problema": [
+        "Muita gente no mesmo espaço, ao mesmo tempo — cada pessoa é uma fonte de calor.",
+        "Pé-direito alto concentra o calor em cima e deixa o ar parado embaixo.",
+        "Uso concentrado em poucos horários por semana, o que torna difícil justificar obra pesada.",
+        "Prédios antigos ou tombados nem sempre permitem instalação de split e tubulação."
+      ],
+      "solucao": "O climatizador evaporativo entrega ar renovado e mais frio com um custo de instalação muito menor. Como ele <strong>troca o ar em vez de recircular</strong>, ajuda no abafamento típico de ambiente cheio — o incômodo em igreja lotada costuma ser tanto o ar parado quanto a temperatura.",
+      "modelos": ["NI56DS", "NI23DS", "NI23", "NI18"],
+      "dimensionamento": "Em igreja, conte pela lotação além da metragem: um salão de 200 m² com 30 pessoas e o mesmo salão com 200 pessoas são problemas diferentes. Distribua o ar ao longo da nave, e não só no fundo. Se a instalação fixa não for possível no prédio, os modelos móveis Big Tank resolvem sem furar nada.",
+      "faq": [
+        ["Faz muito barulho durante o culto?", "O ruído é do ventilador e é contínuo, sem os ciclos de liga e desliga do compressor. Posicionar o equipamento longe do púlpito e da área de som reduz a interferência. Se o silêncio for crítico no seu caso, converse com a gente antes de escolher o modelo."],
+        ["Dá para usar sem fazer obra no templo?", "Dá. Os modelos móveis Big Tank têm reservatório próprio de 150 ou 300 litros e rodízios: você posiciona, liga na tomada e usa. É a saída mais comum em prédios antigos ou alugados."],
+        ["Precisa ficar ligado o tempo todo?", "Não. Ligar de 20 a 30 minutos antes do culto já deixa o ambiente tratado, e esse uso intermitente é exatamente onde o evaporativo compensa mais que o ar-condicionado."],
+        ["E o consumo de água?", "O equipamento evapora água durante o funcionamento. Os modelos Big Tank carregam 150 ou 300 litros no próprio reservatório; os fixos podem ser ligados à rede hidráulica para reposição automática."]
+      ]
+    },
+    {
+      "slug": "climatizador-para-restaurante",
+      "titulo": "Climatizador para restaurante e área externa",
+      "h1": "Climatizador para restaurante: cliente confortável no salão e na varanda",
+      "resumo": "Restaurante junta duas fontes de calor que não se resolvem sozinhas: a cozinha e o cliente. E boa parte do faturamento costuma estar justamente na área externa, onde ar-condicionado não funciona.",
+      "problema": [
+        "Calor da cozinha invade o salão sempre que a porta abre.",
+        "Área externa e varanda ficam vazias no verão — e é onde estão as melhores mesas.",
+        "Cliente com calor come rápido e vai embora: mesa gira, mas o ticket cai.",
+        "Ar-condicionado em ambiente aberto é dinheiro jogado fora."
+      ],
+      "solucao": "Em área externa e varanda, o climatizador evaporativo é praticamente a única solução que funciona, porque ele não depende de ambiente fechado. E no inverno o problema se inverte: aí entram os <strong>aquecedores a gás</strong>, que mantêm a área externa utilizável o ano inteiro.",
+      "modelos": ["NI23", "NI18", "NI9PRO", "AQ-PIRAMIDE-INOX"],
+      "dimensionamento": "Em área aberta, pense em raio de alcance e não em metragem fechada — o equipamento trata a região onde o ar chega. Posicione a favor do vento dominante e mire nas mesas, não no corredor de serviço. Para varanda, os modelos móveis permitem reposicionar conforme a estação e a lotação.",
+      "faq": [
+        ["Climatizador funciona em área aberta e varanda?", "Sim, e é o cenário onde ele leva vantagem. Como resfria por evaporação e insufla ar novo, não precisa de ambiente fechado — diferente do ar-condicionado, que em área aberta não entrega resultado."],
+        ["Molha as mesas ou os clientes?", "Não. A água fica nos painéis evaporativos; o que sai é ar resfriado, não névoa. É diferente de nebulizador, que borrifa água no ambiente."],
+        ["Serve para a cozinha também?", "Ajuda bastante, porque insufla ar novo e alivia o abafamento perto da linha quente. O posicionamento tem que respeitar a exaustão e as chamas — vale combinar isso com a gente antes."],
+        ["E no inverno, o que fazer com a área externa?", "É onde entram as torres de aquecimento a gás. A Pirâmide tem chama viva decorativa e raio de aquecimento de 4 metros; a Torre Chapéu, refletor 360°, para mesas em volta."]
+      ]
+    },
+    {
+      "slug": "climatizador-para-academia",
+      "titulo": "Climatizador para academia e box de treino",
+      "h1": "Climatizador para academia: ar renovado onde todo mundo está transpirando",
+      "resumo": "Academia não tem só problema de temperatura. Tem problema de ar parado — e é isso que gera o cheiro, o abafamento e a reclamação do aluno.",
+      "problema": [
+        "Dezenas de pessoas se exercitando ao mesmo tempo, todas gerando calor e umidade.",
+        "Ar parado concentra odor, mesmo com a academia limpa.",
+        "Horário de pico concentra tudo em duas ou três horas do dia.",
+        "Galpões e boxes de crossfit têm pé-direito alto e portões abertos, onde split não resolve."
+      ],
+      "solucao": "O ponto forte do evaporativo aqui é a <strong>renovação de ar</strong>: ele não recircula o mesmo ar da sala, ele troca. Isso ataca ao mesmo tempo o calor e o abafamento, que é a reclamação mais comum de aluno em horário de pico.",
+      "modelos": ["NI23DS", "NI21BS", "NI23", "NI18"],
+      "dimensionamento": "Dimensione pelo pico, não pela média: a academia às 19h é um ambiente diferente da mesma academia às 14h. Áreas de peso livre e cardio pedem mais fluxo que a sala de musculação de máquinas. Em box de crossfit com portão, aproveite o portão como saída de ar.",
+      "faq": [
+        ["Climatizador ajuda no cheiro da academia?", "Ajuda, porque o problema costuma ser ar parado. Como o evaporativo insufla ar de fora e empurra o ar viciado para as aberturas, ele troca o volume de ar da sala em vez de recirculá-lo."],
+        ["A umidade não atrapalha quem está treinando?", "O evaporativo aumenta um pouco a umidade do ar. Em ambiente ventilado, com o ar saindo por portões ou aberturas, isso não se acumula. Em sala muito fechada o efeito é menor e a sensação pode piorar — por isso a renovação de ar é parte do projeto."],
+        ["Precisa desligar fora do horário de pico?", "Não precisa, mas dá. Como o consumo é essencialmente o do ventilador e da bomba, muita academia deixa ligado o dia todo e reforça no pico."],
+        ["Serve para box de crossfit em galpão?", "Serve, e é um dos usos mais comuns. Pé-direito alto e portão aberto são exatamente as condições em que o evaporativo rende e o ar-condicionado não."]
+      ]
+    },
+    {
+      "slug": "climatizador-para-eventos",
+      "titulo": "Climatizador para eventos e tendas",
+      "h1": "Climatizador para eventos: conforto térmico em estrutura temporária",
+      "resumo": "Em evento, ninguém vai fazer obra. O equipamento precisa chegar, ligar e funcionar — e sair no dia seguinte.",
+      "problema": [
+        "Tenda e estrutura temporária esquentam rápido e não têm infraestrutura elétrica ou hidráulica pronta.",
+        "Público concentrado em pouco espaço eleva a temperatura em minutos.",
+        "Montagem e desmontagem têm hora marcada e não perdoam atraso.",
+        "Evento ao ar livre não comporta nenhuma solução que dependa de ambiente fechado."
+      ],
+      "solucao": "Os modelos móveis <strong>Big Tank</strong> foram feitos para isso: reservatório próprio de 150 ou 300 litros, rodízios e duto direcionável. Não precisam de ponto de água próximo, o que em evento costuma ser o gargalo. Para eventos noturnos e de inverno, as torres a gás resolvem o outro lado do problema.",
+      "modelos": ["NI23", "NI18", "AQ-CHAPEU-INOX", "AQ-PIRAMIDE-INOX"],
+      "dimensionamento": "Conte pela lotação e pelo tempo de uso: o reservatório de 300 litros do NI23 dá mais autonomia que o de 150 do NI18, e em evento longo isso significa menos reabastecimento durante a operação. Distribua os equipamentos nas bordas da área de público, direcionando o duto para dentro.",
+      "faq": [
+        ["Precisa de ponto de água no local?", "Nos modelos Big Tank, não. Eles carregam 150 ou 300 litros no próprio reservatório, o que costuma cobrir a operação do evento. Havendo rede hidráulica disponível, dá para abastecer continuamente."],
+        ["Dá para alugar em vez de comprar?", "Dá. A Nuvem Air trabalha com locação para eventos — é só falar com a gente pelo WhatsApp que passamos as condições."],
+        ["Quanto tempo leva para montar?", "Os móveis chegam prontos: posicionar, encher o reservatório e ligar. Não há obra, fixação nem tubulação."],
+        ["E se o evento for no inverno?", "Aí o problema é o oposto, e a solução são as torres a gás com cilindro P13 embutido. A Torre Chapéu aquece em 360°, e a Pirâmide tem chama viva decorativa, que também compõe a cenografia."]
+      ]
+    }
+  ]
+}

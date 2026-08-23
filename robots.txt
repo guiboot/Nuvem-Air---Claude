@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Páginas de fluxo de compra não têm o que indexar
+Disallow: /loja/carrinho
+Disallow: /loja/sucesso
+Disallow: /loja/pendente
+Disallow: /loja/erro
+Disallow: /api/
+
+Sitemap: https://nuvemair.com.br/sitemap.xml
