@@ -4,23 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Página não encontrada | Nuvem Air</title>
-  <meta name="description" content="A página que você procurava não existe. Veja os climatizadores e aquecedores da Nuvem Air." />
+  <title>Loja em manutenção | Nuvem Air</title>
+  <meta name="description" content="A loja online da Nuvem Air está temporariamente fora do ar. Fale com a gente pelo WhatsApp para comprar climatizadores e aquecedores." />
   <meta name="author" content="Nuvem Air" />
+  <!-- noindex: página temporária. Quando a loja voltar, este arquivo e as
+       regras de /loja no vercel.json saem juntos. -->
   <meta name="robots" content="noindex, follow" />
-  <link rel="canonical" href="https://nuvemair.com.br/404" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Nuvem Air" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="og:title" content="Página não encontrada | Nuvem Air" />
-  <meta property="og:description" content="A página que você procurava não existe. Veja os climatizadores e aquecedores da Nuvem Air." />
-  <meta property="og:url" content="https://nuvemair.com.br/404" />
-  <meta property="og:image" content="https://nuvemair.com.br/assets/img/model-industrial.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Página não encontrada | Nuvem Air" />
-  <meta name="twitter:description" content="A página que você procurava não existe. Veja os climatizadores e aquecedores da Nuvem Air." />
-  <meta name="twitter:image" content="https://nuvemair.com.br/assets/img/model-industrial.png" />
 
   <meta name="theme-color" content="#1e2a78" />
   <link rel="icon" href="/loja/assets/img/icon-primary.png" />
@@ -31,7 +20,8 @@
   <link rel="stylesheet" href="/loja/assets/css/styles.css?v=20260823-2" />
   <link rel="stylesheet" href="/loja/assets/css/loja.css?v=20260823-2" />
   <style>
-    /* Sem busca e sem carrinho, o grid de 3 colunas do header vira flex. */
+    /* O header da loja é um grid de 3 colunas (logo · busca · carrinho).
+       Aqui não existe busca nem carrinho, então volta a ser um flex simples. */
     .lojahdr__topo--simples { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   </style>
 </head>
@@ -47,28 +37,27 @@
   </header>
 
   <main class="loja-retorno container">
-      <div class="loja-retorno__icone" aria-hidden="true">&#128269;</div>
-      <h1>Página não encontrada</h1>
-      <p>O endereço que você abriu não existe ou foi movido. Pode ser um link antigo.</p>
-      <p>Se você procurava um climatizador ou aquecedor, veja os modelos ou chame a gente no WhatsApp.</p>
-      <div class="loja-retorno__acoes">
-        <a class="btn btn--primary" href="/comprar">Ver os modelos</a>
-        <a class="btn btn--ghost" href="/">Ir para o site</a>
-        <a class="btn btn--ghost" href="https://wa.me/5544988049444?text=Ol%C3%A1!%20N%C3%A3o%20encontrei%20o%20que%20procurava%20no%20site%20da%20Nuvem%20Air." target="_blank" rel="noopener">Falar no WhatsApp</a>
-      </div>
+    <div class="loja-retorno__icone" aria-hidden="true">&#128736;</div>
+    <h1>A loja está em manutenção</h1>
+    <p>Estamos ajustando a loja online da Nuvem Air. As compras pelo site ficam pausadas por enquanto — nenhum pedido é perdido e ninguém está sendo cobrado.</p>
+    <p>Se você quer comprar um climatizador ou aquecedor agora, é só chamar no WhatsApp: a gente monta o orçamento, fecha o pedido e emite a nota do mesmo jeito.</p>
+    <div class="loja-retorno__acoes">
+      <a class="btn btn--primary" href="https://wa.me/5544988049444?text=Ol%C3%A1!%20Quero%20comprar%20um%20climatizador%20da%20Nuvem%20Air.%20Pode%20me%20enviar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">Comprar pelo WhatsApp</a>
+      <a class="btn btn--ghost" href="/comprar">Ver os modelos</a>
+      <a class="btn btn--ghost" href="/">Aluguel / Locação</a>
+    </div>
   </main>
 
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <img src="/loja/assets/img/logo-white.png" alt="Nuvem Air — Venda e Instalação de Climatizadores Industriais" />
+        <img src="/loja/assets/img/logo-white.png" alt="Nuvem Air — Climatizadores Industriais" />
         <p>Venda, instalação e montagem de climatizadores evaporativos industriais e portáteis para todo o Brasil. 2 anos de garantia, nota fiscal e suporte especializado.</p>
         <address class="footer__contact">
           <a href="tel:+5544988049444"><strong>(44) 98804-9444</strong></a><br />
           <a href="mailto:contato@nuvemair.com.br">contato@nuvemair.com.br</a><br />
           Maringá · Paraná — atendimento em todo o Brasil<br />
           Seg a Sex, das 8h às 18h
-          <!-- TODO: incluir endereço completo e CNPJ quando o cliente enviar (autoridade + SEO local). -->
         </address>
       </div>
 
@@ -93,18 +82,17 @@
         <a href="tel:+5544988049444">(44) 98804-9444</a>
         <a href="https://wa.me/5544988049444" target="_blank" rel="noopener">WhatsApp</a>
         <a href="mailto:contato@nuvemair.com.br">contato@nuvemair.com.br</a>
-        <a href="https://www.google.com/search?q=Nuvem+air+-+Aluguel+de+Climatizadores+e+Aquecedores&stick=H4sIAAAAAAAA_-NgU1I1qDBLM7JITEozTkk0NDVJSzO1MqhINEo1Mzc0SDFONjFLTTU1W8Rq7FdalpqrkJhZpKCr4JhTml6amqOQkqrgnJOZm1iSWZWYkl-UWqyQquBYWJqanArmAQCMHLWPXwAAAA&hl=pt-BR" target="_blank" rel="noopener">Google · Avaliações</a>
         <a href="https://instagram.com/nuvemair" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://nuvemair.com.br/" target="_blank" rel="noopener">Aluguel / Locação</a>
+        <a href="/">Aluguel / Locação</a>
       </div>
     </div>
     <div class="container footer__bottom">
-      <span>© <span id="year"></span> Nuvem Air · Venda e Instalação de Climatizadores Industriais</span>
+      <span>© <span id="year"></span> Nuvem Air · Climatizadores Industriais</span>
       <span>Feito no Brasil</span>
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/5544988049444?text=Ol%C3%A1!%20Quero%20comprar%20um%20climatizador%20evaporativo%20Nuvem%20Air.%20Pode%20me%20enviar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <a class="whatsapp-float" href="https://wa.me/5544988049444?text=Ol%C3%A1!%20Vi%20que%20a%20loja%20est%C3%A1%20em%20manuten%C3%A7%C3%A3o.%20Quero%20comprar%20um%20climatizador%20Nuvem%20Air." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
     <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
       <path d="M19.05 4.91A10 10 0 0 0 2.3 17.4L1 23l5.74-1.5a10 10 0 0 0 4.77 1.21h.01a10 10 0 0 0 10-10 9.95 9.95 0 0 0-2.47-6.8ZM11.52 20.4h-.01a8.3 8.3 0 0 1-4.23-1.16l-.3-.18-3.4.89.91-3.32-.2-.32a8.31 8.31 0 1 1 7.23 4.1Zm4.56-6.22c-.25-.13-1.47-.73-1.7-.81-.23-.09-.4-.13-.56.12-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.12-1.06-.39-2.02-1.24a7.58 7.58 0 0 1-1.4-1.74c-.14-.25-.01-.39.11-.51.11-.11.25-.3.37-.45.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.55-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.41 1.01 2.58.12.17 1.74 2.66 4.21 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.68-1.18.2-.58.2-1.07.14-1.18-.06-.11-.23-.17-.48-.3Z"/>
     </svg>

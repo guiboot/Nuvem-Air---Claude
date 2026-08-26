@@ -4,12 +4,16 @@
   "outputDirectory": ".",
   "rewrites": [
     { "source": "/painel-de-led", "destination": "/painel-de-led.html" },
-    { "source": "/home", "destination": "/index.html" }
+    { "source": "/home", "destination": "/index.html" },
+    { "source": "/loja-indisponivel", "destination": "/loja-indisponivel.html" }
   ],
   "redirects": [
     { "source": "/totem-de-led.html", "destination": "/painel-de-led", "permanent": true },
     { "source": "/totem-de-led", "destination": "/painel-de-led", "permanent": true },
-    { "source": "/painel-de-led.html", "destination": "/painel-de-led", "permanent": true }
+    { "source": "/painel-de-led.html", "destination": "/painel-de-led", "permanent": true },
+
+    { "source": "/loja", "destination": "/loja-indisponivel", "permanent": false },
+    { "source": "/loja/:caminho((?!assets/).*)", "destination": "/loja-indisponivel", "permanent": false }
   ],
   "headers": [
     {

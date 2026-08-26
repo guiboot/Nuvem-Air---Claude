@@ -21,8 +21,18 @@ const RAIZ = path.join(__dirname, '..');
    herdar a autoridade do domínio principal, em vez de começar do zero num
    subdomínio. SITE_URL permite gerar para outro host sem editar código. */
 const SITE = process.env.SITE_URL || 'https://nuvemair.com.br';
-const WA_NUM = '5544988117615';
+const WA_NUM = '5544988049444';
 const CSS_V = '20260823-2';
+
+/* A loja está temporariamente fora do ar. Quem fecha a porta é o vercel.json
+   (tudo em /loja redireciona para /loja-indisponivel) e o api/checkout.js, que
+   recusa qualquer pedido. As páginas da loja continuam sendo geradas — só o
+   caminho até elas é que está fechado —, mas o que aponta para fora precisa
+   saber: a 404 da raiz e o sitemap.
+
+   Para reabrir a loja, os três andam juntos: volte esta chave para true, ligue
+   LOJA_ATIVA em api/checkout.js e tire as regras de /loja do vercel.json. */
+const LOJA_ATIVA = false;
 
 const cat = JSON.parse(fs.readFileSync(path.join(RAIZ, 'loja/catalogo.json'), 'utf8'));
 const apps = JSON.parse(fs.readFileSync(path.join(RAIZ, 'loja/aplicacoes.json'), 'utf8')).aplicacoes;
@@ -134,7 +144,7 @@ function card(sku) {
 
 /* ------------------------------------------------------------------- <head> */
 
-function head({ titulo, descricao, url, imagem, extra = '', noindex = false }) {
+function head({ titulo, descricao, url, imagem, extra = '', noindex = false, siteName = 'Loja Nuvem Air' }) {
   return `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -148,7 +158,7 @@ function head({ titulo, descricao, url, imagem, extra = '', noindex = false }) {
   <link rel="canonical" href="${url}" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Loja Nuvem Air" />
+  <meta property="og:site_name" content="${esc(siteName)}" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:title" content="${esc(titulo)}" />
   <meta property="og:description" content="${esc(descricao)}" />
@@ -172,6 +182,31 @@ ${extra}</head>
 
 `;
 }
+
+/* Cabeçalho enxuto para as páginas que vivem fora da loja: sem busca no
+   catálogo e sem carrinho, que só fazem sentido com a loja no ar. */
+const ESTILO_HDR_SIMPLES = `  <style>
+    /* Sem busca e sem carrinho, o grid de 3 colunas do header vira flex. */
+    .lojahdr__topo--simples { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  </style>
+`;
+
+const headerSimples = () => `  <header class="lojahdr">
+    <div class="container lojahdr__topo lojahdr__topo--simples">
+      <a class="lojahdr__logo" href="/" aria-label="Nuvem Air">
+        <img src="/loja/assets/img/logo-loja.png" alt="Nuvem Air" width="154" height="28" />
+      </a>
+      <a class="lojahdr__voltar" href="/">Site da Nuvem Air &rarr;</a>
+    </div>
+  </header>`;
+
+/* Sem loja.js nem loja-carrinho.js: os dois leem o catálogo e montam a
+   vitrine, que agora está fora do ar. */
+const SCRIPTS_SIMPLES = `
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+`;
 
 const SCRIPTS = `
   <script src="/loja/assets/js/loja-core.js?v=${CSS_V}"></script>
@@ -648,25 +683,37 @@ retorno('erro.html', '&#9888;', 'O pagamento não foi concluído.',
 
 /* Fica na raiz (a Vercel serve /404.html automaticamente), então os caminhos
    relativos ../assets precisam virar /assets. */
+const acoes404 = LOJA_ATIVA
+  ? `        <a class="btn btn--primary" href="/loja">Ver a loja</a>
+        <a class="btn btn--ghost" href="/">Ir para o site</a>`
+  : `        <a class="btn btn--primary" href="/comprar">Ver os modelos</a>
+        <a class="btn btn--ghost" href="/">Ir para o site</a>`;
+
 const main404 = `  <main class="loja-retorno container">
       <div class="loja-retorno__icone" aria-hidden="true">&#128269;</div>
       <h1>Página não encontrada</h1>
       <p>O endereço que você abriu não existe ou foi movido. Pode ser um link antigo.</p>
-      <p>Se você procurava um climatizador ou aquecedor, a loja está logo ali.</p>
+      <p>${LOJA_ATIVA
+        ? 'Se você procurava um climatizador ou aquecedor, a loja está logo ali.'
+        : 'Se você procurava um climatizador ou aquecedor, veja os modelos ou chame a gente no WhatsApp.'}</p>
       <div class="loja-retorno__acoes">
-        <a class="btn btn--primary" href="/loja">Ver a loja</a>
-        <a class="btn btn--ghost" href="/">Ir para o site</a>
+${acoes404}
         <a class="btn btn--ghost" href="${wa('Olá! Não encontrei o que procurava no site da Nuvem Air.')}" target="_blank" rel="noopener">Falar no WhatsApp</a>
       </div>
   </main>`;
 
 const html404 = head({
   titulo: 'Página não encontrada | Nuvem Air',
-  descricao: 'A página que você procurava não existe. Veja os climatizadores e aquecedores da loja Nuvem Air.',
+  descricao: LOJA_ATIVA
+    ? 'A página que você procurava não existe. Veja os climatizadores e aquecedores da loja Nuvem Air.'
+    : 'A página que você procurava não existe. Veja os climatizadores e aquecedores da Nuvem Air.',
   url: SITE + '/404',
   imagem: SITE + '/assets/img/model-industrial.png',
   noindex: true,
-}) + header() + '\n\n' + main404 + '\n\n' + footer + '\n\n' + waFloat + SCRIPTS;
+  siteName: LOJA_ATIVA ? 'Loja Nuvem Air' : 'Nuvem Air',
+  extra: LOJA_ATIVA ? '' : ESTILO_HDR_SIMPLES,
+}) + (LOJA_ATIVA ? header() : headerSimples()) + '\n\n' + main404 + '\n\n' + footer + '\n\n'
+  + waFloat + (LOJA_ATIVA ? SCRIPTS : SCRIPTS_SIMPLES);
 
 fs.writeFileSync(path.join(RAIZ, '404.html'), html404);
 console.log('  -> 404.html');
@@ -793,7 +840,9 @@ const PAGINAS_FIXAS = [
   { loc: SITE + '/comprar', prioridade: '0.9' },
   { loc: SITE + '/painel-de-led', prioridade: '0.7' },
 ];
-const todasUrls = PAGINAS_FIXAS.concat(urls);
+/* Com a loja fora do ar, as URLs de /loja redirecionam — e sitemap cheio de
+   redirect é erro no Search Console. Ficam de fora até a loja voltar. */
+const todasUrls = LOJA_ATIVA ? PAGINAS_FIXAS.concat(urls) : PAGINAS_FIXAS.slice();
 
 fs.writeFileSync(path.join(RAIZ, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>

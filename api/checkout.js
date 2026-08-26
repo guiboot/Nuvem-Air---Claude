@@ -11,6 +11,13 @@ const core = require('../loja/assets/js/loja-core.js');
 
 const MP_API = 'https://api.mercadopago.com/checkout/preferences';
 
+/* A loja está fora do ar (ver as regras de /loja no vercel.json).
+   Enquanto isso, este endpoint não cria preferência de pagamento nenhuma:
+   o redirect só esconde a vitrine, quem souber o endereço ainda consegue
+   postar aqui direto. Para reabrir a loja, volte para true e tire as
+   regras de /loja do vercel.json — as duas coisas andam juntas. */
+const LOJA_ATIVA = false;
+
 function carregarCatalogo() {
   const arquivo = path.join(process.cwd(), 'loja', 'catalogo.json');
   return JSON.parse(fs.readFileSync(arquivo, 'utf8'));
@@ -120,6 +127,12 @@ function montarPreferencia(catalogo, corpo, origem) {
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     res.status(405).json({ erro: 'Método não permitido.' });
+    return;
+  }
+
+  if (!LOJA_ATIVA) {
+    res.setHeader('Cache-Control', 'no-store');
+    res.status(503).json({ erro: 'A loja está em manutenção. Fale com a gente pelo WhatsApp: (44) 98804-9444.' });
     return;
   }
 

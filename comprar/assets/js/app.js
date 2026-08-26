@@ -204,7 +204,7 @@
   });
 
   /* ---------- Formulário de lead -> WhatsApp + conversão ---------- */
-  var WA_NUMBER = '5544988117615';
+  var WA_NUMBER = '5544988049444';
   var leadForm = document.getElementById('leadForm');
   if (leadForm) {
     leadForm.addEventListener('submit', function (e) {
