@@ -1,66 +1,12 @@
 {
   "moeda": "BRL",
-  "descontoPixPercentual": 5,
+  "descontoPixPercentual": 0,
   "parcelamentoMax": 4,
   "produtos": {
-    "NI21BS": {
-      "nome": "Climatizador Industrial NI21BS",
-      "slug": "ni21bs",
-      "tag": "Teto · NI21BS",
-      "categoria": "climatizadores-fixos",
-      "precoDeCentavos": null,
-      "precoCentavos": null,
-      "pesoKg": 72,
-      "imagem": "/loja/assets/img/ni21bs.webp",
-      "resumo": "Modelo de teto com saída de ar lateral, para distribuir ar resfriado ao longo de corredores, linhas de produção e galpões amplos.",
-      "specs": [
-        "Vazão de 21.000 m³/h",
-        "Cobertura de 150 a 180 m²",
-        "Motor trifásico 1.500 W (220V)",
-        "Painel digital, controle remoto e sensor de água",
-        "Reservatório de 30 L · 72 kg"
-      ]
-    },
-    "NI23DS": {
-      "nome": "Climatizador Industrial NI23DS",
-      "slug": "ni23ds",
-      "tag": "Teto · NI23DS",
-      "categoria": "climatizadores-fixos",
-      "precoDeCentavos": null,
-      "precoCentavos": null,
-      "pesoKg": 72,
-      "imagem": "/loja/assets/img/industrial-inferior.webp",
-      "resumo": "Modelo de teto com direção do ar para baixo, para resfriamento direto sobre linhas de produção e postos de trabalho.",
-      "specs": [
-        "Vazão de 23.000 m³/h",
-        "Cobertura de 180 a 200 m²",
-        "Motor trifásico 1.500 W (220V)",
-        "Painel digital, controle remoto e sensor de água",
-        "Reservatório de 30 L · 72 kg"
-      ]
-    },
-    "NI56DS": {
-      "nome": "Climatizador Industrial NI56DS",
-      "slug": "ni56ds",
-      "tag": "Alta vazão · NI56DS",
-      "categoria": "climatizadores-fixos",
-      "precoDeCentavos": null,
-      "precoCentavos": null,
-      "pesoKg": 119,
-      "imagem": "/loja/assets/img/industrial-frontal.webp",
-      "resumo": "O mais potente da linha, para grandes galpões e centros de distribuição de alto pé-direito que exigem máxima renovação de ar.",
-      "specs": [
-        "Vazão de 56.000 m³/h",
-        "Cobertura de 350 a 400 m²",
-        "Motor trifásico 3.500 W (220V)",
-        "Reservatório de 60 L · hélice balanceada",
-        "119 kg"
-      ]
-    },
-    "NI9PRO": {
-      "nome": "Climatizador Portátil NI9PRO",
-      "slug": "ni9pro",
-      "tag": "Linha PRO · NI9PRO",
+    "NU9PRO": {
+      "nome": "Climatizador Portátil NU9PRO",
+      "slug": "nu9pro",
+      "tag": "Linha PRO · NU9PRO",
       "precoDeCentavos": 490000,
       "precoCentavos": 420000,
       "pesoKg": null,
@@ -74,10 +20,10 @@
       ],
       "categoria": "portateis"
     },
-    "NI18": {
-      "nome": "Climatizador Móvel Big Tank NI18",
-      "slug": "ni18",
-      "tag": "Big Tank · NI18",
+    "NU18": {
+      "nome": "Climatizador Móvel Big Tank NU18",
+      "slug": "nu18",
+      "tag": "Big Tank · NU18",
       "precoDeCentavos": 550000,
       "precoCentavos": 449000,
       "pesoKg": 30,
@@ -91,10 +37,10 @@
       ],
       "categoria": "portateis"
     },
-    "NI23": {
-      "nome": "Climatizador Móvel Big Tank NI23",
-      "slug": "ni23",
-      "tag": "Big Tank · NI23",
+    "NU23": {
+      "nome": "Climatizador Móvel Big Tank NU23",
+      "slug": "nu23",
+      "tag": "Big Tank · NU23",
       "precoDeCentavos": 810000,
       "precoCentavos": 749000,
       "pesoKg": null,
@@ -107,6 +53,63 @@
         "Motor trifásico 1.500 W · 220V"
       ],
       "categoria": "portateis"
+    },
+    "NU21BS": {
+      "nome": "Climatizador Industrial NU21BS",
+      "slug": "nu21bs",
+      "tag": "Teto · NU21BS",
+      "categoria": "climatizadores-fixos",
+      "precoDeCentavos": 820000,
+      "precoCentavos": 529000,
+      "observacao": "Valor do equipamento, sem instalação e sem duto. Instalação e duto têm orçamento personalizado.",
+      "pesoKg": 72,
+      "imagem": "/loja/assets/img/ni21bs.webp",
+      "resumo": "Modelo de teto com saída de ar lateral, para distribuir ar resfriado ao longo de corredores, linhas de produção e galpões amplos.",
+      "specs": [
+        "Vazão de 21.000 m³/h",
+        "Cobertura de 150 a 180 m²",
+        "Motor trifásico 1.500 W (220V)",
+        "Painel digital, controle remoto e sensor de água",
+        "Reservatório de 30 L · 72 kg"
+      ]
+    },
+    "NU23DS": {
+      "nome": "Climatizador Industrial NU23DS",
+      "slug": "nu23ds",
+      "tag": "Teto · NU23DS",
+      "categoria": "climatizadores-fixos",
+      "precoDeCentavos": 850000,
+      "precoCentavos": 539000,
+      "observacao": "Valor do equipamento, sem instalação e sem duto. Instalação e duto têm orçamento personalizado.",
+      "pesoKg": 72,
+      "imagem": "/loja/assets/img/industrial-inferior.webp",
+      "resumo": "Modelo de teto com direção do ar para baixo, para resfriamento direto sobre linhas de produção e postos de trabalho.",
+      "specs": [
+        "Vazão de 23.000 m³/h",
+        "Cobertura de 180 a 200 m²",
+        "Motor trifásico 1.500 W (220V)",
+        "Painel digital, controle remoto e sensor de água",
+        "Reservatório de 30 L · 72 kg"
+      ]
+    },
+    "NU56DS": {
+      "nome": "Climatizador Industrial NU56DS",
+      "slug": "nu56ds",
+      "tag": "Alta vazão · NU56DS",
+      "categoria": "climatizadores-fixos",
+      "precoDeCentavos": 1550000,
+      "precoCentavos": 1350000,
+      "observacao": "Valor do equipamento, sem instalação e sem duto. Instalação e duto têm orçamento personalizado.",
+      "pesoKg": 119,
+      "imagem": "/loja/assets/img/industrial-frontal.webp",
+      "resumo": "O mais potente da linha, para grandes galpões e centros de distribuição de alto pé-direito que exigem máxima renovação de ar.",
+      "specs": [
+        "Vazão de 56.000 m³/h",
+        "Cobertura de 350 a 400 m²",
+        "Motor trifásico 3.500 W (220V)",
+        "Reservatório de 60 L · hélice balanceada",
+        "119 kg"
+      ]
     },
     "AQ-CHAPEU-INOX": {
       "nome": "Aquecedor Torre Chapéu a Gás — Inox",
@@ -124,7 +127,8 @@
         "Sistema de segurança antiqueda",
         "Acendimento eletrônico (piezoelétrico)",
         "Altura: 2,21 m · Diâmetro do chapéu: 81 cm"
-      ]
+      ],
+      "esgotado": true
     },
     "AQ-CHAPEU-PRETO": {
       "nome": "Aquecedor Torre Chapéu a Gás — Preto",
@@ -142,7 +146,8 @@
         "Sistema de segurança antiqueda",
         "Acendimento eletrônico (piezoelétrico)",
         "Altura: 2,21 m · Diâmetro do chapéu: 81 cm"
-      ]
+      ],
+      "esgotado": true
     },
     "AQ-PIRAMIDE-INOX": {
       "nome": "Aquecedor Torre Pirâmide a Gás — Inox",
@@ -160,7 +165,8 @@
         "Cilindro de gás GLP embutido (P13)",
         "Acendimento seguro e estável",
         "Altura: 2,28 m · Base: 52 cm × 52 cm"
-      ]
+      ],
+      "esgotado": true
     },
     "AQ-PIRAMIDE-PRETO": {
       "nome": "Aquecedor Torre Pirâmide a Gás — Preto",
@@ -178,20 +184,21 @@
         "Cilindro de gás GLP embutido (P13)",
         "Acendimento seguro e estável",
         "Altura: 2,28 m · Base: 52 cm × 52 cm"
-      ]
+      ],
+      "esgotado": true
     }
   },
   "frete": {
     "faixas": []
   },
   "categorias": {
-    "climatizadores-fixos": {
-      "titulo": "Climatizadores fixos",
-      "resumo": "Modelos de teto para galpões e linhas de produção. Instalação e montagem por conta da Nuvem Air."
-    },
     "portateis": {
       "titulo": "Portáteis e móveis",
       "resumo": "Com rodízios e reservatório próprio. Chegam prontos para usar, sem obra."
+    },
+    "climatizadores-fixos": {
+      "titulo": "Climatizadores fixos",
+      "resumo": "Modelos de teto para galpões e linhas de produção. Instalação e duto sob orçamento."
     },
     "aquecedores": {
       "titulo": "Aquecedores a gás",

@@ -5,9 +5,9 @@ const { montarPreferencia } = require('../api/checkout.js');
 const catalogo = {
   moeda: 'BRL',
   produtos: {
-    NI9PRO: { nome: 'Climatizador Portátil NI9PRO', slug: 'ni9pro', precoCentavos: 249900 },
-    NI18:   { nome: 'Climatizador Móvel Big Tank NI18', slug: 'ni18', precoCentavos: 599900 },
-    NI23:   { nome: 'Climatizador Móvel Big Tank NI23', slug: 'ni23', precoCentavos: null }
+    NU9PRO: { nome: 'Climatizador Portátil NU9PRO', slug: 'nu9pro', precoCentavos: 249900 },
+    NU18:   { nome: 'Climatizador Móvel Big Tank NU18', slug: 'nu18', precoCentavos: 599900 },
+    NU23:   { nome: 'Climatizador Móvel Big Tank NU23', slug: 'nu23', precoCentavos: null }
   },
   frete: { faixas: [{ de: '80000000', ate: '87999999', valorCentavos: 15000 }] }
 };
@@ -15,7 +15,7 @@ const catalogo = {
 const clienteOk = { nome: 'Maria Souza', email: 'maria@empresa.com.br', telefone: '44988117615', documento: '12345678909' };
 
 function corpo(extra) {
-  return Object.assign({ itens: [{ sku: 'NI18', qtd: 1 }], cliente: clienteOk, cep: '87050-000', pagamento: 'cartao' }, extra);
+  return Object.assign({ itens: [{ sku: 'NU18', qtd: 1 }], cliente: clienteOk, cep: '87050-000', pagamento: 'cartao' }, extra);
 }
 
 test('monta a preferência com item e frete separados', () => {
@@ -23,7 +23,7 @@ test('monta a preferência com item e frete separados', () => {
   assert.strictEqual(r.ok, true);
   const itens = r.preferencia.items;
   assert.strictEqual(itens.length, 2);
-  assert.strictEqual(itens[0].title, 'Climatizador Móvel Big Tank NI18');
+  assert.strictEqual(itens[0].title, 'Climatizador Móvel Big Tank NU18');
   assert.strictEqual(itens[0].unit_price, 5999);
   assert.strictEqual(itens[0].quantity, 1);
   assert.strictEqual(itens[1].title, 'Frete');
@@ -31,7 +31,7 @@ test('monta a preferência com item e frete separados', () => {
 });
 
 test('preço enviado pelo cliente é ignorado', () => {
-  const r = montarPreferencia(catalogo, corpo({ itens: [{ sku: 'NI18', qtd: 1, precoCentavos: 100, unit_price: 1 }] }), 'https://x');
+  const r = montarPreferencia(catalogo, corpo({ itens: [{ sku: 'NU18', qtd: 1, precoCentavos: 100, unit_price: 1 }] }), 'https://x');
   assert.strictEqual(r.preferencia.items[0].unit_price, 5999);
 });
 
@@ -49,7 +49,7 @@ test('CEP inválido é recusado', () => {
 });
 
 test('produto sem preço é recusado', () => {
-  const r = montarPreferencia(catalogo, corpo({ itens: [{ sku: 'NI23', qtd: 1 }] }), 'https://x');
+  const r = montarPreferencia(catalogo, corpo({ itens: [{ sku: 'NU23', qtd: 1 }] }), 'https://x');
   assert.strictEqual(r.ok, false);
   assert.strictEqual(r.status, 400);
 });
@@ -91,7 +91,7 @@ test('dados do cliente vão para payer', () => {
 test('metadata carrega CEP e itens para o painel do MP', () => {
   const r = montarPreferencia(catalogo, corpo(), 'https://x');
   assert.strictEqual(r.preferencia.metadata.cep, '87050000');
-  assert.strictEqual(r.preferencia.metadata.itens, 'NI18 x1');
+  assert.strictEqual(r.preferencia.metadata.itens, 'NU18 x1');
 });
 
 test('back_urls apontam para as páginas de retorno da loja', () => {
@@ -125,15 +125,15 @@ test('documento ausente não cria identification', () => {
 });
 
 test('quantidade maior que um multiplica no MP pela quantity, não pelo preço', () => {
-  const r = montarPreferencia(catalogo, corpo({ itens: [{ sku: 'NI9PRO', qtd: 3 }] }), 'https://x');
+  const r = montarPreferencia(catalogo, corpo({ itens: [{ sku: 'NU9PRO', qtd: 3 }] }), 'https://x');
   assert.strictEqual(r.preferencia.items[0].unit_price, 2499);
   assert.strictEqual(r.preferencia.items[0].quantity, 3);
 });
 
 test('o preço "de" não vai para o Mercado Pago — cobra-se o "por"', () => {
   const comPromo = JSON.parse(JSON.stringify(catalogo));
-  comPromo.produtos.NI18.precoCentavos = 449000;
-  comPromo.produtos.NI18.precoDeCentavos = 550000;
+  comPromo.produtos.NU18.precoCentavos = 449000;
+  comPromo.produtos.NU18.precoDeCentavos = 550000;
   const r = montarPreferencia(comPromo, corpo(), 'https://x');
   assert.strictEqual(r.preferencia.items[0].unit_price, 4490);
   assert.strictEqual(JSON.stringify(r.preferencia).includes('5500'), false);
@@ -145,17 +145,17 @@ const catPag = {
   moeda: 'BRL',
   descontoPixPercentual: 5,
   parcelamentoMax: 4,
-  produtos: { NI18: { nome: 'NI18', slug: 'ni18', precoCentavos: 449000 } },
+  produtos: { NU18: { nome: 'NU18', slug: 'nu18', precoCentavos: 449000 } },
   frete: { faixas: [{ de: '80000000', ate: '87999999', valorCentavos: 15000 }] }
 };
 function corpoPag(pagamento, extra) {
-  return Object.assign({ itens: [{ sku: 'NI18', qtd: 1 }], cliente: clienteOk, cep: '87050-000', pagamento }, extra);
+  return Object.assign({ itens: [{ sku: 'NU18', qtd: 1 }], cliente: clienteOk, cep: '87050-000', pagamento }, extra);
 }
 
 test('Pix: cobra com desconto e restringe o checkout ao Pix', () => {
   const r = montarPreferencia(catPag, corpoPag('pix'), 'https://x');
   assert.strictEqual(r.ok, true);
-  const produto = r.preferencia.items.find((i) => i.id === 'NI18');
+  const produto = r.preferencia.items.find((i) => i.id === 'NU18');
   assert.strictEqual(produto.unit_price, 4265.5);
   const tipos = r.preferencia.payment_methods.excluded_payment_types.map((t) => t.id).sort();
   assert.deepStrictEqual(tipos, ['credit_card', 'debit_card', 'ticket']);
@@ -164,7 +164,7 @@ test('Pix: cobra com desconto e restringe o checkout ao Pix', () => {
 
 test('cartão: cobra o valor cheio e não oferece Pix', () => {
   const r = montarPreferencia(catPag, corpoPag('cartao'), 'https://x');
-  const produto = r.preferencia.items.find((i) => i.id === 'NI18');
+  const produto = r.preferencia.items.find((i) => i.id === 'NU18');
   assert.strictEqual(produto.unit_price, 4490);
   assert.deepStrictEqual(r.preferencia.payment_methods.excluded_payment_types.map((t) => t.id), ['bank_transfer']);
 });

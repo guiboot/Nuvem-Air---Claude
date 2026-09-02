@@ -115,6 +115,36 @@
 .loja-badge-consulta { display: block; font-size: 12.5px; line-height: 1.5; color: var(--ink-2); }
 .loja-badge-consulta a { color: var(--primary); font-weight: 600; text-decoration: underline; }
 
+/* Esgotado. O selo fica junto da tag, no topo do card, porque quem varre a
+   vitrine decide antes de chegar ao preço. A foto perde saturação para o
+   produto sair do primeiro plano sem sumir da listagem. */
+.loja-selo-esgotado {
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #8a1c1c;
+  background: rgba(138,28,28,.09);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+.loja-card--esgotado .loja-card__img img { filter: grayscale(.55); opacity: .72; }
+
+/* Ressalva do preço (o que ele não inclui). Mesmo tom do aviso de "sob
+   consulta": precisa ser lida, não gritar mais que o valor. */
+.loja-obs {
+  display: block;
+  margin-top: 8px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+.loja-obs a { color: var(--primary); font-weight: 600; text-decoration: underline; }
+.loja-carrinho__texto { min-width: 0; }
+.loja-carrinho__produto .loja-obs { margin-top: 4px; }
+
 /* ---------- Página de produto ---------- */
 .loja-produto { padding: 150px 0 96px; }
 .loja-produto__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
@@ -176,7 +206,7 @@
   white-space: nowrap;
 }
 .loja-carrinho__tabela td { padding: 16px 12px 16px 0; border-top: 1px solid var(--line); vertical-align: middle; }
-.loja-carrinho__produto { display: flex; align-items: center; gap: 14px; min-width: 200px; }
+.loja-carrinho__produto { display: flex; align-items: center; gap: 14px; min-width: 280px; }
 .loja-carrinho__produto img { width: 56px; height: 56px; object-fit: contain; flex: none; }
 .loja-carrinho__produto strong { font-size: 15px; font-weight: 600; }
 .loja-carrinho__tabela input[type="number"] {
@@ -358,7 +388,7 @@
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 32px;
-  padding: 18px 0;
+  padding-block: 18px;
 }
 /* logo-loja.png é o logo-primary.png sem a moldura transparente — no
    original a marca ocupa só 23% da altura e ficava minúscula no header. */
@@ -409,7 +439,7 @@
 
 .lojahdr__cats {
   display: flex; align-items: center; gap: 30px;
-  padding: 0 0 16px;
+  padding-block: 0 16px;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -428,40 +458,120 @@
 /* ---------- Banner ---------- */
 .loja-banner {
   position: relative;
-  background: linear-gradient(115deg, var(--primary-dark) 0%, var(--primary) 45%, var(--accent) 100%);
+  /* Rampa mais funda que a anterior: o antigo gradiente terminava no --accent
+     puro e a metade direita ficava clara demais para o cenário e a vinheta
+     aparecerem. Mesma família de azul da marca, só que com fundo. */
+  background: linear-gradient(118deg, #0b1140 0%, var(--primary-dark) 32%, var(--primary) 64%, #2b3cb8 100%);
   color: #fff;
   overflow: hidden;
+  isolation: isolate;
 }
+
+/* O galpão em perspectiva (SVG montado em tools/gerar-loja.js). Puramente
+   decorativo e marcado com aria-hidden lá — quem usa leitor de tela não perde
+   nada por não ouvir uma treliça. */
+.loja-banner__cenario {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
 .loja-banner__inner {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 32px;
-  min-height: 400px;
-  padding: 56px 0;
+  min-height: 440px;
+  padding-block: 64px;
 }
-.loja-banner h1 {
-  font-size: clamp(34px, 4.6vw, 62px);
-  font-weight: 700;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
+.loja-banner__gancho {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(255,255,255,.76);
   margin-bottom: 18px;
 }
-.loja-banner p { font-size: clamp(16px, 1.6vw, 21px); color: rgba(255,255,255,.9); line-height: 1.45; margin-bottom: 28px; max-width: 30ch; }
+/* O texto vai dentro de um <span> de propósito: solto, o flex quebra cada
+   trecho num item e a linha se parte no meio da frase. */
+.loja-banner__gancho span { min-width: 0; }
+.loja-banner__gancho::before {
+  content: '';
+  flex: none;
+  width: 26px;
+  height: 1px;
+  background: rgba(255,255,255,.45);
+}
+.loja-banner h1 {
+  /* Era caixa-alta em 62px e ocupava a coluna inteira, sem sobrar respiro para
+     nada atrás. Caixa mista e um passo menor devolvem o ar sem perder peso. */
+  font-size: clamp(30px, 3.4vw, 52px);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  margin-bottom: 16px;
+  text-wrap: balance;
+}
+.loja-banner p { font-size: clamp(15.5px, 1.4vw, 19px); color: rgba(255,255,255,.86); line-height: 1.5; margin-bottom: 28px; max-width: 34ch; }
 .loja-banner__acoes { display: flex; flex-wrap: wrap; gap: 12px; }
 .loja-banner .btn--white { background: #fff; color: var(--primary); }
-.loja-banner .btn--vazado { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.55); }
-.loja-banner .btn--vazado:hover { background: rgba(255,255,255,.12); }
-.loja-banner__fotos { display: flex; align-items: flex-end; justify-content: center; gap: 10px; }
-.loja-banner__fotos img {
-  flex: 1 1 0;
-  min-width: 0;
-  height: auto;
-  max-height: 330px;
-  object-fit: contain;
-  filter: drop-shadow(0 24px 40px rgba(0,0,0,.35));
+.loja-banner .btn--vazado { background: rgba(255,255,255,.06); color: #fff; border: 1px solid rgba(255,255,255,.5); }
+.loja-banner .btn--vazado:hover { background: rgba(255,255,255,.16); }
+
+/* As três peças dividem uma linha de chão só, cada uma com sombra de contato, e
+   a escala é a relação de tamanho entre elas — não três colunas iguais. Era
+   exatamente isso que faltava: sem chão comum os recortes pareciam colados. */
+/* A faixa tem altura definida e cada peça ocupa uma fração dela (--altura, que
+   vem do gerador). Dimensionar pela altura, e não pela largura, é o que mantém
+   a proporção entre os produtos correta: as três imagens têm formatos bem
+   diferentes, e largura igual deixaria a torre a gás do tamanho de um portátil. */
+.loja-banner__fotos {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: clamp(232px, 25vw, 368px);
+  padding-bottom: 18px;
 }
+.loja-banner__peca {
+  position: relative;
+  flex: none;
+  height: var(--altura, 100%);
+}
+.loja-banner__peca img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  width: auto;
+  filter: drop-shadow(0 14px 20px rgba(3,6,28,.4));
+}
+/* Sombra de contato. Como o recorte encosta na base do elemento, ela cai
+   exatamente sob o pé do produto sem precisar de compensação. */
+.loja-banner__peca::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -9px;
+  width: 150%;
+  height: 26px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(1,3,18,.72) 0%, rgba(1,3,18,.34) 42%, rgba(1,3,18,0) 72%);
+}
+/* O que está atrás perde brilho e saturação: é o mínimo de profundidade
+   atmosférica para os três não disputarem o mesmo plano. */
+.loja-banner__peca--fundo { filter: brightness(.84) saturate(.88); }
+.loja-banner__peca--meio { margin-left: -2.5%; }
+.loja-banner__peca--frente { margin-left: -3.5%; z-index: 2; }
 
 /* ---------- Faixa de confiança ---------- */
 .loja-selos { border-bottom: 1px solid var(--line); background: var(--paper); }
@@ -470,7 +580,7 @@
   grid-template-columns: repeat(3, auto);
   justify-content: center;
   gap: 64px;
-  padding: 26px 0;
+  padding-block: 26px;
 }
 .loja-selo { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .loja-selo svg { flex: none; color: var(--primary); }
@@ -478,13 +588,20 @@
 .loja-selo span { display: block; font-size: 14px; color: var(--ink-2); }
 
 @media (max-width: 980px) {
-  .loja-banner__inner { grid-template-columns: 1fr; min-height: 0; text-align: left; }
-  .loja-banner__fotos { justify-content: flex-start; }
-  .loja-banner__fotos img { max-height: 210px; }
+  .loja-banner__inner { grid-template-columns: 1fr; min-height: 0; text-align: left; padding-block: 46px 40px; }
+  .loja-banner__fotos { justify-content: flex-start; height: clamp(200px, 42vw, 300px); }
+  /* O SVG é recortado (slice) e, numa tela estreita, sobra justamente a faixa
+     central — a mais carregada — passando por trás do texto. Recuar o cenário
+     devolve legibilidade sem perder a atmosfera. */
+  .loja-banner__cenario { opacity: .58; }
   .loja-selos__inner { grid-template-columns: 1fr; gap: 18px; justify-content: start; }
 }
+@media (max-width: 560px) {
+  .loja-banner__gancho { text-transform: none; letter-spacing: .01em; font-size: 12.5px; }
+}
+
 @media (max-width: 780px) {
-  .lojahdr__topo { grid-template-columns: auto auto; gap: 12px; padding: 14px 0; }
+  .lojahdr__topo { grid-template-columns: auto auto; gap: 12px; padding-block: 14px; }
   .lojahdr__logo img { height: 22px; }
   .lojahdr__busca { grid-column: 1 / -1; order: 3; max-width: none; }
   .lojahdr__busca input { padding: 12px 46px 12px 18px; font-size: 14.5px; }
@@ -493,7 +610,9 @@
      padding dele deixava a barra 48px mais larga que a viewport */
   .lojahdr__cats { gap: 20px; }
   .lojahdr__cats .lojahdr__voltar { margin-left: 0; }
-  .loja-banner__inner { padding: 36px 0; }
+  .loja-banner__inner { padding-block: 34px 30px; }
+  .loja-banner__gancho { font-size: 11px; letter-spacing: .04em; margin-bottom: 12px; }
+  .loja-banner__fotos { height: clamp(150px, 40vw, 214px); }
 }
 
 /* =========================================================

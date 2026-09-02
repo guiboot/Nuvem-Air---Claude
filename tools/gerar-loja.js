@@ -22,7 +22,7 @@ const RAIZ = path.join(__dirname, '..');
    subdomínio. SITE_URL permite gerar para outro host sem editar código. */
 const SITE = process.env.SITE_URL || 'https://nuvemair.com.br';
 const WA_NUM = '5544988049444';
-const CSS_V = '20260823-2';
+const CSS_V = '20260902-1';
 
 /* A loja está temporariamente fora do ar. Quem fecha a porta é o vercel.json
    (tudo em /loja redireciona para /loja-indisponivel) e o api/checkout.js, que
@@ -68,7 +68,7 @@ function header() {
   return `  <header class="lojahdr">
     <div class="container lojahdr__topo">
       <a class="lojahdr__logo" href="/loja" aria-label="Loja Nuvem Air">
-        <img src="/loja/assets/img/logo-loja.png" alt="Nuvem Air" width="154" height="28" />
+        <img src="/loja/assets/img/logo-loja.png?v=${CSS_V}" alt="Nuvem Air" width="154" height="28" />
       </a>
 
       <form class="lojahdr__busca" role="search" data-busca>
@@ -97,6 +97,9 @@ ${cats}
    e parcelamento não existiam para o Googlebot nem no primeiro paint. */
 function blocoPreco(sku) {
   const p = cat.produtos[sku];
+  if (!core.disponivel(cat, sku)) {
+    return `<div class="loja-preco loja-preco--consulta"><span class="loja-preco__valor">Esgotado</span></div>`;
+  }
   if (!core.temPrecoDefinido(cat, sku)) {
     return `<div class="loja-preco loja-preco--consulta"><span class="loja-preco__valor">Sob consulta</span></div>`;
   }
@@ -120,22 +123,38 @@ function blocoPreco(sku) {
   return `<div class="loja-preco">${linhas.join('')}</div>`;
 }
 
+/* A observação anda colada no preço, porque é o que o preço não inclui. Sai no
+   card, na página do produto e no carrinho (esse último é desenhado por
+   loja.js). Omitir em qualquer um dos três deixa a pessoa fechar o pedido
+   achando que a instalação estava dentro. */
+function blocoObservacao(sku) {
+  const p = cat.produtos[sku];
+  if (!p.observacao) return '';
+  const link = wa(`Olá! Quero orçamento de instalação e duto para o ${p.nome}.`);
+  return `<p class="loja-obs">${esc(p.observacao)} <a href="${link}" target="_blank" rel="noopener">Peça o orçamento pelo WhatsApp</a>.</p>`;
+}
+
 function card(sku) {
   const p = cat.produtos[sku];
-  const tem = core.temPrecoDefinido(cat, sku);
-  const aviso = tem ? '' :
-    `<span class="loja-badge-consulta">Ainda sem preço publicado. <a href="${wa('Olá! Quero o preço do ' + p.nome + '.')}" target="_blank" rel="noopener">Peça o valor pelo WhatsApp</a>.</span>`;
+  const disp = core.disponivel(cat, sku);
+  const tem = disp && core.temPrecoDefinido(cat, sku);
+  const rotulo = !disp ? 'Esgotado' : (tem ? 'Comprar agora' : 'Sob consulta');
+  const aviso = !disp
+    ? `<span class="loja-badge-consulta">Sem estoque no momento. <a href="${wa('Olá! Quero ser avisado quando o ' + p.nome + ' voltar ao estoque.')}" target="_blank" rel="noopener">Avise-me quando voltar</a>.</span>`
+    : (tem ? '' :
+      `<span class="loja-badge-consulta">Ainda sem preço publicado. <a href="${wa('Olá! Quero o preço do ' + p.nome + '.')}" target="_blank" rel="noopener">Peça o valor pelo WhatsApp</a>.</span>`);
 
-  return `        <article class="loja-card" data-sku="${sku}" data-categoria="${p.categoria}" data-preco="${p.precoCentavos === null ? '' : p.precoCentavos}" data-nome="${esc(p.nome)}">
+  return `        <article class="loja-card${disp ? '' : ' loja-card--esgotado'}" data-sku="${sku}" data-categoria="${p.categoria}" data-preco="${p.precoCentavos === null ? '' : p.precoCentavos}" data-nome="${esc(p.nome)}">
           <a class="loja-card__img" href="/loja/${p.slug}" tabindex="-1" aria-hidden="true">
             <img src="${p.imagem}" alt="${esc(p.nome)}" loading="lazy" width="400" height="400" />
           </a>
           <div class="loja-card__body">
-            <span class="loja-card__tag">${esc(p.tag)}</span>
+            <span class="loja-card__tag">${esc(p.tag)}</span>${disp ? '' : '\n            <span class="loja-selo-esgotado">Esgotado</span>'}
             <h3><a href="/loja/${p.slug}">${esc(p.nome)}</a></h3>
             <div class="loja-card__rodape">
               ${blocoPreco(sku)}
-              <a class="btn btn--primary full loja-card__btn" href="/loja/${p.slug}"${tem ? '' : ' disabled'}>${tem ? 'Comprar agora' : 'Sob consulta'}</a>
+              ${blocoObservacao(sku)}
+              <a class="btn btn--primary full loja-card__btn" href="/loja/${p.slug}"${tem ? '' : ' disabled'}>${rotulo}</a>
               ${aviso}
             </div>
           </div>
@@ -170,7 +189,7 @@ function head({ titulo, descricao, url, imagem, extra = '', noindex = false, sit
   <meta name="twitter:image" content="${imagem}" />
 
   <meta name="theme-color" content="#1e2a78" />
-  <link rel="icon" href="/loja/assets/img/icon-primary.png" />
+  <link rel="icon" href="/loja/assets/img/icon-primary.png?v=${CSS_V}" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -194,7 +213,7 @@ const ESTILO_HDR_SIMPLES = `  <style>
 const headerSimples = () => `  <header class="lojahdr">
     <div class="container lojahdr__topo lojahdr__topo--simples">
       <a class="lojahdr__logo" href="/" aria-label="Nuvem Air">
-        <img src="/loja/assets/img/logo-loja.png" alt="Nuvem Air" width="154" height="28" />
+        <img src="/loja/assets/img/logo-loja.png?v=${CSS_V}" alt="Nuvem Air" width="154" height="28" />
       </a>
       <a class="lojahdr__voltar" href="/">Site da Nuvem Air &rarr;</a>
     </div>
@@ -222,7 +241,7 @@ const SCRIPTS = `
 
 const urls = [];
 
-/* Cada página vira um diretório com index.html, para que /loja/ni18 funcione
+/* Cada página vira um diretório com index.html, para que /loja/nu18 funcione
    sem depender de cleanUrls — ligar isso no site principal mudaria o
    comportamento das URLs que já estão no ar. */
 function pagina(nome, opcoes, main, { indexar = true, prioridade = '0.7' } = {}) {
@@ -286,10 +305,54 @@ const selos = [
 
 const skus = Object.keys(cat.produtos);
 
-const bannerFotos = ['NI23', 'AQ-PIRAMIDE-INOX', 'NI56DS']
-  .filter((s) => cat.produtos[s])
-  .map((s) => `\n          <img src="${cat.produtos[s].imagem}" alt="${esc(cat.produtos[s].nome)}" width="400" height="400" />`)
+/* As três peças do banner em ordem de profundidade — fundo primeiro, frente por
+   último —, porque quem vem depois no DOM pinta por cima. O plano de cada uma
+   define escala e sombra no CSS: elas dividem uma linha de chão só, em vez de
+   ficarem lado a lado no mesmo tamanho. */
+/* As peças do banner usam recortes próprios (banner-*.webp), colados no
+   contorno do produto. Os arquivos da vitrine não servem aqui: o do NU23 tem
+   25% de área vazia embaixo e o do NU56DS tem 5%, então alinhar os quadros pelo
+   pé deixava cada produto num chão diferente — que era o motivo de parecerem
+   recortes soltos. Com o quadro rente, flex-end já põe os três no mesmo chão.
+
+   `altura` é a proporção entre eles, em % da faixa: a torre a gás tem mais de
+   dois metros e é de longe a mais alta. Não é a escala física exata, que faria
+   os climatizadores sumirem do lado dela — é a ordem de grandeza real com a
+   diferença comprimida.
+
+   A ordem é do fundo para a frente, porque quem vem depois no DOM pinta por
+   cima. `w`/`h` são as dimensões reais do arquivo, para o navegador reservar o
+   espaço certo antes de a imagem chegar. */
+const BANNER_PECAS = [
+  { sku: 'NU56DS', plano: 'fundo', arquivo: 'banner-ni56ds', w: 542, h: 676, altura: 66 },
+  { sku: 'AQ-PIRAMIDE-INOX', plano: 'meio', arquivo: 'banner-aq-piramide-inox', w: 295, h: 1078, altura: 100 },
+  { sku: 'NU23', plano: 'frente', arquivo: 'banner-ni23', w: 302, h: 533, altura: 72 },
+];
+
+const bannerFotos = BANNER_PECAS
+  .filter((peca) => cat.produtos[peca.sku])
+  .map((peca) => `\n          <div class="loja-banner__peca loja-banner__peca--${peca.plano}" style="--altura:${peca.altura}%"><img src="/loja/assets/img/${peca.arquivo}.webp" alt="${esc(cat.produtos[peca.sku].nome)}" width="${peca.w}" height="${peca.h}" /></div>`)
   .join('');
+
+/* Menor preço da vitrine para o gancho do banner. É o preço cheio, não o do
+   Pix: o desconto continua valendo na vitrine, na página de produto e no
+   checkout, mas o hero anuncia o valor sem condição atrelada.
+
+   Sai do catálogo em vez de ficar chumbado aqui: sete dos dez produtos estão
+   sob consulta e essa lista muda. Se um dia nenhum tiver preço, o gancho
+   simplesmente não aparece. */
+const precosVitrine = skus
+  .map((s) => cat.produtos[s].precoCentavos)
+  .filter((v) => typeof v === 'number');
+const menorPreco = precosVitrine.length ? Math.min.apply(null, precosVitrine) : null;
+
+/* Sem os centavos: num gancho de hero o ",00" é só ruído. Se algum dia um
+   preço quebrado entrar no catálogo, ele aparece por extenso mesmo. */
+const semCentavos = (centavos) => core.formatarBRL(centavos).replace(/,00$/, '');
+
+const gancho = menorPreco
+  ? `\n          <p class="loja-banner__gancho"><span>${skus.length} modelos &middot; a partir de ${semCentavos(menorPreco)}</span></p>`
+  : '';
 
 /* Seções por categoria, todas no HTML. O filtro do navegador só mostra e
    esconde o que já veio pronto — nada é montado por JS. */
@@ -306,10 +369,140 @@ ${doGrupo.map(card).join('\n')}
       </section>`;
 }).filter(Boolean).join('\n\n');
 
+/* ---------------------------------------------------------------- cenário do banner */
+
+/* O fundo do hero é um vão de galpão em perspectiva de um ponto, desenhado aqui
+   em SVG. Não é foto porque não temos nenhuma em formato wide — as que existem
+   são print de celular na vertical — e vetor resolve melhor de qualquer jeito:
+   fica nítido em qualquer tela, pesa poucos KB inline e não custa um request.
+
+   Ponto de fuga deslocado para a direita, atrás dos produtos, para a fuga das
+   linhas empurrar o olho até eles. O pórtico mais próximo é maior que a viewBox
+   de propósito: as laterais saem de quadro em vez de terminar dentro dele. */
+const FUGA = { x: 1000, y: 300 };
+const PORTICO = { esq: -400, dir: 1500, topo: -160, base: 700 };
+
+const rumoX = (de, t) => de + (FUGA.x - de) * t;
+const rumoY = (de, t) => de + (FUGA.y - de) * t;
+const n = (v) => Number(v.toFixed(1));
+
+/* Profundidades escolhidas na mão: o espaçamento aperta conforme recua, que é
+   o que o olho espera de uma sequência de pórticos iguais indo embora. */
+/* Profundidades escolhidas na mão: o espaçamento aperta conforme recua, que é
+   o que o olho espera de uma sequência de pórticos iguais indo embora. */
+const PROFUNDIDADES = [0.1, 0.31, 0.47, 0.6, 0.7];
+
+const porticos = PROFUNDIDADES.map((t) => {
+  const e = n(rumoX(PORTICO.esq, t));
+  const d = n(rumoX(PORTICO.dir, t));
+  const topo = n(rumoY(PORTICO.topo, t));
+  const base = n(rumoY(PORTICO.base, t));
+  /* A opacidade cai rápido: pórtico distante com o mesmo peso do da frente
+     achata tudo num desenho técnico, que era o efeito da primeira versão. */
+  const opacidade = n(0.9 - 0.9 * t);
+  const traco = n(2.6 - 2 * t);
+  return `            <path d="M${e} ${base}V${topo}H${d}V${base}" opacity="${opacidade}" stroke-width="${traco}" />`;
+}).join('\n');
+
+/* Treliça só nos dois pórticos da frente. Mais atrás o traço fica menor que um
+   pixel e o zigue-zague vira um borrão cinza — na primeira versão parecia
+   moiré atravessando o topo do banner. */
+const trelicas = PROFUNDIDADES.slice(0, 2).map((t) => {
+  const e = rumoX(PORTICO.esq, t);
+  const d = rumoX(PORTICO.dir, t);
+  const topo = rumoY(PORTICO.topo, t);
+  const altura = 46 * (1 - t);
+  const passos = 14;
+  const pontos = [];
+  for (let i = 0; i <= passos; i += 1) {
+    const x = e + ((d - e) * i) / passos;
+    pontos.push(`${n(x)},${n(i % 2 ? topo + altura : topo)}`);
+  }
+  return `            <polyline points="${pontos.join(' ')}" opacity="${n(0.55 - 0.8 * t)}" stroke-width="${n(1.8 - 1.2 * t)}" />`;
+}).join('\n');
+
+/* As quatro arestas do vão indo para a fuga. São elas que dizem "galpão" antes
+   de qualquer outra coisa; os pórticos só dão ritmo. */
+const arestas = [
+  [PORTICO.esq, PORTICO.topo], [PORTICO.dir, PORTICO.topo],
+  [PORTICO.esq, PORTICO.base], [PORTICO.dir, PORTICO.base],
+].map(([x, y]) => `            <path d="M${x} ${y}L${FUGA.x} ${FUGA.y}" opacity=".52" stroke-width="1.7" />`).join('\n');
+
+/* O piso: o triângulo entre as duas arestas de baixo e a fuga. Sem ele os
+   produtos ficam sobre um degradê liso e nada segura o pé deles. */
+const piso = `<path d="M${PORTICO.esq} ${PORTICO.base}L${FUGA.x} ${FUGA.y}L${PORTICO.dir} ${PORTICO.base}Z" fill="url(#lb-piso)" />`;
+
+const cenarioGalpao = `        <svg class="loja-banner__cenario" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="lb-piso" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0" stop-color="#c6d2ff" stop-opacity=".16" />
+              <stop offset="1" stop-color="#c6d2ff" stop-opacity="0" />
+            </linearGradient>
+            <linearGradient id="lb-feixe" x1="0" y1="0" x2=".3" y2="1">
+              <stop offset="0" stop-color="#eef2ff" stop-opacity=".26" />
+              <stop offset=".55" stop-color="#eef2ff" stop-opacity=".08" />
+              <stop offset="1" stop-color="#eef2ff" stop-opacity="0" />
+            </linearGradient>
+            <radialGradient id="lb-vao" cx=".5" cy=".5" r=".5">
+              <stop offset="0" stop-color="#f2f6ff" stop-opacity=".34" />
+              <stop offset=".55" stop-color="#cfd9ff" stop-opacity=".12" />
+              <stop offset="1" stop-color="#cfd9ff" stop-opacity="0" />
+            </radialGradient>
+            <radialGradient id="lb-poca" cx=".5" cy=".5" r=".5">
+              <stop offset="0" stop-color="#dbe4ff" stop-opacity=".22" />
+              <stop offset="1" stop-color="#dbe4ff" stop-opacity="0" />
+            </radialGradient>
+            <radialGradient id="lb-vinheta" cx=".52" cy=".46" r=".74">
+              <stop offset=".42" stop-color="#060a2a" stop-opacity="0" />
+              <stop offset="1" stop-color="#060a2a" stop-opacity=".5" />
+            </radialGradient>
+            <filter id="lb-suave" x="-25%" y="-25%" width="150%" height="150%">
+              <feGaussianBlur stdDeviation="14" />
+            </filter>
+            <linearGradient id="lb-lateral" x1="0" y1="0" x2="1" y2="0">
+              <stop offset=".2" stop-color="#fff" stop-opacity="0" />
+              <stop offset=".62" stop-color="#fff" stop-opacity="1" />
+            </linearGradient>
+            <mask id="lb-so-direita">
+              <rect width="1440" height="520" fill="url(#lb-lateral)" />
+            </mask>
+          </defs>
+
+          <!-- O fundo do vão, aberto e claro. Dá profundidade e, de quebra,
+               recorta a silhueta dos produtos que ficam na frente dele. -->
+          <ellipse cx="${FUGA.x}" cy="${FUGA.y}" rx="470" ry="250" fill="url(#lb-vao)" />
+
+          <!-- Piso e estrutura entram mascarados: nascem do nada na altura do
+               texto e só ganham corpo na metade direita, atrás dos produtos.
+               Sem isso, a aresta de baixo cruzava o canto esquerdo como uma
+               diagonal solta, passando bem debaixo dos botões. -->
+          <g mask="url(#lb-so-direita)">
+            ${piso}
+            <g class="loja-banner__estrutura" fill="none" stroke="#b6c4ff" stroke-linejoin="round">
+${arestas}
+${porticos}
+${trelicas}
+            </g>
+          </g>
+
+          <!-- Poça de luz no piso, sob o grupo de produtos: é ela que faz a
+               sombra de contato aparecer. Contra fundo escuro a sombra some, e
+               os produtos voltam a parecer recortes flutuando. -->
+          <ellipse cx="1035" cy="548" rx="310" ry="46" fill="url(#lb-poca)" />
+
+          <g filter="url(#lb-suave)">
+            <polygon points="298,-30 404,-30 986,550 806,550" fill="url(#lb-feixe)" />
+            <polygon points="596,-30 654,-30 1206,550 1112,550" fill="url(#lb-feixe)" opacity=".7" />
+          </g>
+
+          <rect width="1440" height="520" fill="url(#lb-vinheta)" />
+        </svg>`;
+
 const vitrineMain = `  <main>
     <section class="loja-banner">
+${cenarioGalpao}
       <div class="container loja-banner__inner">
-        <div>
+        <div class="loja-banner__texto">${gancho}
           <h1>Climatização e aquecimento para grandes ambientes</h1>
           <p>Climatizadores evaporativos e torres a gás para indústrias, galpões, restaurantes e eventos. Com nota fiscal, garantia e envio para todo o Brasil.</p>
           <div class="loja-banner__acoes">
@@ -410,7 +603,8 @@ const RELACIONADOS = 3;
 
 for (const sku of skus) {
   const p = cat.produtos[sku];
-  const tem = core.temPrecoDefinido(cat, sku);
+  const disp = core.disponivel(cat, sku);
+  const tem = disp && core.temPrecoDefinido(cat, sku);
   const categoria = (cat.categorias[p.categoria] || {}).titulo || 'Produtos';
   const url = `${SITE}/loja/${p.slug}`;
   const imagemAbs = SITE + p.imagem;
@@ -423,11 +617,11 @@ for (const sku of skus) {
     name: p.nome, sku, description: p.resumo, image: imagemAbs,
     brand: { '@type': 'Brand', name: 'Nuvem Air' },
   };
-  if (tem) {
+  if (core.temPrecoDefinido(cat, sku)) {
     produtoLd.offers = {
       '@type': 'Offer', priceCurrency: 'BRL',
       price: (p.precoCentavos / 100).toFixed(2),
-      availability: 'https://schema.org/InStock',
+      availability: disp ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
       url,
       seller: { '@type': 'Organization', name: 'Nuvem Air' },
     };
@@ -475,19 +669,20 @@ for (const sku of skus) {
         </div>
 
         <div class="loja-produto__info">
-          <span class="loja-card__tag">${esc(p.tag)}</span>
+          <span class="loja-card__tag">${esc(p.tag)}</span>${disp ? '' : '\n          <span class="loja-selo-esgotado">Esgotado</span>'}
           <h1>${esc(p.nome)}</h1>
           <p class="loja-produto__resumo">${esc(p.resumo)}</p>
 
           <div class="loja-produto__compra">
             ${blocoPreco(sku)}
+            ${blocoObservacao(sku)}
 
-            <div class="loja-qtd">
+            ${disp ? `<div class="loja-qtd">
               <label for="qtd-${p.slug}">Quantidade</label>
               <input type="number" id="qtd-${p.slug}" data-qtd value="1" min="1" max="20" />
-            </div>
+            </div>` : `<p class="loja-badge-consulta">Sem estoque no momento. <a href="${wa('Olá! Quero ser avisado quando o ' + p.nome + ' voltar ao estoque.')}" target="_blank" rel="noopener">Avise-me quando voltar</a>.</p>`}
 
-            <button type="button" class="btn btn--primary btn--lg full loja-produto__btn" data-comprar${tem ? '' : ' disabled'}>${tem ? 'Adicionar ao carrinho' : 'Sob consulta'}</button>
+            <button type="button" class="btn btn--primary btn--lg full loja-produto__btn" data-comprar${tem ? '' : ' disabled'}>${!disp ? 'Esgotado' : (tem ? 'Adicionar ao carrinho' : 'Sob consulta')}</button>
 
             <div class="loja-produto__ctas">
               <a class="btn btn--ghost" href="${wa(msgWa)}" target="_blank" rel="noopener" data-evento="whatsapp-produto">Falar com especialista</a>
@@ -535,7 +730,14 @@ ${relacionados.map(card).join('\n')}
     </div>
   </main>`;
 
-  const descricao = `${p.nome}: ${p.specs.slice(0, 2).join(', ').toLowerCase()}.${tem ? ` A partir de ${core.formatarBRL(core.precoPixCentavos(cat, sku) || p.precoCentavos)} no Pix.` : ' Peça o preço pelo WhatsApp.'} Nota fiscal, ${garantia.toLowerCase()} e envio para todo o Brasil.`;
+  /* Sem desconto no Pix, precoPixCentavos é null e o preço anunciado passa a
+     ser o cheio — então o "no Pix" tem de sair junto, senão a descrição promete
+     uma condição que não existe mais. */
+  const precoMeta = core.precoPixCentavos(cat, sku);
+  const frasePreco = tem
+    ? ` A partir de ${core.formatarBRL(precoMeta === null ? p.precoCentavos : precoMeta)}${precoMeta === null ? '' : ' no Pix'}.`
+    : ' Peça o preço pelo WhatsApp.';
+  const descricao = `${p.nome}: ${p.specs.slice(0, 2).join(', ').toLowerCase()}.${frasePreco} Nota fiscal, ${garantia.toLowerCase()} e envio para todo o Brasil.`;
 
   pagina(p.slug + '.html', {
     titulo: `${p.nome} | Nuvem Air`,
@@ -548,14 +750,16 @@ ${relacionados.map(card).join('\n')}
 
 /* ----------------------------------------------------------------- carrinho */
 
-const opcaoPix = pixPct ? `
+/* O Pix é sempre oferecido. O que o desconto muda é só a legenda: ele deixou
+   de existir, o meio de pagamento não. */
+const opcaoPix = `
               <label class="loja-pagto">
                 <input type="radio" name="pagamento" value="pix" checked />
                 <span class="loja-pagto__corpo">
                   <strong>Pix</strong>
-                  <span>${pixPct}% de desconto &middot; aprovação na hora</span>
+                  <span>${pixPct ? `${pixPct}% de desconto &middot; aprovação na hora` : 'aprovação na hora'}</span>
                 </span>
-              </label>` : '';
+              </label>`;
 
 const carrinhoMain = `  <main class="loja-carrinho" data-carrinho>
     <div class="container">
@@ -591,7 +795,7 @@ const carrinhoMain = `  <main class="loja-carrinho" data-carrinho>
 
             <div class="loja-pagtos" role="radiogroup" aria-label="Forma de pagamento">${opcaoPix}
               <label class="loja-pagto">
-                <input type="radio" name="pagamento" value="cartao"${pixPct ? '' : ' checked'} />
+                <input type="radio" name="pagamento" value="cartao" />
                 <span class="loja-pagto__corpo">
                   <strong>Cartão ou boleto</strong>
                   <span>${parcelas ? `até ${parcelas}x sem juros` : 'crédito ou boleto'}</span>
@@ -721,7 +925,7 @@ console.log('  -> 404.html');
 /* -------------------------------------------------- páginas de aplicação */
 
 /* Uma página por ambiente. Existem porque a busca real é "climatizador para
-   galpão", não "NI56DS" — e quem procura assim ainda não sabe qual modelo
+   galpão", não "NU56DS" — e quem procura assim ainda não sabe qual modelo
    quer. Cada página resolve a dúvida e leva ao produto certo. */
 
 const indiceApps = apps.map((a) =>

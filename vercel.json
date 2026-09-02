@@ -13,7 +13,14 @@
     { "source": "/painel-de-led.html", "destination": "/painel-de-led", "permanent": true },
 
     { "source": "/loja", "destination": "/loja-indisponivel", "permanent": false },
-    { "source": "/loja/:caminho((?!assets/).*)", "destination": "/loja-indisponivel", "permanent": false }
+    { "source": "/loja/:caminho((?!assets/).*)", "destination": "/loja-indisponivel", "permanent": false },
+
+    { "source": "/loja/ni18", "destination": "/loja/nu18", "permanent": true },
+    { "source": "/loja/ni21bs", "destination": "/loja/nu21bs", "permanent": true },
+    { "source": "/loja/ni23", "destination": "/loja/nu23", "permanent": true },
+    { "source": "/loja/ni23ds", "destination": "/loja/nu23ds", "permanent": true },
+    { "source": "/loja/ni56ds", "destination": "/loja/nu56ds", "permanent": true },
+    { "source": "/loja/ni9pro", "destination": "/loja/nu9pro", "permanent": true }
   ],
   "headers": [
     {

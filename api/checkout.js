@@ -4,7 +4,7 @@
    navegador é usado. O corpo da requisição contribui apenas com sku,
    quantidade, CEP e dados de contato — todo o resto é recalculado aqui
    a partir de loja/catalogo.json. Sem isso, qualquer pessoa edita o
-   localStorage e compra um NI23 por R$ 0,01. */
+   localStorage e compra um NU23 por R$ 0,01. */
 const fs = require('node:fs');
 const path = require('node:path');
 const core = require('../loja/assets/js/loja-core.js');

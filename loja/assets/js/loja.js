@@ -321,7 +321,15 @@
           img.src = p.imagem;
           img.alt = p.nome;
           caixa.appendChild(img);
-          caixa.appendChild(el('strong', null, p.nome));
+          /* Nome e ressalva empilhados numa coluna própria. Soltos, viravam
+             dois itens do flex de .loja-carrinho__produto e ficavam lado a
+             lado, espremendo os dois. */
+          var texto = el('div', 'loja-carrinho__texto');
+          texto.appendChild(el('strong', null, p.nome));
+          /* A ressalva do preço tem de chegar até aqui: é o último ponto antes
+             de pagar, e quem pulou a página do produto não viu em outro lugar. */
+          if (p.observacao) texto.appendChild(el('span', 'loja-obs', p.observacao));
+          caixa.appendChild(texto);
           tdProd.appendChild(caixa);
           tr.appendChild(tdProd);
 

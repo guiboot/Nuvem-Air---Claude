@@ -30,6 +30,14 @@
     return !!p && typeof p.precoCentavos === 'number';
   }
 
+  /* Esgotado é independente de preço: o produto pode ter valor publicado e
+     mesmo assim não estar à venda. Por isso não dá para deduzir estoque de
+     precoCentavos — quem responde é a chave esgotado do catálogo. */
+  function disponivel(catalogo, sku) {
+    var p = produto(catalogo, sku);
+    return !!p && p.esgotado !== true;
+  }
+
   /* O preço vem SEMPRE do catálogo. Qualquer precoCentavos que venha
      junto do item é descartado de propósito. */
   function subtotalCentavos(catalogo, itens) {
@@ -121,6 +129,9 @@
       var item = itens[i] || {};
       var p = produto(catalogo, item.sku);
       if (!p) return { ok: false, erro: 'Produto desconhecido: ' + item.sku };
+      if (p.esgotado === true) {
+        return { ok: false, erro: 'O produto ' + item.sku + ' está esgotado.' };
+      }
       if (typeof p.precoCentavos !== 'number') {
         return { ok: false, erro: 'O produto ' + item.sku + ' está sem preço definido.' };
       }
@@ -138,6 +149,7 @@
     formatarBRL: formatarBRL,
     produto: produto,
     temPrecoDefinido: temPrecoDefinido,
+    disponivel: disponivel,
     subtotalCentavos: subtotalCentavos,
     descontoPercentual: descontoPercentual,
     descontoPixCentavos: descontoPixCentavos,

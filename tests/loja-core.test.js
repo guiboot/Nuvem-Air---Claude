@@ -5,9 +5,9 @@ const core = require('../loja/assets/js/loja-core.js');
 const catalogo = {
   moeda: 'BRL',
   produtos: {
-    NI9PRO: { nome: 'Climatizador Portátil NI9PRO', slug: 'ni9pro', precoCentavos: 249900 },
-    NI18:   { nome: 'Climatizador Móvel Big Tank NI18', slug: 'ni18', precoCentavos: 599900 },
-    NI23:   { nome: 'Climatizador Móvel Big Tank NI23', slug: 'ni23', precoCentavos: null }
+    NU9PRO: { nome: 'Climatizador Portátil NU9PRO', slug: 'nu9pro', precoCentavos: 249900 },
+    NU18:   { nome: 'Climatizador Móvel Big Tank NU18', slug: 'nu18', precoCentavos: 599900 },
+    NU23:   { nome: 'Climatizador Móvel Big Tank NU23', slug: 'nu23', precoCentavos: null }
   },
   frete: {
     faixas: [
@@ -28,18 +28,41 @@ test('formatarBRL devolve "Sob consulta" quando não há preço', () => {
 });
 
 test('subtotalCentavos soma preço do catálogo vezes quantidade', () => {
-  const itens = [{ sku: 'NI9PRO', qtd: 2 }, { sku: 'NI18', qtd: 1 }];
+  const itens = [{ sku: 'NU9PRO', qtd: 2 }, { sku: 'NU18', qtd: 1 }];
   assert.strictEqual(core.subtotalCentavos(catalogo, itens), 249900 * 2 + 599900);
 });
 
 test('subtotalCentavos ignora preço enviado pelo cliente', () => {
-  const itens = [{ sku: 'NI9PRO', qtd: 1, precoCentavos: 100 }];
+  const itens = [{ sku: 'NU9PRO', qtd: 1, precoCentavos: 100 }];
   assert.strictEqual(core.subtotalCentavos(catalogo, itens), 249900);
 });
 
 test('temPrecoDefinido é falso para produto sem preço', () => {
-  assert.strictEqual(core.temPrecoDefinido(catalogo, 'NI9PRO'), true);
-  assert.strictEqual(core.temPrecoDefinido(catalogo, 'NI23'), false);
+  assert.strictEqual(core.temPrecoDefinido(catalogo, 'NU9PRO'), true);
+  assert.strictEqual(core.temPrecoDefinido(catalogo, 'NU23'), false);
+});
+
+test('disponivel é falso quando o produto está marcado como esgotado', () => {
+  const c = { produtos: { X: { nome: 'X', slug: 'x', precoCentavos: 1000, esgotado: true } } };
+  assert.strictEqual(core.disponivel(c, 'X'), false);
+});
+
+test('disponivel é verdadeiro sem a chave esgotado', () => {
+  assert.strictEqual(core.disponivel(catalogo, 'NU9PRO'), true);
+});
+
+test('disponivel é falso para sku desconhecido', () => {
+  assert.strictEqual(core.disponivel(catalogo, 'NAO-EXISTE'), false);
+});
+
+/* Esgotado com preço publicado é o caso perigoso: o item passa por
+   temPrecoDefinido e chegaria ao Mercado Pago se validarItens não olhasse
+   o estoque. */
+test('validarItens recusa produto esgotado mesmo com preço', () => {
+  const c = { produtos: { X: { nome: 'X', slug: 'x', precoCentavos: 1000, esgotado: true } } };
+  const r = core.validarItens(c, [{ sku: 'X', qtd: 1 }]);
+  assert.strictEqual(r.ok, false);
+  assert.match(r.erro, /esgotado/);
 });
 
 test('normalizarCep aceita com e sem máscara', () => {
@@ -74,16 +97,16 @@ test('validarItens rejeita SKU desconhecido', () => {
 });
 
 test('validarItens rejeita produto sem preço definido', () => {
-  const r = core.validarItens(catalogo, [{ sku: 'NI23', qtd: 1 }]);
+  const r = core.validarItens(catalogo, [{ sku: 'NU23', qtd: 1 }]);
   assert.strictEqual(r.ok, false);
   assert.match(r.erro, /sem preço/i);
 });
 
 test('validarItens rejeita quantidade inválida', () => {
-  assert.strictEqual(core.validarItens(catalogo, [{ sku: 'NI18', qtd: 0 }]).ok, false);
-  assert.strictEqual(core.validarItens(catalogo, [{ sku: 'NI18', qtd: -1 }]).ok, false);
-  assert.strictEqual(core.validarItens(catalogo, [{ sku: 'NI18', qtd: 1.5 }]).ok, false);
-  assert.strictEqual(core.validarItens(catalogo, [{ sku: 'NI18', qtd: 100 }]).ok, false);
+  assert.strictEqual(core.validarItens(catalogo, [{ sku: 'NU18', qtd: 0 }]).ok, false);
+  assert.strictEqual(core.validarItens(catalogo, [{ sku: 'NU18', qtd: -1 }]).ok, false);
+  assert.strictEqual(core.validarItens(catalogo, [{ sku: 'NU18', qtd: 1.5 }]).ok, false);
+  assert.strictEqual(core.validarItens(catalogo, [{ sku: 'NU18', qtd: 100 }]).ok, false);
 });
 
 test('validarItens rejeita carrinho vazio', () => {
@@ -91,9 +114,9 @@ test('validarItens rejeita carrinho vazio', () => {
 });
 
 test('validarItens devolve itens limpos, só sku e qtd', () => {
-  const r = core.validarItens(catalogo, [{ sku: 'NI18', qtd: 2, precoCentavos: 1 }]);
+  const r = core.validarItens(catalogo, [{ sku: 'NU18', qtd: 2, precoCentavos: 1 }]);
   assert.strictEqual(r.ok, true);
-  assert.deepStrictEqual(r.itens, [{ sku: 'NI18', qtd: 2 }]);
+  assert.deepStrictEqual(r.itens, [{ sku: 'NU18', qtd: 2 }]);
 });
 
 /* ---------- Preço "de / por" ---------- */
@@ -101,7 +124,7 @@ test('validarItens devolve itens limpos, só sku e qtd', () => {
 const catalogoPromo = {
   moeda: 'BRL',
   produtos: {
-    NI18:   { nome: 'NI18', slug: 'ni18', precoCentavos: 449000, precoDeCentavos: 550000 },
+    NU18:   { nome: 'NU18', slug: 'nu18', precoCentavos: 449000, precoDeCentavos: 550000 },
     SEMDE:  { nome: 'Sem de', slug: 'semde', precoCentavos: 100000 },
     IGUAL:  { nome: 'Igual', slug: 'igual', precoCentavos: 100000, precoDeCentavos: 100000 },
     MENOR:  { nome: 'Menor', slug: 'menor', precoCentavos: 100000, precoDeCentavos: 90000 }
@@ -110,7 +133,7 @@ const catalogoPromo = {
 };
 
 test('descontoPercentual calcula o abatimento', () => {
-  assert.strictEqual(core.descontoPercentual(catalogoPromo, 'NI18'), 18);
+  assert.strictEqual(core.descontoPercentual(catalogoPromo, 'NU18'), 18);
 });
 
 test('descontoPercentual é nulo sem preço "de"', () => {
@@ -123,7 +146,7 @@ test('descontoPercentual é nulo quando o "de" não é maior que o "por"', () =>
 });
 
 test('o preço "de" nunca entra na conta — cobra-se o "por"', () => {
-  assert.strictEqual(core.subtotalCentavos(catalogoPromo, [{ sku: 'NI18', qtd: 2 }]), 898000);
+  assert.strictEqual(core.subtotalCentavos(catalogoPromo, [{ sku: 'NU18', qtd: 2 }]), 898000);
 });
 
 /* ---------- Pix e parcelamento ---------- */
