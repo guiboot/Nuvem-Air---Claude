@@ -68,7 +68,7 @@ function header() {
   return `  <header class="lojahdr">
     <div class="container lojahdr__topo">
       <a class="lojahdr__logo" href="/loja" aria-label="Loja Nuvem Air">
-        <img src="/loja/assets/img/logo-loja.png" alt="Nuvem Air" width="154" height="28" />
+        <img src="/loja/assets/img/logo-loja.png?v=20260902-1" alt="Nuvem Air" width="154" height="28" />
       </a>
 
       <form class="lojahdr__busca" role="search" data-busca>
@@ -170,7 +170,7 @@ function head({ titulo, descricao, url, imagem, extra = '', noindex = false, sit
   <meta name="twitter:image" content="${imagem}" />
 
   <meta name="theme-color" content="#1e2a78" />
-  <link rel="icon" href="/loja/assets/img/icon-primary.png" />
+  <link rel="icon" href="/loja/assets/img/icon-primary.png?v=20260902-1" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -194,7 +194,7 @@ const ESTILO_HDR_SIMPLES = `  <style>
 const headerSimples = () => `  <header class="lojahdr">
     <div class="container lojahdr__topo lojahdr__topo--simples">
       <a class="lojahdr__logo" href="/" aria-label="Nuvem Air">
-        <img src="/loja/assets/img/logo-loja.png" alt="Nuvem Air" width="154" height="28" />
+        <img src="/loja/assets/img/logo-loja.png?v=20260902-1" alt="Nuvem Air" width="154" height="28" />
       </a>
       <a class="lojahdr__voltar" href="/">Site da Nuvem Air &rarr;</a>
     </div>
