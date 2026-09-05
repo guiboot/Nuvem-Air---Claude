@@ -102,7 +102,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
 .nav.scrolled .nav__bar { background: var(--nav-bg-scrolled); }
 
 .nav__logo { min-width: max-content; }
-.nav__logo img { height: 56px; width: auto; display: block; }
+.nav__logo img { height: 36px; width: auto; display: block; }
 
 .nav__menu {
   display: flex;
@@ -1202,7 +1202,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
-.footer__brand img { height: 44px; width: auto; margin-bottom: 20px; }
+.footer__brand img { height: 30px; width: auto; margin-bottom: 20px; }
 .footer__brand p { font-size: 14px; max-width: 320px; line-height: 1.6; }
 .footer__col h4 {
   color: #fff;
@@ -1306,7 +1306,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; color: inh
   .nav__toggle { display: flex; }
   .nav__panel { display: none; }
   .nav__logo { min-width: 0; }
-  .nav__logo img { height: 48px; }
+  .nav__logo img { height: 30px; }
 
   /* "Quero comprar" fixo na barra, ao lado do hamburguer */
   .nav__cross-mobile {
