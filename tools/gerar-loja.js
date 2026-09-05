@@ -189,7 +189,11 @@ function head({ titulo, descricao, url, imagem, extra = '', noindex = false, sit
   <meta name="twitter:image" content="${imagem}" />
 
   <meta name="theme-color" content="#1e2a78" />
-  <link rel="icon" href="/loja/assets/img/icon-primary.png?v=${CSS_V}" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png?v=20260905" />
+  <link rel="icon" type="image/png" sizes="144x144" href="/assets/img/favicon-144.png?v=20260905" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png?v=20260905" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png?v=20260905" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=20260905" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1038,11 +1042,11 @@ ${outras.map((o) => `            <li><a href="/loja/${o.slug}"><strong>${esc(o.t
 
 const hoje = new Date().toISOString().slice(0, 10);
 /* Páginas do site que não passam por este gerador, mas precisam estar no
-   sitemap: a home da locação, a landing de venda e o painel de LED. */
+   sitemap: a home da locação e a landing de venda. O totem de LED virou uma
+   seção da home (/#totem-led); /painel-de-led agora é 301 e saiu daqui. */
 const PAGINAS_FIXAS = [
   { loc: SITE + '/', prioridade: '1.0' },
   { loc: SITE + '/comprar', prioridade: '0.9' },
-  { loc: SITE + '/painel-de-led', prioridade: '0.7' },
 ];
 /* Com a loja fora do ar, as URLs de /loja redirecionam — e sitemap cheio de
    redirect é erro no Search Console. Ficam de fora até a loja voltar. */
