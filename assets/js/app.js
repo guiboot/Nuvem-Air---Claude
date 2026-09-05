@@ -129,7 +129,20 @@
     countObserver.observe(statsBlock);
   }
 
-  // Hero rotating word
+  // Hero rotating word — as demais palavras entram por JS para que o texto
+  // indexado pelo Google seja apenas "A Nuvem Air climatiza o seu ambiente."
+  const wordHost = document.querySelector('.hero__word[data-rotate]');
+  if (wordHost) {
+    wordHost.dataset.rotate.split(',').forEach((pair) => {
+      const [text, mood] = pair.split(':');
+      const span = document.createElement('span');
+      span.className = 'hero__word-item';
+      span.dataset.word = mood;
+      span.textContent = text;
+      wordHost.appendChild(span);
+    });
+  }
+
   const words = document.querySelectorAll('.hero__word-item');
   if (words.length) {
     let idx = 0;
@@ -171,4 +184,26 @@
       }
     });
   });
+
+  // Lazy-load de vídeos: só baixa quando entra na viewport
+  const lazyVideos = document.querySelectorAll('video.lazy-video');
+  if (lazyVideos.length && 'IntersectionObserver' in window) {
+    const vio = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const vid = entry.target;
+        if (vid.dataset.src) {
+          vid.src = vid.dataset.src;
+          vid.removeAttribute('data-src');
+          if (vid.play) vid.play().catch(() => {});
+        }
+        obs.unobserve(vid);
+      });
+    }, { rootMargin: '300px' });
+    lazyVideos.forEach((v) => vio.observe(v));
+  } else {
+    lazyVideos.forEach((v) => {
+      if (v.dataset.src) { v.src = v.dataset.src; if (v.play) v.play().catch(() => {}); }
+    });
+  }
 })();

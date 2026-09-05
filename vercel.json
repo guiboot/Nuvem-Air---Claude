@@ -3,14 +3,17 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".",
   "rewrites": [
-    { "source": "/painel-de-led", "destination": "/painel-de-led.html" },
-    { "source": "/home", "destination": "/index.html" },
     { "source": "/loja-indisponivel", "destination": "/loja-indisponivel.html" }
   ],
   "redirects": [
-    { "source": "/totem-de-led.html", "destination": "/painel-de-led", "permanent": true },
-    { "source": "/totem-de-led", "destination": "/painel-de-led", "permanent": true },
-    { "source": "/painel-de-led.html", "destination": "/painel-de-led", "permanent": true },
+    { "source": "/totem-de-led.html", "destination": "/#totem-led", "permanent": true },
+    { "source": "/totem-de-led", "destination": "/#totem-led", "permanent": true },
+    { "source": "/painel-de-led", "destination": "/#totem-led", "permanent": true },
+    { "source": "/painel-de-led.html", "destination": "/#totem-led", "permanent": true },
+
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/comprar/index.html", "destination": "/comprar", "permanent": true },
 
     { "source": "/loja", "destination": "/loja-indisponivel", "permanent": false },
     { "source": "/loja/:caminho((?!assets/).*)", "destination": "/loja-indisponivel", "permanent": false },
@@ -24,12 +27,20 @@
   ],
   "headers": [
     {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
       "source": "/loja/assets/(.*)",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     },
     {
       "source": "/comprar/assets/(.*)",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/(.*)\\.(mp4|png|jpg|jpeg|webp)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }]
     },
     {
       "source": "/loja/catalogo.json",

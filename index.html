@@ -16,13 +16,16 @@
   <!-- SEO · Primary -->
   <title>Nuvem Air · Aluguel de Climatizadores, Aquecedores e Totem de LED | Locação Industrial e para Eventos</title>
   <meta name="description" content="Aluguel de climatizadores evaporativos portáteis e climatizadores industriais fixos (de teto ou parede), aquecedores a gás e totem de LED P2.5 para empresas, indústrias, galpões e eventos. Nossa equipe faz o cálculo pelas dimensões do espaço, instalação e manutenção. Locação em Maringá, Londrina, Curitiba, São Paulo e todo o Brasil. Orçamento em até 2 horas." />
-  <meta name="keywords" content="aluguel de climatizador, locação de climatizador, climatizador industrial, climatizador industrial fixo, climatizador de teto, climatizador de parede, climatizador para empresas, climatizador para galpão, climatizador para barracão, climatizador para indústria, climatizador evaporativo, climatizador portátil, aluguel de aquecedor, aquecedor a gás, locação de aquecedor, climatizador para evento, aquecedor pirâmide, aquecedor chapéu, aluguel de totem de LED, locação de totem de LED, totem de LED P2.5, totem de LED Maringá, painel de LED para evento, Nuvem Air, climatizador Maringá, climatizador Londrina, aluguel climatizador Curitiba" />
   <meta name="author" content="Nuvem Air" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="geo.region" content="BR-PR" />
   <meta name="geo.placename" content="Maringá, Londrina, Curitiba" />
   <link rel="canonical" href="https://nuvemair.com.br/" />
-  <link rel="icon" type="image/png" href="assets/img/icon-primary.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png?v=20260905" />
+  <link rel="icon" type="image/png" sizes="144x144" href="/assets/img/favicon-144.png?v=20260905" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png?v=20260905" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png?v=20260905" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=20260905" />
 
   <!-- Open Graph -->
   <meta property="og:locale" content="pt_BR" />
@@ -54,7 +57,13 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Nuvem Air — Aluguel de Climatizadores",
-    "image": "https://nuvemair.com.br/assets/img/logo-primary.png",
+    "image": "https://nuvemair.com.br/assets/img/logo-nuvemair.png",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://nuvemair.com.br/assets/img/logo-nuvemair.png",
+      "width": 1001,
+      "height": 273
+    },
     "url": "https://nuvemair.com.br/",
     "telephone": "+55-44-9-8804-9444",
     "priceRange": "$$",
@@ -80,11 +89,6 @@
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
       "opens": "08:00",
       "closes": "18:00"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "86"
     }
   }
   </script>
@@ -129,8 +133,8 @@
   <!-- NAV (estilo Terminal Industries · floating pill) -->
   <header class="nav" id="nav">
     <div class="nav__bar">
-      <a href="/home" class="nav__logo" aria-label="Nuvem Air — Início">
-        <img src="assets/img/logo-white.png" alt="Nuvem Air" />
+      <a href="/" class="nav__logo" aria-label="Nuvem Air — Início">
+        <img width="252" height="168" src="assets/img/logo-white.webp" alt="Nuvem Air" decoding="async" />
       </a>
 
       <nav class="nav__menu" aria-label="Principal">
@@ -146,7 +150,7 @@
             <svg class="caret" viewBox="0 0 12 8" width="12" height="8" aria-hidden="true"><path d="M1 1.5L6 6.5L11 1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
-        <a class="nav__link nav__link--plain" href="/painel-de-led">Painéis de LED</a>
+        <a class="nav__link nav__link--plain" href="#totem-led">Totem de LED</a>
         <div class="nav__item" data-menu="mercados">
           <button class="nav__link" aria-haspopup="true">
             Mercados
@@ -283,11 +287,9 @@
 
       <h1 class="hero__title">
         A Nuvem Air
-        <span class="hero__word">
-          <span class="hero__word-ghost" aria-hidden="true">transforma</span>
+        <span class="hero__word" data-rotate="aquece:warm,transforma:event">
+          <span class="hero__word-ghost" aria-hidden="true"></span>
           <span class="hero__word-item is-active" data-word="cool">climatiza</span>
-          <span class="hero__word-item" data-word="warm">aquece</span>
-          <span class="hero__word-item" data-word="event">transforma</span>
         </span>
         <br />o seu ambiente.
       </h1>
@@ -315,7 +317,7 @@
         <div class="hero__strip-track">
           <a href="#climatizadores" class="hero__tile" data-mood="cool">
             <span class="hero__tile-num">01</span>
-            <img src="assets/img/strip/model-industrial.png" alt="Climatizador industrial" />
+            <img width="301" height="480" src="assets/img/strip/model-industrial.webp" alt="Climatizador industrial" decoding="async" />
             <div class="hero__tile-meta">
               <strong>Industrial</strong>
               <small>Climatizador · 200m²</small>
@@ -323,7 +325,7 @@
           </a>
           <a href="#climatizadores" class="hero__tile" data-mood="cool">
             <span class="hero__tile-num">02</span>
-            <img src="assets/img/strip/model-industrial-compacto.png" alt="Climatizador industrial compacto" />
+            <img width="300" height="480" src="assets/img/strip/model-industrial-compacto.webp" alt="Climatizador industrial compacto" decoding="async" />
             <div class="hero__tile-meta">
               <strong>Industrial Compacto</strong>
               <small>Climatizador · até 80 m²</small>
@@ -331,7 +333,7 @@
           </a>
           <a href="#climatizadores" class="hero__tile" data-mood="cool">
             <span class="hero__tile-num">03</span>
-            <img src="assets/img/strip/model-compacto.png" alt="Climatizador portátil compacto" />
+            <img width="309" height="480" src="assets/img/strip/model-compacto.webp" alt="Climatizador portátil compacto" decoding="async" />
             <div class="hero__tile-meta">
               <strong>Portátil</strong>
               <small>Climatizador · até 70 m²</small>
@@ -339,7 +341,7 @@
           </a>
           <a href="#climatizadores-fixos" class="hero__tile" data-mood="cool">
             <span class="hero__tile-num">04</span>
-            <img src="assets/img/climatizador-industrial-fixo-56000.png" alt="Climatizador industrial fixo 56.000 de teto ou parede" />
+            <img width="387" height="480" src="assets/img/climatizador-industrial-fixo-56000.webp" alt="Climatizador industrial fixo 56.000 de teto ou parede" decoding="async" />
             <div class="hero__tile-meta">
               <strong>Industrial Fixo 56.000</strong>
               <small>Climatizador · teto/parede</small>
@@ -347,7 +349,7 @@
           </a>
           <a href="#climatizadores-fixos" class="hero__tile" data-mood="cool">
             <span class="hero__tile-num">05</span>
-            <img src="assets/img/climatizador-industrial-fixo-23000.png" alt="Climatizador industrial fixo 23.000 de teto ou parede" />
+            <img width="451" height="480" src="assets/img/climatizador-industrial-fixo-23000.webp" alt="Climatizador industrial fixo 23.000 de teto ou parede" decoding="async" />
             <div class="hero__tile-meta">
               <strong>Industrial Fixo 23.000</strong>
               <small>Climatizador · teto/parede</small>
@@ -355,7 +357,7 @@
           </a>
           <a href="#aquecedores" class="hero__tile" data-mood="warm">
             <span class="hero__tile-num">06</span>
-            <img src="assets/img/strip/aquecedor-piramide.png" alt="Aquecedor pirâmide a gás" />
+            <img width="189" height="480" src="assets/img/strip/aquecedor-piramide.webp" alt="Aquecedor pirâmide a gás" decoding="async" />
             <div class="hero__tile-meta">
               <strong>Pirâmide a Gás</strong>
               <small>Aquecedor · chama viva</small>
@@ -363,23 +365,15 @@
           </a>
           <a href="#aquecedores" class="hero__tile" data-mood="warm">
             <span class="hero__tile-num">07</span>
-            <img src="assets/img/strip/aquecedor-torre.png" alt="Aquecedor torre chapéu" />
+            <img width="223" height="480" src="assets/img/strip/aquecedor-torre.webp" alt="Aquecedor torre chapéu" decoding="async" />
             <div class="hero__tile-meta">
               <strong>Torre Chapéu</strong>
               <small>Aquecedor · 13 kW</small>
             </div>
           </a>
-          <a href="/painel-de-led#paineis" class="hero__tile" data-mood="tech">
+          <a href="#totem-led" class="hero__tile" data-mood="tech">
             <span class="hero__tile-num">08</span>
-            <img src="painel-de-led-3.9-outdoor-sem-fundo.png" alt="Aluguel de painel de LED P3.9 outdoor" />
-            <div class="hero__tile-meta">
-              <strong>Painel de LED</strong>
-              <small>P3.9 · Outdoor</small>
-            </div>
-          </a>
-          <a href="/painel-de-led" class="hero__tile" data-mood="tech">
-            <span class="hero__tile-num">09</span>
-            <img src="aluguel-totem-de-led-maringa.png" alt="Aluguel de totem de LED P2.5" />
+            <img width="482" height="480" src="aluguel-totem-de-led-maringa.webp" alt="Aluguel de totem de LED P2.5" decoding="async" />
             <div class="hero__tile-meta">
               <strong>Totem de LED</strong>
               <small>P2.5 · Indoor</small>
@@ -421,7 +415,7 @@
       <div class="products__grid">
         <article class="product">
           <div class="product__img">
-            <img src="assets/img/model-industrial.png" alt="Aluguel de climatizador industrial 1000L Nuvem Air" loading="lazy" />
+            <img width="384" height="480" src="assets/img/model-industrial.webp" alt="Aluguel de climatizador industrial 1000L Nuvem Air" loading="lazy" decoding="async" />
           </div>
           <div class="product__body">
             <span class="product__tag">Industrial</span>
@@ -439,7 +433,7 @@
 
         <article class="product">
           <div class="product__img">
-            <img src="assets/img/model-industrial-compacto.png" alt="Aluguel de climatizador industrial compacto para eventos e galpões médios" loading="lazy" />
+            <img width="384" height="480" src="assets/img/model-industrial-compacto.webp" alt="Aluguel de climatizador industrial compacto para eventos e galpões médios" loading="lazy" decoding="async" />
           </div>
           <div class="product__body">
             <span class="product__tag">Industrial Compacto</span>
@@ -457,7 +451,7 @@
 
         <article class="product">
           <div class="product__img">
-            <img src="assets/img/model-compacto.png" alt="Aluguel de climatizador evaporativo portátil para escritórios e lojas" loading="lazy" />
+            <img width="384" height="480" src="assets/img/model-compacto.webp" alt="Aluguel de climatizador evaporativo portátil para escritórios e lojas" loading="lazy" decoding="async" />
           </div>
           <div class="product__body">
             <span class="product__tag">Portátil</span>
@@ -488,7 +482,7 @@
       <div class="products__grid products__grid--two">
         <article class="product">
           <div class="product__img">
-            <img src="assets/img/climatizador-industrial-fixo-56000.png" alt="Climatizador industrial fixo 56.000 de teto ou parede para empresas e galpões" loading="lazy" />
+            <img width="387" height="480" src="assets/img/climatizador-industrial-fixo-56000.webp" alt="Climatizador industrial fixo 56.000 de teto ou parede para empresas e galpões" loading="lazy" decoding="async" />
           </div>
           <div class="product__body">
             <span class="product__tag">Fixo · Teto ou Parede</span>
@@ -507,7 +501,7 @@
 
         <article class="product">
           <div class="product__img">
-            <img src="assets/img/climatizador-industrial-fixo-23000.png" alt="Climatizador industrial fixo 23.000 de teto ou parede para empresas e galpões médios" loading="lazy" />
+            <img width="451" height="480" src="assets/img/climatizador-industrial-fixo-23000.webp" alt="Climatizador industrial fixo 23.000 de teto ou parede para empresas e galpões médios" loading="lazy" decoding="async" />
           </div>
           <div class="product__body">
             <span class="product__tag">Fixo · Teto ou Parede</span>
@@ -539,7 +533,7 @@
       <div class="products__grid products__grid--two">
         <article class="product product--dark">
           <div class="product__img">
-            <img src="assets/img/aquecedor-piramide.png" alt="Aluguel de aquecedor pirâmide a gás para eventos e restaurantes" loading="lazy" />
+            <img width="384" height="480" src="assets/img/aquecedor-piramide.webp" alt="Aluguel de aquecedor pirâmide a gás para eventos e restaurantes" loading="lazy" decoding="async" />
           </div>
           <div class="product__body">
             <span class="product__tag">Pirâmide</span>
@@ -557,7 +551,7 @@
 
         <article class="product product--dark">
           <div class="product__img">
-            <img src="assets/img/aquecedor-torre.png" alt="Aluguel de aquecedor torre chapéu para áreas externas" loading="lazy" />
+            <img width="384" height="480" src="assets/img/aquecedor-torre.webp" alt="Aluguel de aquecedor torre chapéu para áreas externas" loading="lazy" decoding="async" />
           </div>
           <div class="product__body">
             <span class="product__tag">Chapéu</span>
@@ -581,40 +575,14 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow eyebrow--tech">Tecnologia</span>
-        <h2>Aluguel de Painéis de LED para eventos.</h2>
-        <p>Do <strong>painel outdoor P3.9 de alto brilho</strong> ao <strong>totem indoor P2.5 de altíssima resolução</strong> — soluções para casamentos, lançamentos de produto, shows, ações de marca e eventos corporativos, em ambientes internos e externos.</p>
+        <h2>Aluguel de Totem de LED para eventos.</h2>
+        <p>Totem de LED <strong>indoor P2.5 de altíssima resolução</strong> — a solução para casamentos, lançamentos de produto, shows, ações de marca e eventos corporativos.</p>
       </div>
 
-      <div class="products__grid products__grid--two">
+      <div class="products__grid products__grid--one">
         <article class="product product--tech">
           <div class="product__img">
-            <img src="painel-de-led-3.9-outdoor-sem-fundo.png" alt="Aluguel de painel de LED P3.9 outdoor — módulo modular de alto brilho" loading="lazy" />
-          </div>
-          <div class="product__body">
-            <span class="product__tag">P3.9 · Outdoor</span>
-            <h3>Painel de LED Outdoor</h3>
-            <p>Painel de LED <strong>modular de alto brilho</strong> para áreas externas — resistente à água e ao sol, montado no tamanho que o seu palco ou ativação precisar.</p>
-            <ul>
-              <li>Pixel pitch P3.9 — alta resolução para média distância</li>
-              <li>Alto brilho para uso sob luz do dia</li>
-              <li>Proteção IP65 — resistente a chuva e poeira</li>
-              <li>Módulos moduláveis — montagem em qualquer tamanho</li>
-              <li>Ideal para shows, palcos, fachadas e eventos externos</li>
-              <li>Estrutura para piso ou içamento (truss)</li>
-            </ul>
-            <div class="product__actions">
-              <a class="product__cta product__cta--tech" href="https://wa.me/5544988049444?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20para%20aluguel%20do%20Painel%20de%20LED%20P3.9%20Outdoor." target="_blank" rel="noopener">Solicitar orçamento</a>
-              <a class="product__detail-link" href="/painel-de-led#paineis">
-                Ver detalhes
-                <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product product--tech">
-          <div class="product__img">
-            <img src="aluguel-totem-de-led-maringa.png" alt="Aluguel de totem de LED P2.5 indoor super fino — Maringá" loading="lazy" />
+            <img width="482" height="480" src="aluguel-totem-de-led-maringa.webp" alt="Aluguel de totem de LED P2.5 indoor super fino — Maringá" loading="lazy" decoding="async" />
           </div>
           <div class="product__body">
             <span class="product__tag">P2.5 · Indoor</span>
@@ -629,14 +597,40 @@
               <li>Tamanho: 1,95m × 0,65m (A × L)</li>
             </ul>
             <div class="product__actions">
-              <a class="product__cta product__cta--tech" href="https://wa.me/5544988049444?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20para%20aluguel%20do%20Painel%20de%20LED%20P2.5." target="_blank" rel="noopener">Solicitar orçamento</a>
-              <a class="product__detail-link" href="/painel-de-led">
-                Ver detalhes e vídeos
+              <a class="product__cta product__cta--tech" href="https://wa.me/5544988049444?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20para%20aluguel%20do%20Totem%20de%20LED%20P2.5." target="_blank" rel="noopener">Solicitar orçamento</a>
+              <a class="product__detail-link" href="#totem-videos">
+                Ver o totem em uso
                 <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOTEM EM USO REAL -->
+  <section class="totem-videos" id="totem-videos">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow eyebrow--tech">O totem em ação</span>
+        <h2>Veja o Totem de LED em uso real.</h2>
+        <p>Imagens nítidas, alto contraste e instalação rápida — o impacto visual que o seu evento merece.</p>
+      </div>
+
+      <div class="totem-videos__grid">
+        <div class="totem-video">
+          <video class="lazy-video" data-src="aluguel-totem-de-led.mp4" muted loop playsinline preload="none" aria-label="Totem de LED Nuvem Air em operação"></video>
+        </div>
+        <div class="totem-video">
+          <video class="lazy-video" data-src="locacao-totem-de-led-maringa.mp4" muted loop playsinline preload="none" aria-label="Locação de totem de LED em Maringá"></video>
+        </div>
+        <div class="totem-video">
+          <video class="lazy-video" data-src="locacao-totem-de-led-evento.mp4" muted loop playsinline preload="none" aria-label="Locação de totem de LED em evento corporativo"></video>
+        </div>
+        <div class="totem-video">
+          <img width="800" height="1223" src="totem-de-led-maringa.webp" alt="Totem de LED montado em estrutura com rodízios — Nuvem Air, Maringá" loading="lazy" decoding="async" />
+        </div>
       </div>
     </div>
   </section>
@@ -676,7 +670,7 @@
           <p>Nossos climatizadores evaporativos industriais movimentam grandes volumes de ar e reduzem a sensação térmica em minutos, mesmo em galpões de alto pé-direito. Instalação plug-and-play.</p>
         </div>
         <div class="pillar__image">
-          <video src="aluguel-Climatizador-Londrina.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Climatizador Nuvem Air em operação em Londrina"></video>
+          <video class="lazy-video" data-src="aluguel-Climatizador-Londrina.mp4" muted loop playsinline preload="none" aria-label="Climatizador Nuvem Air em operação em Londrina"></video>
         </div>
       </div>
 
@@ -690,7 +684,7 @@
           <p>De casamentos a feiras corporativas, atendemos eventos com equipe técnica dedicada e equipamentos silenciosos. Instalação rápida e discreta.</p>
         </div>
         <div class="pillar__image">
-          <video src="alugar-climatizador-maringa.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Climatizador Nuvem Air em operação em Maringá"></video>
+          <video class="lazy-video" data-src="alugar-climatizador-maringa.mp4" muted loop playsinline preload="none" aria-label="Climatizador Nuvem Air em operação em Maringá"></video>
         </div>
       </div>
 
@@ -704,7 +698,7 @@
           <p>Modelo de locação com valor fixo mensal. Você paga apenas pelo período em que precisa — e ainda reduz a conta de energia quando comparado ao ar-condicionado convencional.</p>
         </div>
         <div class="pillar__image">
-          <video src="aluguel-climatizador-campo-mourao.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Climatizador Nuvem Air em operação em Campo Mourão"></video>
+          <video class="lazy-video" data-src="aluguel-climatizador-campo-mourao.mp4" muted loop playsinline preload="none" aria-label="Climatizador Nuvem Air em operação em Campo Mourão"></video>
         </div>
       </div>
     </div>
@@ -976,7 +970,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <img src="assets/img/logo-white.png" alt="Nuvem Air — Locação de Climatizadores" />
+        <img width="252" height="168" src="assets/img/logo-white.webp" alt="Nuvem Air — Locação de Climatizadores" decoding="async" loading="lazy" />
         <p>Aluguel de climatizadores e aquecedores em todo o Brasil. Tecnologia evaporativa, logística nacional e suporte especializado.</p>
       </div>
 
@@ -985,7 +979,7 @@
         <a href="#climatizadores">Climatizadores portáteis</a>
         <a href="#climatizadores-fixos">Climatizador industrial fixo</a>
         <a href="#aquecedores">Aquecedores</a>
-        <a href="/painel-de-led">Totem de LED</a>
+        <a href="#totem-led">Totem de LED</a>
         <a href="#processo">Como funciona</a>
         <a href="/comprar">Quero comprar aquecedor</a>
       </div>
