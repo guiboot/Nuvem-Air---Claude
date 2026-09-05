@@ -3,48 +3,142 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".",
   "rewrites": [
-    { "source": "/loja-indisponivel", "destination": "/loja-indisponivel.html" }
+    {
+      "source": "/loja-indisponivel",
+      "destination": "/loja-indisponivel.html"
+    }
   ],
   "redirects": [
-    { "source": "/totem-de-led.html", "destination": "/#totem-led", "permanent": true },
-    { "source": "/totem-de-led", "destination": "/#totem-led", "permanent": true },
-    { "source": "/painel-de-led", "destination": "/#totem-led", "permanent": true },
-    { "source": "/painel-de-led.html", "destination": "/#totem-led", "permanent": true },
-
-    { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/home", "destination": "/", "permanent": true },
-    { "source": "/comprar/index.html", "destination": "/comprar", "permanent": true },
-
-    { "source": "/loja", "destination": "/loja-indisponivel", "permanent": false },
-    { "source": "/loja/:caminho((?!assets/).*)", "destination": "/loja-indisponivel", "permanent": false },
-
-    { "source": "/loja/ni18", "destination": "/loja/nu18", "permanent": true },
-    { "source": "/loja/ni21bs", "destination": "/loja/nu21bs", "permanent": true },
-    { "source": "/loja/ni23", "destination": "/loja/nu23", "permanent": true },
-    { "source": "/loja/ni23ds", "destination": "/loja/nu23ds", "permanent": true },
-    { "source": "/loja/ni56ds", "destination": "/loja/nu56ds", "permanent": true },
-    { "source": "/loja/ni9pro", "destination": "/loja/nu9pro", "permanent": true }
+    {
+      "source": "/totem-de-led.html",
+      "destination": "/#totem-led",
+      "permanent": true
+    },
+    {
+      "source": "/totem-de-led",
+      "destination": "/#totem-led",
+      "permanent": true
+    },
+    {
+      "source": "/painel-de-led",
+      "destination": "/#totem-led",
+      "permanent": true
+    },
+    {
+      "source": "/painel-de-led.html",
+      "destination": "/#totem-led",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/comprar/index.html",
+      "destination": "/comprar",
+      "permanent": true
+    },
+    {
+      "source": "/loja",
+      "destination": "/loja-indisponivel",
+      "permanent": false
+    },
+    {
+      "source": "/loja/:caminho((?!assets/).*)",
+      "destination": "/loja-indisponivel",
+      "permanent": false
+    },
+    {
+      "source": "/loja/ni18",
+      "destination": "/loja/nu18",
+      "permanent": true
+    },
+    {
+      "source": "/loja/ni21bs",
+      "destination": "/loja/nu21bs",
+      "permanent": true
+    },
+    {
+      "source": "/loja/ni23",
+      "destination": "/loja/nu23",
+      "permanent": true
+    },
+    {
+      "source": "/loja/ni23ds",
+      "destination": "/loja/nu23ds",
+      "permanent": true
+    },
+    {
+      "source": "/loja/ni56ds",
+      "destination": "/loja/nu56ds",
+      "permanent": true
+    },
+    {
+      "source": "/loja/ni9pro",
+      "destination": "/loja/nu9pro",
+      "permanent": true
+    }
   ],
   "headers": [
     {
-      "source": "/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "source": "/(.*)\\.(mp4|png|jpg|jpeg|webp)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    },
+    {
+      "source": "/assets/css/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/js/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
       "source": "/loja/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
       "source": "/comprar/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
-    },
-    {
-      "source": "/(.*)\\.(mp4|png|jpg|jpeg|webp)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
       "source": "/loja/catalogo.json",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     }
   ]
 }
