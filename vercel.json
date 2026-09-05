@@ -96,6 +96,24 @@
       ]
     },
     {
+      "source": "/loja/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/comprar/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
       "source": "/assets/css/(.*)",
       "headers": [
         {
@@ -114,20 +132,20 @@
       ]
     },
     {
-      "source": "/loja/assets/(.*)",
+      "source": "/comprar/assets/css/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "value": "public, max-age=604800"
         }
       ]
     },
     {
-      "source": "/comprar/assets/(.*)",
+      "source": "/comprar/assets/js/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "value": "public, max-age=604800"
         }
       ]
     },
