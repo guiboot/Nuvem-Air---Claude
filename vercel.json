@@ -5,6 +5,7 @@
     { "source": "/home", "destination": "/index.html" }
   ],
   "redirects": [
+    { "source": "/comprar", "destination": "https://vendas.nuvemair.com.br/", "permanent": true },
     { "source": "/totem-de-led.html", "destination": "/painel-de-led", "permanent": true },
     { "source": "/totem-de-led", "destination": "/painel-de-led", "permanent": true },
     { "source": "/painel-de-led.html", "destination": "/painel-de-led", "permanent": true }
