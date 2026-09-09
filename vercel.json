@@ -5,9 +5,9 @@
   ],
   "redirects": [
     { "source": "/comprar", "destination": "https://vendas.nuvemair.com.br/", "permanent": true },
-    { "source": "/painel-de-led", "destination": "/#totem-led", "permanent": true },
-    { "source": "/painel-de-led.html", "destination": "/#totem-led", "permanent": true },
-    { "source": "/totem-de-led", "destination": "/#totem-led", "permanent": true },
-    { "source": "/totem-de-led.html", "destination": "/#totem-led", "permanent": true }
+    { "source": "/painel-de-led", "destination": "/", "permanent": true },
+    { "source": "/painel-de-led.html", "destination": "/", "permanent": true },
+    { "source": "/totem-de-led", "destination": "/", "permanent": true },
+    { "source": "/totem-de-led.html", "destination": "/", "permanent": true }
   ]
 }
