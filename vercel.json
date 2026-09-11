@@ -45,6 +45,16 @@
       "permanent": true
     },
     {
+      "source": "/eventos/index.html",
+      "destination": "/eventos",
+      "permanent": true
+    },
+    {
+      "source": "/eventos/:slug/index.html",
+      "destination": "/eventos/:slug",
+      "permanent": true
+    },
+    {
       "source": "/loja",
       "destination": "/loja-indisponivel",
       "permanent": false

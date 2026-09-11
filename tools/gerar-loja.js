@@ -15,6 +15,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const core = require('../loja/assets/js/loja-core.js');
+const eventosDados = require('./eventos-dados.js');
 
 const RAIZ = path.join(__dirname, '..');
 /* Domínio de destino. A loja passou a morar em nuvemair.com.br/loja para
@@ -1052,7 +1053,12 @@ const PAGINAS_FIXAS = [
 ];
 /* Com a loja fora do ar, as URLs de /loja redirecionam — e sitemap cheio de
    redirect é erro no Search Console. Ficam de fora até a loja voltar. */
-const todasUrls = LOJA_ATIVA ? PAGINAS_FIXAS.concat(urls) : PAGINAS_FIXAS.slice();
+/* As URLs de evento vêm do módulo de dados, não de uma lista mantida aqui:
+   página nova entrando no site sem entrar no sitemap é o erro clássico.
+   Com publicar:false, urlsSitemap devolve vazio — mesma disciplina da loja
+   fora do ar, que também fica fora daqui. */
+const urlsEventos = eventosDados.urlsSitemap(eventosDados.carregar(), SITE);
+const todasUrls = (LOJA_ATIVA ? PAGINAS_FIXAS.concat(urls) : PAGINAS_FIXAS.slice()).concat(urlsEventos);
 
 fs.writeFileSync(path.join(RAIZ, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>
