@@ -21,7 +21,7 @@ const RAIZ = path.join(__dirname, '..');
    herdar a autoridade do domínio principal, em vez de começar do zero num
    subdomínio. SITE_URL permite gerar para outro host sem editar código. */
 const SITE = process.env.SITE_URL || 'https://nuvemair.com.br';
-const WA_NUM = '5544988049444';
+const WA_NUM = '5544988117615';
 const CSS_V = '20260902-1';
 
 /* A loja está temporariamente fora do ar. Quem fecha a porta é o vercel.json

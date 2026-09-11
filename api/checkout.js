@@ -132,7 +132,7 @@ module.exports = async function handler(req, res) {
 
   if (!LOJA_ATIVA) {
     res.setHeader('Cache-Control', 'no-store');
-    res.status(503).json({ erro: 'A loja está em manutenção. Fale com a gente pelo WhatsApp: (44) 98804-9444.' });
+    res.status(503).json({ erro: 'A loja está em manutenção. Fale com a gente pelo WhatsApp: (44) 98811-7615.' });
     return;
   }
 
