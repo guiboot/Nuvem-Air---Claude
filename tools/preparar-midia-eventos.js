@@ -90,7 +90,10 @@ for (const slug of Object.keys(curadoria)) {
   });
 }
 
-fs.writeFileSync(path.join(DESTINO, 'manifest.json'), JSON.stringify(manifesto, null, 2) + '\n');
+/* Fora de assets/eventos/: nada no site referencia este arquivo — é só um
+   registro de curadoria para quem roda o `npm run midia` de novo — e aquela
+   pasta é servida em produção, então um manifest.json órfão iria ao ar. */
+fs.writeFileSync(path.join(__dirname, 'manifest-eventos.json'), JSON.stringify(manifesto, null, 2) + '\n');
 console.log('\n%d cases, %d arquivos -> assets/eventos/',
   Object.keys(manifesto).length,
   Object.values(manifesto).reduce((n, m) => n + m.length, 0));
