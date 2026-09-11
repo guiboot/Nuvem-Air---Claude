@@ -46,7 +46,7 @@
       "seo": {
         "titulo": "Climatizador para exposição de carros · Case Motor Classic | Nuvem Air",
         "descricao": "Climatizadores evaporativos numa exposição de carros em área coberta: ar em movimento sobre o público, sem obra e sem cabo à vista. Case da Nuvem Air.",
-        "h1": "Motor Classic: público parado, carro quente, galpão fechado"
+        "h1": "Motor Classic: público parado, carro quente, pátio coberto"
       }
     },
     {
@@ -280,7 +280,7 @@
     {
       "slug": "agro-semente",
       "tipo": "evento",
-      "categoria": "galpao",
+      "categoria": "corporativo",
       "cliente": "Agro Semente",
       "cidade": "REVISAR: Maringá",
       "uf": "PR",
@@ -316,7 +316,7 @@
       "seo": {
         "titulo": "Climatizador para feira agro · Case Agro Semente | Nuvem Air",
         "descricao": "Climatizador evaporativo num dia de campo montado na lavoura de soja: área de recepção utilizável ao meio-dia, sem parede. Case da Nuvem Air.",
-        "h1": "Feira agro em galpão: climatizar o que não tem parede"
+        "h1": "Feira agro na lavoura: climatizar o que não tem parede"
       }
     },
     {
@@ -364,7 +364,7 @@
     {
       "slug": "ecospeed",
       "tipo": "evento",
-      "categoria": "industria",
+      "categoria": "corporativo",
       "cliente": "Ecospeed",
       "cidade": "REVISAR: Maringá",
       "uf": "PR",
@@ -388,13 +388,13 @@
       "seo": {
         "titulo": "Climatizador para empresa · Case Ecospeed | Nuvem Air",
         "descricao": "Climatizador evaporativo numa área coberta de convivência aberta de um lado: alívio térmico onde não cabe ar-condicionado. Case da Nuvem Air.",
-        "h1": "Ecospeed: climatização pontual para a área de produção"
+        "h1": "Ecospeed: climatização pontual para a área de convivência"
       }
     },
     {
       "slug": "ciacollor",
       "tipo": "evento",
-      "categoria": "industria",
+      "categoria": "corporativo",
       "cliente": "Ciacollor",
       "cidade": "REVISAR: Maringá",
       "uf": "PR",
@@ -434,9 +434,9 @@
         }
       ],
       "seo": {
-        "titulo": "Climatizador para indústria · Case Ciacollor | Nuvem Air",
+        "titulo": "Climatizador para salão de eventos · Case Ciacollor | Nuvem Air",
         "descricao": "Climatizadores evaporativos nas laterais de um pavilhão fechado por cortinas: ar por cima da plateia cheia e equipamento fora de cena. Case da Nuvem Air.",
-        "h1": "Ciacollor: ar em movimento no chão de fábrica"
+        "h1": "Ciacollor: um salão de cortinado que não podia ficar abafado"
       }
     },
     {
@@ -687,7 +687,7 @@
       ],
       "seo": {
         "titulo": "Climatizador para tecelagem · Locação mensal Soft Dream | Nuvem Air",
-        "descricao": "Locação mensal de climatizadores numa tecelagem: conforto térmico no chão de fábrica com baixo consumo. Veja o case da Nuvem Air em Maringá.",
+        "descricao": "Locação mensal de climatizadores evaporativos numa tecelagem em operação contínua: conforto térmico no chão de fábrica com baixo consumo. Case da Nuvem Air.",
         "h1": "Soft Dream: climatização mensal numa tecelagem"
       }
     }
