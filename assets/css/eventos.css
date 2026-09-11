@@ -54,3 +54,35 @@
   .case { padding: 110px 0 72px; }
   .case-ficha { grid-template-columns: 1fr 1fr; }
 }
+
+/* Listagem /eventos */
+
+.lista { padding: 140px 0 100px; }
+.lista__titulo { font-size: clamp(32px, 5.5vw, 56px); line-height: 1.08; margin: 18px 0 12px; }
+.lista__sub { font-size: 17px; color: var(--ink-2); max-width: 560px; margin-bottom: 36px; }
+
+.lista__filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+.lista__filtro {
+  font: inherit; font-size: 14px; cursor: pointer;
+  padding: 9px 16px; border-radius: 999px;
+  border: 1px solid var(--line); background: transparent; color: var(--ink-2);
+}
+.lista__filtro:hover { background: var(--paper-2); }
+.lista__filtro.is-ativo { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.lista__grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+.lista__card { text-decoration: none; color: inherit; display: block; }
+.lista__card[hidden] { display: none; }
+/* Mídia real é retrato (900x1200 foto) — 3/4, não 4/3, senão o
+   object-fit: cover corta a maior parte de cada imagem. */
+.lista__card img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 4px; margin-bottom: 12px; display: block; }
+.lista__card-selo { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--ink-2); display: block; margin-bottom: 4px; }
+.lista__card strong { display: block; font-size: 17px; margin-bottom: 2px; }
+.lista__card-local { font-size: 14px; color: var(--ink-2); }
+
+.lista__vazio { font-size: 16px; color: var(--ink-2); padding: 40px 0; }
+
+@media (max-width: 640px) {
+  .lista { padding: 110px 0 72px; }
+  .lista__grade { grid-template-columns: 1fr 1fr; gap: 16px; }
+}

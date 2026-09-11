@@ -200,6 +200,126 @@ ${vizinhos.map((v) => {
 `;
 }
 
+const CATEGORIA_ROTULO = {
+  casamento: 'Casamentos',
+  corporativo: 'Corporativos',
+  industria: 'Indústria',
+  galpao: 'Galpões',
+  institucional: 'Institucional'
+};
+
+function paginaListagem(conj, partes) {
+  const url = SITE + '/eventos';
+  const titulo = 'Eventos e locações da Nuvem Air · 16 trabalhos entregues';
+  const descricao = 'Casamentos, feiras, galpões, indústrias e hospitais climatizados pela Nuvem Air. Veja os equipamentos instalados em cada tipo de ambiente.';
+  const capa = conj.cases[0];
+  const capaMidia = capa.midia.find((m) => m.tipo === 'imagem') || capa.midia[0];
+
+  const jsonld = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: titulo,
+      description: descricao,
+      url,
+      inLanguage: 'pt-BR'
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: conj.cases.map((c, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: c.cliente,
+        url: `${SITE}/eventos/${c.slug}`
+      }))
+    }
+  ];
+
+  /* Os 16 cards vêm no HTML e o filtro só esconde. Conteúdo que só existe
+     depois do JS não é indexado — e o orgânico é o ponto desta seção. */
+  const categorias = dados.CATEGORIAS.filter((k) => conj.cases.some((c) => c.categoria === k));
+
+  return head({ titulo, descricao, url, imagem: `${SITE}/assets/eventos/${capa.slug}/${capaMidia.poster || capaMidia.arquivo}`, jsonld, noindex: !conj.publicar, tipo: 'website' })
+    + partes.nav + `
+
+  <main class="lista">
+    <div class="container">
+      <nav class="case-trilha" aria-label="Trilha de navegação">
+        <a href="/">Início</a> <span aria-hidden="true">/</span>
+        <span aria-current="page">Eventos</span>
+      </nav>
+
+      <h1 class="lista__titulo">Onde a Nuvem Air já esteve.</h1>
+      <p class="lista__sub">${esc(conj.cases.length)} trabalhos entregues — de casamento em chácara a chão de fábrica. Cada um com o equipamento que o ambiente pedia.</p>
+
+      <div class="lista__filtros" role="group" aria-label="Filtrar trabalhos">
+        <button class="lista__filtro is-ativo" data-filtro="todos">Todos</button>
+        <button class="lista__filtro" data-filtro="mensal">Locação mensal</button>
+${categorias.map((k) => `        <button class="lista__filtro" data-filtro="${esc(k)}">${esc(CATEGORIA_ROTULO[k])}</button>`).join('\n')}
+      </div>
+
+      <div class="lista__grade">
+${conj.cases.map((c) => {
+  const m = c.midia.find((x) => x.tipo === 'imagem') || c.midia[0];
+  const local = [limpo(c.cidade), limpo(c.uf)].filter(Boolean).join(' · ');
+  return `        <a class="lista__card" href="/eventos/${esc(c.slug)}" data-tipo="${esc(c.tipo)}" data-categoria="${esc(c.categoria)}">
+          <img src="/assets/eventos/${esc(c.slug)}/${esc(m.poster || m.arquivo)}" alt="${esc(m.alt)}" width="420" height="560" loading="lazy" decoding="async" />
+          <span class="lista__card-selo">${esc(TIPO_ROTULO[c.tipo])}</span>
+          <strong>${esc(c.cliente)}</strong>
+          ${local ? `<span class="lista__card-local">${esc(local)}</span>` : ''}
+        </a>`;
+}).join('\n')}
+      </div>
+
+      <p class="lista__vazio" hidden>Nenhum trabalho nesta categoria ainda.</p>
+
+      <section class="case-cta">
+        <h2>O próximo pode ser o seu.</h2>
+        <p>Diga as dimensões do espaço e o tipo de evento. A equipe calcula quantos equipamentos são necessários e devolve o orçamento em até 2 horas.</p>
+        <a class="btn btn--primary" href="${wa('Olá! Vi os cases no site e quero um orçamento.')}" target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
+      </section>
+    </div>
+  </main>
+
+` + partes.rodape + `
+  <script src="/assets/js/app.js?v=20260905-5"></script>
+  <script>
+    /* Filtro da listagem. Os cards já estão no HTML; isto só esconde.
+       Aceita ?categoria=industria e ?tipo=mensal vindos do mega-menu da home. */
+    (function () {
+      var cards = [].slice.call(document.querySelectorAll('.lista__card'));
+      var botoes = [].slice.call(document.querySelectorAll('.lista__filtro'));
+      var vazio = document.querySelector('.lista__vazio');
+
+      function aplicar(filtro) {
+        var visiveis = 0;
+        cards.forEach(function (c) {
+          var casa = filtro === 'todos' || c.dataset.categoria === filtro || c.dataset.tipo === filtro;
+          c.hidden = !casa;
+          if (casa) visiveis++;
+        });
+        botoes.forEach(function (b) { b.classList.toggle('is-ativo', b.dataset.filtro === filtro); });
+        if (vazio) vazio.hidden = visiveis > 0;
+      }
+
+      botoes.forEach(function (b) {
+        b.addEventListener('click', function () {
+          aplicar(b.dataset.filtro);
+          history.replaceState(null, '', b.dataset.filtro === 'todos' ? '/eventos' : '/eventos?categoria=' + b.dataset.filtro);
+        });
+      });
+
+      var q = new URLSearchParams(location.search);
+      var inicial = q.get('categoria') || q.get('tipo');
+      if (inicial && botoes.some(function (b) { return b.dataset.filtro === inicial; })) aplicar(inicial);
+    })();
+  </script>
+</body>
+</html>
+`;
+}
+
 function gerar() {
   const conj = dados.validar(dados.carregar(), { raiz: RAIZ });
   const partes = sitePartes.partes();
@@ -211,9 +331,13 @@ function gerar() {
     console.log('  -> eventos/%s/index.html', c.slug);
   }
 
+  fs.mkdirSync(path.join(RAIZ, 'eventos'), { recursive: true });
+  fs.writeFileSync(path.join(RAIZ, 'eventos', 'index.html'), paginaListagem(conj, partes));
+  console.log('  -> eventos/index.html');
+
   console.log('%d cases gerados%s', conj.cases.length, conj.publicar ? '' : ' (noindex — publicar:false)');
 }
 
-module.exports = { paginaCase, gerar };
+module.exports = { paginaCase, paginaListagem, gerar };
 
 if (require.main === module) gerar();
