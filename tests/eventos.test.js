@@ -57,6 +57,16 @@ test('recusa case sem mídia', () => {
   assert.throws(() => dados.validar(base([caseValido({ midia: [] })])), /mídia/i);
 });
 
+test('recusa nome de arquivo de mídia com acento', () => {
+  const c = caseValido({ midia: [{ tipo: 'imagem', arquivo: 'casamento-loandá-1.webp', poster: null, alt: 'x' }] });
+  assert.throws(() => dados.validar(base([c])), /arquivo/i);
+});
+
+test('recusa nome de poster com acento', () => {
+  const c = caseValido({ midia: [{ tipo: 'video', arquivo: 'casamento-em-loanda-1.mp4', poster: 'capa-loandá.webp', alt: 'x' }] });
+  assert.throws(() => dados.validar(base([c])), /poster/i);
+});
+
 test('recusa título de SEO vazio', () => {
   const c = caseValido();
   c.seo = Object.assign({}, c.seo, { titulo: '' });

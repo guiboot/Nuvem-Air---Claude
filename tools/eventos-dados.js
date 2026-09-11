@@ -14,6 +14,10 @@ const path = require('node:path');
 const CATEGORIAS = ['casamento', 'corporativo', 'industria', 'galpao', 'institucional'];
 const TIPOS = ['evento', 'mensal'];
 const SLUG_VALIDO = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+/* Mesma exigência do slug, só que com ponto liberado para a extensão do
+   arquivo. Nome de mídia acentuado existe no Mac de quem edita e dá 404 na
+   Vercel — é o modo de falha documentado em accented-filenames-404-on-vercel. */
+const NOME_MIDIA_VALIDO = /^[a-z0-9]+(-[a-z0-9]+)*\.[a-z0-9]+$/;
 
 /* Campos de texto que vão para a página e, por isso, não podem sair com
    marcação de revisão pendente. */
@@ -43,6 +47,15 @@ function validar(dados, opcoes = {}) {
     }
 
     if (!Array.isArray(c.midia) || c.midia.length === 0) throw new Error(`${c.slug}: sem mídia`);
+
+    for (const m of c.midia) {
+      for (const [campo, nome] of [['arquivo', m.arquivo], ['poster', m.poster]]) {
+        if (nome == null) continue;
+        if (!NOME_MIDIA_VALIDO.test(String(nome))) {
+          throw new Error(`${c.slug}: ${campo} de mídia inválido: ${JSON.stringify(nome)} — use só a-z, 0-9 e hífen (acento vira 404 na Vercel)`);
+        }
+      }
+    }
 
     const seo = c.seo || {};
     for (const campo of ['titulo', 'descricao', 'h1']) {

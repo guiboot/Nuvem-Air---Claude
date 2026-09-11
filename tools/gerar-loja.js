@@ -16,13 +16,12 @@ const fs = require('node:fs');
 const path = require('node:path');
 const core = require('../loja/assets/js/loja-core.js');
 const eventosDados = require('./eventos-dados.js');
+/* SITE: a loja passou a morar em nuvemair.com.br/loja para herdar a
+   autoridade do domínio principal, em vez de começar do zero num
+   subdomínio. SITE_URL permite gerar para outro host sem editar código. */
+const { SITE, esc, wa } = require('./site-comum.js');
 
 const RAIZ = path.join(__dirname, '..');
-/* Domínio de destino. A loja passou a morar em nuvemair.com.br/loja para
-   herdar a autoridade do domínio principal, em vez de começar do zero num
-   subdomínio. SITE_URL permite gerar para outro host sem editar código. */
-const SITE = process.env.SITE_URL || 'https://nuvemair.com.br';
-const WA_NUM = '5544988117615';
 const CSS_V = '20260902-1';
 
 /* A loja está temporariamente fora do ar. Quem fecha a porta é o vercel.json
@@ -40,11 +39,6 @@ const apps = JSON.parse(fs.readFileSync(path.join(RAIZ, 'loja/aplicacoes.json'),
 const lerParcial = (n) => fs.readFileSync(path.join(RAIZ, 'loja', n), 'utf8').trimEnd();
 
 /* ---------------------------------------------------------------- utilidades */
-
-const esc = (s) => String(s)
-  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-
-const wa = (texto) => 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(texto);
 
 const footer = lerParcial('_rodape.html');
 const waFloat = lerParcial('_whatsapp.html');
@@ -1057,7 +1051,7 @@ const PAGINAS_FIXAS = [
    página nova entrando no site sem entrar no sitemap é o erro clássico.
    Com publicar:false, urlsSitemap devolve vazio — mesma disciplina da loja
    fora do ar, que também fica fora daqui. */
-const urlsEventos = eventosDados.urlsSitemap(eventosDados.carregar(), SITE);
+const urlsEventos = eventosDados.urlsSitemap(eventosDados.validar(eventosDados.carregar(), { raiz: RAIZ }), SITE);
 const todasUrls = (LOJA_ATIVA ? PAGINAS_FIXAS.concat(urls) : PAGINAS_FIXAS.slice()).concat(urlsEventos);
 
 fs.writeFileSync(path.join(RAIZ, 'sitemap.xml'),

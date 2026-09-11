@@ -11,20 +11,23 @@ const fs = require('node:fs');
 const path = require('node:path');
 const dados = require('./eventos-dados.js');
 const sitePartes = require('./site-partes.js');
+const { SITE, esc, wa } = require('./site-comum.js');
 
 const RAIZ = path.join(__dirname, '..');
-const SITE = process.env.SITE_URL || 'https://nuvemair.com.br';
-const WA_NUM = '5544988117615';
 const CSS_V = '20260911-1';
-
-const esc = (s) => String(s == null ? '' : s)
-  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-
-const wa = (texto) => 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(texto);
 
 /* Campo que ainda não foi revisado não vai para a página: melhor a frase
    existir sem o número do que sair "REVISAR: 300 m²" no ar. */
 const limpo = (v) => (String(v == null ? '' : v).startsWith('REVISAR') ? '' : String(v == null ? '' : v));
+
+/* Local do case, para o subtítulo do <h1>, a linha "Local" da ficha técnica e
+   a legenda dos cards da listagem. A UF só faz sentido colada à cidade — sem
+   cidade (ainda "REVISAR", limpa para vazio), o local inteiro fica vazio em
+   vez de imprimir a UF sozinha ("PR" solto não diz nada a quem lê). */
+const localDe = (c) => {
+  const cidade = limpo(c.cidade);
+  return cidade ? [cidade, limpo(c.uf)].filter(Boolean).join(' · ') : '';
+};
 
 const TIPO_ROTULO = { evento: 'Evento', mensal: 'Locação mensal' };
 
@@ -67,7 +70,7 @@ function head({ titulo, descricao, url, imagem, jsonld = [], noindex, tipo = 'ar
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css?v=${CSS_V}" />
   <link rel="stylesheet" href="/assets/css/eventos.css?v=${CSS_V}" />
-${jsonld.map((o) => `  <script type="application/ld+json">\n${JSON.stringify(o, null, 2)}\n  </script>`).join('\n')}
+${jsonld.map((o) => `  <script type="application/ld+json">\n${JSON.stringify(o, null, 2).replace(/</g, '\\u003c')}\n  </script>`).join('\n')}
 </head>
 <body>
 
@@ -93,7 +96,7 @@ function midia(c, m, primeiro) {
 function ficha(c) {
   const linhas = [
     ['Tipo', TIPO_ROTULO[c.tipo]],
-    ['Local', [limpo(c.cidade), limpo(c.uf)].filter(Boolean).join(' · ')],
+    ['Local', localDe(c)],
     ['Quando', limpo(c.data)],
     ['Equipamento', (c.equipamento || []).join(', ')],
     ['Quantidade', limpo(c.quantidade)],
@@ -110,7 +113,7 @@ function paginaCase(conj, c, partes) {
   const capa = c.midia.find((m) => m.tipo === 'imagem') || c.midia[0];
   const imagem = `${SITE}/assets/eventos/${c.slug}/${capa.poster || capa.arquivo}`;
   const vizinhos = dados.irmaos(conj, c.slug, 2);
-  const local = [limpo(c.cidade), limpo(c.uf)].filter(Boolean).join(' · ');
+  const local = localDe(c);
 
   /* Article, e não Event: o schema Event descreve evento futuro, com data e
      ingresso. Aplicá-lo a trabalho entregue gera rich result errado e é
@@ -210,7 +213,7 @@ const CATEGORIA_ROTULO = {
 
 function paginaListagem(conj, partes) {
   const url = SITE + '/eventos';
-  const titulo = 'Eventos e locações da Nuvem Air · 16 trabalhos entregues';
+  const titulo = `Eventos e locações da Nuvem Air · ${conj.cases.length} trabalhos entregues`;
   const descricao = 'Casamentos, feiras, galpões, indústrias e hospitais climatizados pela Nuvem Air. Veja os equipamentos instalados em cada tipo de ambiente.';
   const capa = conj.cases[0];
   const capaMidia = capa.midia.find((m) => m.tipo === 'imagem') || capa.midia[0];
@@ -262,7 +265,7 @@ ${categorias.map((k) => `        <button class="lista__filtro" data-filtro="${es
       <div class="lista__grade">
 ${conj.cases.map((c) => {
   const m = c.midia.find((x) => x.tipo === 'imagem') || c.midia[0];
-  const local = [limpo(c.cidade), limpo(c.uf)].filter(Boolean).join(' · ');
+  const local = localDe(c);
   return `        <a class="lista__card" href="/eventos/${esc(c.slug)}" data-tipo="${esc(c.tipo)}" data-categoria="${esc(c.categoria)}">
           <img src="/assets/eventos/${esc(c.slug)}/${esc(m.poster || m.arquivo)}" alt="${esc(m.alt)}" width="420" height="560" loading="lazy" decoding="async" />
           <span class="lista__card-selo">${esc(TIPO_ROTULO[c.tipo])}</span>
