@@ -11,7 +11,10 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const CATEGORIAS = ['casamento', 'corporativo', 'industria', 'galpao', 'institucional'];
+/* `institucional` existiu e foi fundida em `corporativo`: com um case só, o
+   filtro virava uma vitrine de um card. Hospital e escola são evento
+   corporativo para quem busca — a distinção não ajudava ninguém a achar. */
+const CATEGORIAS = ['casamento', 'corporativo', 'industria', 'galpao'];
 const TIPOS = ['evento', 'mensal'];
 const SLUG_VALIDO = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 /* Mesma exigência do slug, só que com ponto liberado para a extensão do

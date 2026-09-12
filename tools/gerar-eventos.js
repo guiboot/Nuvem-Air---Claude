@@ -207,8 +207,7 @@ const CATEGORIA_ROTULO = {
   casamento: 'Casamentos',
   corporativo: 'Corporativos',
   industria: 'Indústria',
-  galpao: 'Galpões',
-  institucional: 'Institucional'
+  galpao: 'Galpões'
 };
 
 function paginaListagem(conj, partes) {
