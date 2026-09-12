@@ -212,8 +212,11 @@ const CATEGORIA_ROTULO = {
 
 function paginaListagem(conj, partes) {
   const url = SITE + '/eventos';
-  const titulo = `Eventos e locações da Nuvem Air · ${conj.cases.length} trabalhos entregues`;
-  const descricao = 'Casamentos, feiras, galpões, indústrias e hospitais climatizados pela Nuvem Air. Veja os equipamentos instalados em cada tipo de ambiente.';
+  /* Nem o título nem o subtítulo anunciam um total: o que está publicado é
+     uma amostra do que já foi entregue, e prometer a lista completa seria
+     falso — além de envelhecer mal a cada case novo que entra. */
+  const titulo = 'Eventos e locações da Nuvem Air · alguns dos nossos trabalhos';
+  const descricao = 'Alguns dos trabalhos da Nuvem Air: casamentos, feiras, galpões, indústrias e hospitais climatizados. Veja o equipamento usado em cada ambiente.';
   const capa = conj.cases[0];
   const capaMidia = capa.midia.find((m) => m.tipo === 'imagem') || capa.midia[0];
 
@@ -253,7 +256,7 @@ function paginaListagem(conj, partes) {
       </nav>
 
       <h1 class="lista__titulo">Onde a Nuvem Air já esteve.</h1>
-      <p class="lista__sub">${esc(conj.cases.length)} trabalhos entregues — de casamento em chácara a chão de fábrica. Cada um com o equipamento que o ambiente pedia.</p>
+      <p class="lista__sub">Estes foram alguns dos nossos trabalhos — não todos. De casamento em chácara a chão de fábrica, cada um com o equipamento que o ambiente pedia.</p>
 
       <div class="lista__filtros" role="group" aria-label="Filtrar trabalhos">
         <button class="lista__filtro is-ativo" data-filtro="todos">Todos</button>
