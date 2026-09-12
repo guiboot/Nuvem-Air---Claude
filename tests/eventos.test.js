@@ -1,5 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert');
+const fs = require('node:fs');
 const path = require('node:path');
 const dados = require('../tools/eventos-dados.js');
 
@@ -114,7 +115,17 @@ test('irmaos prefere a mesma categoria e nunca devolve o próprio', () => {
 });
 
 test('o eventos.json real do projeto passa na validação, mídia em disco incluída', () => {
+  const raiz = path.join(__dirname, '..');
   const reais = dados.carregar();
-  assert.ok(reais.cases.length === 16, 'esperado 16 cases, veio ' + reais.cases.length);
-  assert.doesNotThrow(() => dados.validar(reais, { raiz: path.join(__dirname, '..') }));
+
+  /* Confere a contagem contra o manifesto da mídia em vez de um número
+     cravado. Um número fixo aqui vira mentira na primeira vez que um case
+     entra ou sai; amarrado ao manifesto, o teste continua verdadeiro e ainda
+     pega o caso que importa — dado e mídia saírem de sincronia. */
+  const manifesto = JSON.parse(fs.readFileSync(path.join(raiz, 'tools/manifest-eventos.json'), 'utf8'));
+  assert.strictEqual(reais.cases.length, Object.keys(manifesto).length,
+    'eventos.json e tools/manifest-eventos.json discordam na quantidade de cases');
+  assert.ok(reais.cases.length > 0, 'nenhum case carregado');
+
+  assert.doesNotThrow(() => dados.validar(reais, { raiz }));
 });

@@ -440,36 +440,6 @@
       }
     },
     {
-      "slug": "colegio-adventista",
-      "tipo": "evento",
-      "categoria": "institucional",
-      "cliente": "Colégio Adventista",
-      "cidade": "REVISAR: Maringá",
-      "uf": "PR",
-      "data": "REVISAR: 2025-12",
-      "equipamento": [
-        "Climatizador Evaporativo Industrial Portátil"
-      ],
-      "quantidade": "REVISAR: 3",
-      "area": "REVISAR: 600 m²",
-      "desafio": "Ginásio coberto do colégio preparado para um evento: quadra fechada, pé-direito alto e o público todo concentrado sobre o piso esportivo.",
-      "solucao": "Três climatizadores evaporativos industriais enfileirados na lateral da quadra, com o difusor de aletas apontado para o centro do piso.",
-      "resultado": "Os três aparelhos cobriram a lateral inteira da quadra sem invadir a área das mesas nem encostar na pintura do piso esportivo.",
-      "midia": [
-        {
-          "tipo": "video",
-          "arquivo": "colegio-adventista-1.mp4",
-          "poster": "colegio-adventista-1.webp",
-          "alt": "Três climatizadores evaporativos industriais enfileirados na lateral da quadra coberta do colégio, com as mesas do evento já postas"
-        }
-      ],
-      "seo": {
-        "titulo": "Climatizador para escola e formatura · Colégio Adventista",
-        "descricao": "Três climatizadores evaporativos na lateral da quadra coberta de um colégio em dia de evento: ar dirigido ao centro do piso. Case da Nuvem Air.",
-        "h1": "Colégio Adventista: ginásio cheio em dia de evento"
-      }
-    },
-    {
       "slug": "quinta-dos-mouroes",
       "tipo": "evento",
       "categoria": "casamento",
