@@ -1,0 +1,665 @@
+{
+  "publicar": false,
+  "cases": [
+    {
+      "slug": "motor-classic",
+      "tipo": "evento",
+      "categoria": "corporativo",
+      "cliente": "Motor Classic",
+      "cidade": "REVISAR: Maringá",
+      "uf": "PR",
+      "data": "REVISAR: 2025-10",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 4",
+      "area": "REVISAR: 400 m²",
+      "desafio": "Exposição de carros numa área coberta de concessionária, com o público parado ao lado dos veículos e o piso de bloquete devolvendo calor a tarde inteira.",
+      "solucao": "Climatizadores evaporativos industriais enfileirados na lateral da cobertura, com o ar soprado por cima dos carros em direção a quem circulava entre eles.",
+      "resultado": "Ar em movimento na faixa onde o público ficava parado, sem cabo atravessando a área de circulação e sem nada apoiado nos veículos.",
+      "midia": [
+        {
+          "tipo": "video",
+          "arquivo": "motor-classic-1.mp4",
+          "poster": "motor-classic-1.webp",
+          "alt": "Carros brancos estacionados sob a cobertura da concessionária durante a exposição, entre palmeiras e piso de bloquete"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "motor-classic-2.mp4",
+          "poster": "motor-classic-2.webp",
+          "alt": "Climatizadores evaporativos industriais enfileirados no piso de bloquete, ao lado das tendas brancas da exposição"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "motor-classic-3.mp4",
+          "poster": "motor-classic-3.webp",
+          "alt": "Quatro climatizadores evaporativos industriais posicionados sob a cobertura, entre os carros expostos e as palmeiras"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "motor-classic-4.mp4",
+          "poster": "motor-classic-4.webp",
+          "alt": "Estrutura de treliça metálica montada entre os carros expostos, na área coberta da concessionária"
+        }
+      ],
+      "seo": {
+        "titulo": "Climatizador para exposição de carros · Motor Classic",
+        "descricao": "Climatizadores evaporativos numa exposição de carros em área coberta: ar em movimento sobre o público, sem obra e sem cabo à vista. Case da Nuvem Air.",
+        "h1": "Motor Classic: público parado, carro quente, pátio coberto"
+      }
+    },
+    {
+      "slug": "companhia-de-melhoramentos",
+      "tipo": "evento",
+      "categoria": "corporativo",
+      "cliente": "Companhia de Melhoramentos",
+      "cidade": "REVISAR: Maringá",
+      "uf": "PR",
+      "data": "REVISAR: 2025-11",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 3",
+      "area": "REVISAR: 600 m²",
+      "desafio": "Evento num barracão de festas com telhado de madeira e churrasqueira acesa no fundo, com mesas e cadeiras ocupando o vão inteiro.",
+      "solucao": "Climatizadores evaporativos industriais com duto em cotovelo encostados nas paredes laterais, jogando o ar por cima das fileiras de mesas.",
+      "resultado": "O ar alcançou o meio do vão sem nada instalado no telhado de madeira nem no piso por onde os convidados circulavam.",
+      "midia": [
+        {
+          "tipo": "video",
+          "arquivo": "companhia-de-melhoramentos-1.mp4",
+          "poster": "companhia-de-melhoramentos-1.webp",
+          "alt": "Climatizador evaporativo industrial com duto em cotovelo dentro do barracão, com as cadeiras do evento montadas ao fundo"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "companhia-de-melhoramentos-2.mp4",
+          "poster": "companhia-de-melhoramentos-2.webp",
+          "alt": "Climatizador evaporativo industrial encostado na parede do barracão, apontado para as fileiras de cadeiras"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "companhia-de-melhoramentos-3.mp4",
+          "poster": "companhia-de-melhoramentos-3.webp",
+          "alt": "Interior do barracão de festas com telhado de madeira, mesas e cadeiras plásticas brancas sobre o piso de concreto"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "companhia-de-melhoramentos-4.mp4",
+          "poster": "companhia-de-melhoramentos-4.webp",
+          "alt": "Churrasqueira do evento com costelas e linguiças penduradas sobre a brasa, sob o letreiro do serviço de buffet"
+        }
+      ],
+      "seo": {
+        "titulo": "Climatização de evento corporativo · Companhia de Melhoramentos",
+        "descricao": "Climatizadores evaporativos num barracão de festas com churrasqueira acesa: ar por cima das mesas, sem tocar no telhado de madeira. Case da Nuvem Air.",
+        "h1": "Um evento corporativo inteiro climatizado sem obra nenhuma"
+      }
+    },
+    {
+      "slug": "rotary-sicredi",
+      "tipo": "evento",
+      "categoria": "corporativo",
+      "cliente": "Rotary com Sicredi",
+      "cidade": "REVISAR: Maringá",
+      "uf": "PR",
+      "data": "REVISAR: 2025-09",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 4",
+      "area": "REVISAR: 500 m²",
+      "desafio": "Jantar beneficente no átrio envidraçado da Sicredi Dexis, com mesas redondas montadas, painel de LED ligado e a fachada de vidro segurando o calor do dia.",
+      "solucao": "Dois climatizadores evaporativos industriais na praça de entrada, um com difusor de aletas e outro com duto em cotovelo, empurrando ar para dentro do salão.",
+      "resultado": "Renovação de ar durante todo o jantar, com os equipamentos fora do enquadramento das mesas e do painel de LED.",
+      "midia": [
+        {
+          "tipo": "video",
+          "arquivo": "rotary-sicredi-1.mp4",
+          "poster": "rotary-sicredi-1.webp",
+          "alt": "Climatizador evaporativo industrial com difusor de aletas no saguão, em frente ao painel de LED do evento"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "rotary-sicredi-2.mp4",
+          "poster": "rotary-sicredi-2.webp",
+          "alt": "Duto do climatizador Nuvem Air em primeiro plano e, ao fundo, as mesas redondas do jantar sob iluminação azul"
+        },
+        {
+          "tipo": "imagem",
+          "arquivo": "rotary-sicredi-3.webp",
+          "poster": null,
+          "alt": "Dois climatizadores evaporativos industriais lado a lado na praça de entrada do prédio envidraçado da Sicredi Dexis"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "rotary-sicredi-4.mp4",
+          "poster": "rotary-sicredi-4.webp",
+          "alt": "Close da logomarca Nuvem Air no duto do climatizador, com o painel de LED do evento aceso ao lado"
+        }
+      ],
+      "seo": {
+        "titulo": "Climatizador para jantar beneficente · Rotary Sicredi",
+        "descricao": "Dois climatizadores evaporativos num jantar beneficente em átrio envidraçado: ar renovado com o salão cheio e o equipamento fora de cena. Case da Nuvem Air.",
+        "h1": "Jantar do Rotary com Sicredi: salão cheio, ninguém suando"
+      }
+    },
+    {
+      "slug": "rotary-acema",
+      "tipo": "evento",
+      "categoria": "corporativo",
+      "cliente": "Rotary Acema",
+      "cidade": "REVISAR: Maringá",
+      "uf": "PR",
+      "data": "REVISAR: 2025-10",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 2",
+      "area": "REVISAR: 250 m²",
+      "desafio": "Encontro num salão fechado por cortinas de tecido, sem janela para renovar o ar e com o público concentrado na área das mesas.",
+      "solucao": "Climatizador evaporativo industrial junto à cortina lateral, com o difusor de aletas inclinado para baixo, direcionando o ar sobre os convidados.",
+      "resultado": "Ar renovado no salão sem mexer na decoração: o aparelho ficou rente à cortina, ao lado do paisagismo que já estava montado.",
+      "midia": [
+        {
+          "tipo": "imagem",
+          "arquivo": "rotary-acema-1.webp",
+          "poster": null,
+          "alt": "Climatizador evaporativo industrial com duto e difusor de aletas ao lado da cortina de tecido do salão, junto a um vaso de bambu"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "rotary-acema-2.mp4",
+          "poster": "rotary-acema-2.webp",
+          "alt": "Climatizador em operação no salão, com o difusor de aletas direcionando o ar para baixo e o painel digital aceso"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "rotary-acema-3.mp4",
+          "poster": "rotary-acema-3.webp",
+          "alt": "Close da logomarca Nuvem Air no duto do climatizador instalado no salão"
+        }
+      ],
+      "seo": {
+        "titulo": "Aluguel de climatizador para evento de entidade · Rotary Acema",
+        "descricao": "Climatizador evaporativo num salão de associação fechado por cortinas, sem janela: ar renovado sem alterar a decoração já montada. Case da Nuvem Air.",
+        "h1": "Rotary Acema: climatização para um salão de associação"
+      }
+    },
+    {
+      "slug": "hospital-universitario",
+      "tipo": "evento",
+      "categoria": "corporativo",
+      "cliente": "Hospital Universitário",
+      "cidade": "REVISAR: Maringá",
+      "uf": "PR",
+      "data": "REVISAR: 2025-11",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 3",
+      "area": "REVISAR: 400 m²",
+      "desafio": "Evento de tecnologia em saúde ocupando o auditório e o hall do hospital, com estandes, banners e público em pé na área de circulação.",
+      "solucao": "Climatizadores evaporativos industriais com duto em cotovelo no hall, encostados na parede e fora das portas do auditório e das rotas de maca.",
+      "resultado": "Hall climatizado sem obstruir a circulação e sem instalação elétrica nova — o equipamento saiu no fim do evento como entrou.",
+      "midia": [
+        {
+          "tipo": "video",
+          "arquivo": "hospital-universitario-1.mp4",
+          "poster": "hospital-universitario-1.webp",
+          "alt": "Climatizador evaporativo industrial com duto em cotovelo no hall do hospital, ao lado do banner do evento"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "hospital-universitario-2.mp4",
+          "poster": "hospital-universitario-2.webp",
+          "alt": "Climatizador posicionado no corredor de piso branco, perto dos banners dos expositores e dos balões verdes"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "hospital-universitario-3.mp4",
+          "poster": "hospital-universitario-3.webp",
+          "alt": "Auditório do hospital com poltronas verdes vazias, palco iluminado de azul e letreiro luminoso ao fundo"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "hospital-universitario-4.mp4",
+          "poster": "hospital-universitario-4.webp",
+          "alt": "Bandeiras dos expositores montadas no hall do hospital, ao lado de uma mesa de apoio com arranjo"
+        }
+      ],
+      "seo": {
+        "titulo": "Climatizador para hospital · Hospital Universitário",
+        "descricao": "Climatizadores evaporativos num congresso de saúde dentro do hospital: hall climatizado sem obra e sem obstruir a circulação. Case da Nuvem Air.",
+        "h1": "Climatização num hospital, onde não cabe improviso"
+      }
+    },
+    {
+      "slug": "weld-vision",
+      "tipo": "evento",
+      "categoria": "industria",
+      "cliente": "Weld Vision",
+      "cidade": "REVISAR: Maringá",
+      "uf": "PR",
+      "data": "REVISAR: 2025-02",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 2",
+      "area": "REVISAR: 800 m²",
+      "desafio": "Galpão de telha metálica com máquina de corte em operação: o telhado esquenta o vão e o processo devolve calor exatamente onde fica o operador.",
+      "solucao": "Climatizador evaporativo industrial com difusor duplo de aletas ao lado da máquina, com o ar direcionado ao posto de trabalho e não à peça.",
+      "resultado": "Ar mais fresco no posto do operador sem mexer no layout do galpão: o equipamento é móvel e acompanha a máquina que estiver rodando.",
+      "midia": [
+        {
+          "tipo": "video",
+          "arquivo": "weld-vision-1.mp4",
+          "poster": "weld-vision-1.webp",
+          "alt": "Climatizador evaporativo industrial com difusor duplo de aletas ao lado da máquina de corte, dentro do galpão de telha metálica"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "weld-vision-2.mp4",
+          "poster": "weld-vision-2.webp",
+          "alt": "Painel digital do climatizador em operação no chão de fábrica, com a máquina azul da Weld Vision ao lado"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "weld-vision-3.mp4",
+          "poster": "weld-vision-3.webp",
+          "alt": "Máquina de corte azul da Weld Vision instalada no galpão de estrutura metálica"
+        }
+      ],
+      "seo": {
+        "titulo": "Climatizador industrial para corte a laser · Weld Vision",
+        "descricao": "Climatizador evaporativo industrial ao lado da máquina de corte, num galpão de telha metálica: ar dirigido ao posto do operador. Case da Nuvem Air.",
+        "h1": "Weld Vision: calor de corte somado ao calor do galpão"
+      }
+    },
+    {
+      "slug": "agro-semente",
+      "tipo": "evento",
+      "categoria": "corporativo",
+      "cliente": "Agro Semente",
+      "cidade": "REVISAR: Maringá",
+      "uf": "PR",
+      "data": "REVISAR: 2025-01",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 2",
+      "area": "REVISAR: 200 m²",
+      "desafio": "Dia de campo montado no meio da lavoura de soja: estande de estrutura temporária, sem parede e com o chão de palha exposto ao sol.",
+      "solucao": "Climatizador evaporativo industrial com o duto direcionado para dentro do estande, apoiado no chão de palha e alinhado à treliça da estrutura.",
+      "resultado": "A área de recepção dos visitantes ficou utilizável no meio do dia, com o aparelho na borda da estrutura e fora do caminho da visitação.",
+      "midia": [
+        {
+          "tipo": "imagem",
+          "arquivo": "agro-semente-1.webp",
+          "poster": null,
+          "alt": "Climatizador evaporativo industrial com duto instalado na beira do talhão de soja, sob a estrutura do estande"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "agro-semente-2.mp4",
+          "poster": "agro-semente-2.webp",
+          "alt": "Climatizador em operação sob a tenda do estande, com as cadeiras plásticas dos visitantes ao fundo"
+        },
+        {
+          "tipo": "imagem",
+          "arquivo": "agro-semente-3.webp",
+          "poster": null,
+          "alt": "Estande de madeira e estrutura laranja montado no meio da lavoura, com fardos de palha ao redor"
+        }
+      ],
+      "seo": {
+        "titulo": "Climatizador para feira agro · Case Agro Semente | Nuvem Air",
+        "descricao": "Climatizador evaporativo num dia de campo montado na lavoura de soja: área de recepção utilizável ao meio-dia, sem parede. Case da Nuvem Air.",
+        "h1": "Feira agro na lavoura: climatizar o que não tem parede"
+      }
+    },
+    {
+      "slug": "havam",
+      "tipo": "evento",
+      "categoria": "galpao",
+      "cliente": "Havam",
+      "cidade": "REVISAR: Maringá",
+      "uf": "PR",
+      "data": "REVISAR: 2025-02",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 4",
+      "area": "REVISAR: 1.500 m²",
+      "desafio": "Galpão de distribuição com porta-paletes carregados até o alto: o vão é fechado, a mercadoria bloqueia a ventilação e o ar parado se acumula nos corredores.",
+      "solucao": "Dois climatizadores evaporativos industriais na cabeceira dos corredores, entre as ruas de porta-paletes, soprando no sentido do corredor.",
+      "resultado": "Ar circulando nos corredores de separação sem nada preso à estrutura do porta-paletes e sem reduzir o espaço de manobra.",
+      "midia": [
+        {
+          "tipo": "video",
+          "arquivo": "havam-1.mp4",
+          "poster": "havam-1.webp",
+          "alt": "Climatizador evaporativo industrial com duto em cotovelo dentro do galpão, diante dos porta-paletes carregados"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "havam-2.mp4",
+          "poster": "havam-2.webp",
+          "alt": "Fachada do galpão com painéis pintados e pátio de manobra, em dia de céu aberto"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "havam-3.mp4",
+          "poster": "havam-3.webp",
+          "alt": "Dois climatizadores evaporativos industriais lado a lado no corredor do galpão, encostados no porta-paletes azul"
+        }
+      ],
+      "seo": {
+        "titulo": "Climatização de galpão · Case Havam | Nuvem Air",
+        "descricao": "Dois climatizadores evaporativos na cabeceira dos corredores de um galpão de distribuição: ar circulando entre os porta-paletes. Case da Nuvem Air.",
+        "h1": "Havam: um galpão que ficou utilizável no meio da tarde"
+      }
+    },
+    {
+      "slug": "ecospeed",
+      "tipo": "evento",
+      "categoria": "corporativo",
+      "cliente": "Ecospeed",
+      "cidade": "REVISAR: Maringá",
+      "uf": "PR",
+      "data": "REVISAR: 2025-11",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 1",
+      "area": "REVISAR: 150 m²",
+      "desafio": "Área coberta de convivência da empresa, aberta de um lado e com piso de grama sintética, usada pelo time em pé nas mesas altas.",
+      "solucao": "Climatizador evaporativo industrial com duto em cotovelo na cabeceira da área, lançando o ar por cima das mesas altas em direção ao lado aberto.",
+      "resultado": "Um ponto de alívio térmico num espaço aberto que não comporta ar-condicionado, montado e retirado sem obra.",
+      "midia": [
+        {
+          "tipo": "video",
+          "arquivo": "ecospeed-1.mp4",
+          "poster": "ecospeed-1.webp",
+          "alt": "Climatizador evaporativo industrial com duto em cotovelo na área coberta da empresa, com mesas altas e piso de grama sintética ao fundo"
+        }
+      ],
+      "seo": {
+        "titulo": "Climatizador para empresa · Case Ecospeed | Nuvem Air",
+        "descricao": "Climatizador evaporativo numa área coberta de convivência aberta de um lado: alívio térmico onde não cabe ar-condicionado. Case da Nuvem Air.",
+        "h1": "Ecospeed: climatização pontual para a área de convivência"
+      }
+    },
+    {
+      "slug": "ciacollor",
+      "tipo": "evento",
+      "categoria": "corporativo",
+      "cliente": "Ciacollor",
+      "cidade": "REVISAR: Maringá",
+      "uf": "PR",
+      "data": "REVISAR: 2025-12",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 3",
+      "area": "REVISAR: 400 m²",
+      "desafio": "Evento da empresa num pavilhão fechado por cortinas, com as cadeiras montadas em fileiras e o piso claro devolvendo o calor das luminárias.",
+      "solucao": "Climatizadores evaporativos industriais com duto em cotovelo nas laterais do pavilhão, com o ar passando por cima das fileiras de cadeiras.",
+      "resultado": "O pavilhão ficou utilizável com a plateia cheia e os equipamentos ficaram atrás da linha das cortinas, fora do campo de visão do palco.",
+      "midia": [
+        {
+          "tipo": "video",
+          "arquivo": "ciacollor-1.mp4",
+          "poster": "ciacollor-1.webp",
+          "alt": "Climatizador evaporativo industrial com duto ao lado das cortinas do pavilhão, de frente para as cadeiras montadas em fileiras"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "ciacollor-2.mp4",
+          "poster": "ciacollor-2.webp",
+          "alt": "Duto do climatizador Nuvem Air em primeiro plano e o lounge do pavilhão ao fundo"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "ciacollor-3.mp4",
+          "poster": "ciacollor-3.webp",
+          "alt": "Lago e gramado da área externa onde o evento da Ciacollor foi montado"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "ciacollor-4.mp4",
+          "poster": "ciacollor-4.webp",
+          "alt": "Painel gráfico da Ciacollor montado no gramado, em frente ao pavilhão envidraçado"
+        }
+      ],
+      "seo": {
+        "titulo": "Climatizador para salão de eventos · Case Ciacollor | Nuvem Air",
+        "descricao": "Climatizadores evaporativos nas laterais de um pavilhão fechado por cortinas: ar por cima da plateia cheia e equipamento fora de cena. Case da Nuvem Air.",
+        "h1": "Ciacollor: um salão de cortinado que não podia ficar abafado"
+      }
+    },
+    {
+      "slug": "quinta-dos-mouroes",
+      "tipo": "evento",
+      "categoria": "casamento",
+      "cliente": "Quinta dos Mourões",
+      "cidade": "REVISAR: Maringá",
+      "uf": "PR",
+      "data": "REVISAR: 2025-10",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 3",
+      "area": "REVISAR: 350 m²",
+      "desafio": "Espaço de eventos com cobertura metálica e laterais abertas para o campo: sombra o dia inteiro, mas nenhuma barreira que tire o ar da inércia.",
+      "solucao": "Climatizador evaporativo industrial com duto em cotovelo na borda da área coberta, soprando de fora para dentro, por cima do lounge e das mesas.",
+      "resultado": "Ar em movimento sob a cobertura sem fechar a vista para os morros, com o aparelho apoiado no bloquete e alimentado por mangueira.",
+      "midia": [
+        {
+          "tipo": "video",
+          "arquivo": "quinta-dos-mouroes-1.mp4",
+          "poster": "quinta-dos-mouroes-1.webp",
+          "alt": "Climatizador evaporativo industrial com duto sob a cobertura metálica do espaço de eventos, com o céu aberto ao fundo"
+        },
+        {
+          "tipo": "imagem",
+          "arquivo": "quinta-dos-mouroes-2.webp",
+          "poster": null,
+          "alt": "Climatizador evaporativo industrial na beira da área coberta, com as mesas montadas e os morros verdes ao fundo"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "quinta-dos-mouroes-3.mp4",
+          "poster": "quinta-dos-mouroes-3.webp",
+          "alt": "Lounge de poltronas cinza montado sob a cobertura, em frente ao painel de fotos do espaço de eventos"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "quinta-dos-mouroes-4.mp4",
+          "poster": "quinta-dos-mouroes-4.webp",
+          "alt": "Área coberta do espaço de eventos com sofá, poltronas e o climatizador instalado na lateral aberta"
+        }
+      ],
+      "seo": {
+        "titulo": "Climatizador para espaço de eventos · Quinta dos Mourões",
+        "descricao": "Climatizador evaporativo na borda de uma área coberta e aberta para o campo: ar em movimento sobre as mesas sem fechar a vista. Case da Nuvem Air.",
+        "h1": "Quinta dos Mourões: festa ao ar livre com ar fresco"
+      }
+    },
+    {
+      "slug": "chacara-jandaia",
+      "tipo": "evento",
+      "categoria": "casamento",
+      "cliente": "Chácara em Jandaia",
+      "cidade": "REVISAR: Jandaia do Sul",
+      "uf": "PR",
+      "data": "REVISAR: 2025-11",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 2",
+      "area": "REVISAR: 300 m²",
+      "desafio": "Festa numa tenda montada sobre o gramado da chácara: sem parede, sem piso firme e com o sol batendo na lona até o fim da tarde.",
+      "solucao": "Dois climatizadores evaporativos industriais apoiados em palete na borda da tenda, alimentados por mangueira e soprando para dentro da área das mesas.",
+      "resultado": "O palete manteve o aparelho nivelado e fora da grama molhada, e o ar entrou pela lateral aberta sem passar por cima do buffet.",
+      "midia": [
+        {
+          "tipo": "video",
+          "arquivo": "chacara-jandaia-1.mp4",
+          "poster": "chacara-jandaia-1.webp",
+          "alt": "Climatizador evaporativo industrial com difusor de aletas montado no gramado da chácara, ligado à mangueira de água"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "chacara-jandaia-2.mp4",
+          "poster": "chacara-jandaia-2.webp",
+          "alt": "Close da logomarca Nuvem Air no duto do climatizador montado na chácara"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "chacara-jandaia-3.mp4",
+          "poster": "chacara-jandaia-3.webp",
+          "alt": "Tenda branca montada no gramado da chácara, com o climatizador posicionado na lateral aberta"
+        },
+        {
+          "tipo": "imagem",
+          "arquivo": "chacara-jandaia-4.webp",
+          "poster": null,
+          "alt": "Climatizador evaporativo industrial sobre palete na borda da tenda, com um segundo aparelho ao fundo e o sol baixo"
+        }
+      ],
+      "seo": {
+        "titulo": "Climatizador para chácara e festa · Chácara Jandaia",
+        "descricao": "Dois climatizadores evaporativos sobre palete na borda de uma tenda montada no gramado da chácara, alimentados por mangueira. Case da Nuvem Air.",
+        "h1": "Chácara em Jandaia: climatizar uma festa sem parede"
+      }
+    },
+    {
+      "slug": "confraternizacao-empresa-jandaia",
+      "tipo": "evento",
+      "categoria": "corporativo",
+      "cliente": "Confraternização de empresa em Jandaia",
+      "cidade": "REVISAR: Jandaia do Sul",
+      "uf": "PR",
+      "data": "REVISAR: 2025-12",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 2",
+      "area": "REVISAR: 500 m²",
+      "desafio": "Confraternização montada dentro do próprio galpão da empresa, com mesas redondas e cadeiras com capa ocupando a área de produção liberada.",
+      "solucao": "Climatizador evaporativo industrial com duto em cotovelo na cabeceira do galpão, com a vazão ajustada no painel digital durante a montagem.",
+      "resultado": "O galpão recebeu o time inteiro sentado sem ficar abafado, e o equipamento saiu no dia seguinte devolvendo a área à produção.",
+      "midia": [
+        {
+          "tipo": "video",
+          "arquivo": "confraternizacao-empresa-jandaia-1.mp4",
+          "poster": "confraternizacao-empresa-jandaia-1.webp",
+          "alt": "Climatizador evaporativo industrial com duto em cotovelo no galpão da empresa, de frente para as mesas e cadeiras com capa branca"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "confraternizacao-empresa-jandaia-2.mp4",
+          "poster": "confraternizacao-empresa-jandaia-2.webp",
+          "alt": "Painel digital do climatizador sendo ajustado durante a montagem da confraternização"
+        }
+      ],
+      "seo": {
+        "titulo": "Climatizador para confraternização de empresa · Jandaia",
+        "descricao": "Climatizador evaporativo numa confraternização montada dentro do próprio galpão da empresa: mesas postas e ar em movimento. Case da Nuvem Air.",
+        "h1": "Confraternização em Jandaia: o time inteiro, sem abafamento"
+      }
+    },
+    {
+      "slug": "casamento-em-loanda",
+      "tipo": "evento",
+      "categoria": "casamento",
+      "cliente": "Casamento em Loanda",
+      "cidade": "Loanda",
+      "uf": "PR",
+      "data": "REVISAR: 2025-11",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 4",
+      "area": "REVISAR: 300 m²",
+      "desafio": "Recepção num salão de tijolo aparente com telhado de telha cerâmica sobre estrutura de madeira, com as mesas ocupando o vão inteiro.",
+      "solucao": "Climatizadores evaporativos industriais encostados nas colunas de tijolo, com o duto em cotovelo passando o ar por cima das mesas postas.",
+      "resultado": "Os aparelhos ficaram alinhados às colunas, fora do enquadramento das mesas, e o ar chegou ao centro do salão sem cabo cruzando o piso.",
+      "midia": [
+        {
+          "tipo": "imagem",
+          "arquivo": "casamento-em-loanda-1.webp",
+          "poster": null,
+          "alt": "Climatizador evaporativo industrial no salão de tijolo aparente do casamento, com as mesas postas e as cadeiras transparentes ao lado"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "casamento-em-loanda-2.mp4",
+          "poster": "casamento-em-loanda-2.webp",
+          "alt": "Dois climatizadores evaporativos industriais encostados na parede de tijolo do salão do casamento"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "casamento-em-loanda-3.mp4",
+          "poster": "casamento-em-loanda-3.webp",
+          "alt": "Climatizador com duto em cotovelo ao lado das mesas de toalha verde, sob o telhado de telha cerâmica"
+        }
+      ],
+      "seo": {
+        "titulo": "Aluguel de climatizador para casamento em Loanda · Nuvem Air",
+        "descricao": "Climatizadores evaporativos numa recepção de casamento em Loanda (PR), num salão de tijolo aparente: instalação discreta e sem obra. Case da Nuvem Air.",
+        "h1": "Um casamento em Loanda sem ninguém abanando o leque"
+      }
+    },
+    {
+      "slug": "soft-dream-tecelagem",
+      "tipo": "mensal",
+      "categoria": "industria",
+      "cliente": "Soft Dream Tecelagem",
+      "cidade": "REVISAR: Maringá",
+      "uf": "PR",
+      "data": "REVISAR: 2025-01",
+      "equipamento": [
+        "Climatizador Evaporativo Industrial Portátil"
+      ],
+      "quantidade": "REVISAR: 4",
+      "area": "REVISAR: 1.200 m²",
+      "desafio": "Chão de fábrica de tecelagem em operação contínua: os teares trabalham o turno inteiro e o ar precisa se mover sem levantar fiapo sobre o urdume.",
+      "solucao": "Climatizadores evaporativos industriais móveis no piso da tecelagem, posicionados nos corredores entre as máquinas e realocáveis a cada turno.",
+      "resultado": "Locação mensal em vez de compra: os aparelhos ficam na fábrica durante a temporada quente e mudam de posição conforme a linha que está rodando.",
+      "midia": [
+        {
+          "tipo": "video",
+          "arquivo": "soft-dream-tecelagem-1.mp4",
+          "poster": "soft-dream-tecelagem-1.webp",
+          "alt": "Climatizador evaporativo industrial com difusor de aletas sobre o piso azul da tecelagem"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "soft-dream-tecelagem-2.mp4",
+          "poster": "soft-dream-tecelagem-2.webp",
+          "alt": "Climatizador evaporativo industrial com duto em cotovelo em operação no galpão da tecelagem"
+        },
+        {
+          "tipo": "video",
+          "arquivo": "soft-dream-tecelagem-3.mp4",
+          "poster": "soft-dream-tecelagem-3.webp",
+          "alt": "Climatizador posicionado entre as máquinas da tecelagem, no piso azul do chão de fábrica"
+        },
+        {
+          "tipo": "imagem",
+          "arquivo": "soft-dream-tecelagem-4.webp",
+          "poster": null,
+          "alt": "Climatizador evaporativo industrial ao lado do tear, com os fios amarelos do urdume esticados ao fundo"
+        }
+      ],
+      "seo": {
+        "titulo": "Climatizador para tecelagem · Locação mensal Soft Dream",
+        "descricao": "Locação mensal de climatizadores evaporativos numa tecelagem em operação contínua: conforto térmico no chão de fábrica com baixo consumo. Case da Nuvem Air.",
+        "h1": "Soft Dream: climatização mensal numa tecelagem"
+      }
+    }
+  ]
+}

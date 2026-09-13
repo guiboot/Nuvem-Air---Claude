@@ -1,0 +1,4 @@
+# Arquivos de trabalho que não são servidos
+docs/
+tests/
+*.MOV

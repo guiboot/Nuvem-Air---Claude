@@ -1,0 +1,282 @@
+{
+  "motor-classic": [
+    {
+      "tipo": "video",
+      "arquivo": "motor-classic-1.mp4",
+      "poster": "motor-classic-1.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "motor-classic-2.mp4",
+      "poster": "motor-classic-2.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "motor-classic-3.mp4",
+      "poster": "motor-classic-3.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "motor-classic-4.mp4",
+      "poster": "motor-classic-4.webp"
+    }
+  ],
+  "companhia-de-melhoramentos": [
+    {
+      "tipo": "video",
+      "arquivo": "companhia-de-melhoramentos-1.mp4",
+      "poster": "companhia-de-melhoramentos-1.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "companhia-de-melhoramentos-2.mp4",
+      "poster": "companhia-de-melhoramentos-2.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "companhia-de-melhoramentos-3.mp4",
+      "poster": "companhia-de-melhoramentos-3.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "companhia-de-melhoramentos-4.mp4",
+      "poster": "companhia-de-melhoramentos-4.webp"
+    }
+  ],
+  "rotary-sicredi": [
+    {
+      "tipo": "video",
+      "arquivo": "rotary-sicredi-1.mp4",
+      "poster": "rotary-sicredi-1.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "rotary-sicredi-2.mp4",
+      "poster": "rotary-sicredi-2.webp"
+    },
+    {
+      "tipo": "imagem",
+      "arquivo": "rotary-sicredi-3.webp",
+      "poster": null
+    },
+    {
+      "tipo": "video",
+      "arquivo": "rotary-sicredi-4.mp4",
+      "poster": "rotary-sicredi-4.webp"
+    }
+  ],
+  "rotary-acema": [
+    {
+      "tipo": "imagem",
+      "arquivo": "rotary-acema-1.webp",
+      "poster": null
+    },
+    {
+      "tipo": "video",
+      "arquivo": "rotary-acema-2.mp4",
+      "poster": "rotary-acema-2.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "rotary-acema-3.mp4",
+      "poster": "rotary-acema-3.webp"
+    }
+  ],
+  "hospital-universitario": [
+    {
+      "tipo": "video",
+      "arquivo": "hospital-universitario-1.mp4",
+      "poster": "hospital-universitario-1.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "hospital-universitario-2.mp4",
+      "poster": "hospital-universitario-2.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "hospital-universitario-3.mp4",
+      "poster": "hospital-universitario-3.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "hospital-universitario-4.mp4",
+      "poster": "hospital-universitario-4.webp"
+    }
+  ],
+  "weld-vision": [
+    {
+      "tipo": "video",
+      "arquivo": "weld-vision-1.mp4",
+      "poster": "weld-vision-1.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "weld-vision-2.mp4",
+      "poster": "weld-vision-2.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "weld-vision-3.mp4",
+      "poster": "weld-vision-3.webp"
+    }
+  ],
+  "agro-semente": [
+    {
+      "tipo": "imagem",
+      "arquivo": "agro-semente-1.webp",
+      "poster": null
+    },
+    {
+      "tipo": "video",
+      "arquivo": "agro-semente-2.mp4",
+      "poster": "agro-semente-2.webp"
+    },
+    {
+      "tipo": "imagem",
+      "arquivo": "agro-semente-3.webp",
+      "poster": null
+    }
+  ],
+  "havam": [
+    {
+      "tipo": "video",
+      "arquivo": "havam-1.mp4",
+      "poster": "havam-1.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "havam-2.mp4",
+      "poster": "havam-2.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "havam-3.mp4",
+      "poster": "havam-3.webp"
+    }
+  ],
+  "ecospeed": [
+    {
+      "tipo": "video",
+      "arquivo": "ecospeed-1.mp4",
+      "poster": "ecospeed-1.webp"
+    }
+  ],
+  "ciacollor": [
+    {
+      "tipo": "video",
+      "arquivo": "ciacollor-1.mp4",
+      "poster": "ciacollor-1.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "ciacollor-2.mp4",
+      "poster": "ciacollor-2.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "ciacollor-3.mp4",
+      "poster": "ciacollor-3.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "ciacollor-4.mp4",
+      "poster": "ciacollor-4.webp"
+    }
+  ],
+  "quinta-dos-mouroes": [
+    {
+      "tipo": "video",
+      "arquivo": "quinta-dos-mouroes-1.mp4",
+      "poster": "quinta-dos-mouroes-1.webp"
+    },
+    {
+      "tipo": "imagem",
+      "arquivo": "quinta-dos-mouroes-2.webp",
+      "poster": null
+    },
+    {
+      "tipo": "video",
+      "arquivo": "quinta-dos-mouroes-3.mp4",
+      "poster": "quinta-dos-mouroes-3.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "quinta-dos-mouroes-4.mp4",
+      "poster": "quinta-dos-mouroes-4.webp"
+    }
+  ],
+  "chacara-jandaia": [
+    {
+      "tipo": "video",
+      "arquivo": "chacara-jandaia-1.mp4",
+      "poster": "chacara-jandaia-1.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "chacara-jandaia-2.mp4",
+      "poster": "chacara-jandaia-2.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "chacara-jandaia-3.mp4",
+      "poster": "chacara-jandaia-3.webp"
+    },
+    {
+      "tipo": "imagem",
+      "arquivo": "chacara-jandaia-4.webp",
+      "poster": null
+    }
+  ],
+  "confraternizacao-empresa-jandaia": [
+    {
+      "tipo": "video",
+      "arquivo": "confraternizacao-empresa-jandaia-1.mp4",
+      "poster": "confraternizacao-empresa-jandaia-1.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "confraternizacao-empresa-jandaia-2.mp4",
+      "poster": "confraternizacao-empresa-jandaia-2.webp"
+    }
+  ],
+  "casamento-em-loanda": [
+    {
+      "tipo": "imagem",
+      "arquivo": "casamento-em-loanda-1.webp",
+      "poster": null
+    },
+    {
+      "tipo": "video",
+      "arquivo": "casamento-em-loanda-2.mp4",
+      "poster": "casamento-em-loanda-2.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "casamento-em-loanda-3.mp4",
+      "poster": "casamento-em-loanda-3.webp"
+    }
+  ],
+  "soft-dream-tecelagem": [
+    {
+      "tipo": "video",
+      "arquivo": "soft-dream-tecelagem-1.mp4",
+      "poster": "soft-dream-tecelagem-1.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "soft-dream-tecelagem-2.mp4",
+      "poster": "soft-dream-tecelagem-2.webp"
+    },
+    {
+      "tipo": "video",
+      "arquivo": "soft-dream-tecelagem-3.mp4",
+      "poster": "soft-dream-tecelagem-3.webp"
+    },
+    {
+      "tipo": "imagem",
+      "arquivo": "soft-dream-tecelagem-4.webp",
+      "poster": null
+    }
+  ]
+}

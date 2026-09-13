@@ -1,0 +1,88 @@
+/* Seção de eventos — cases.  Carregado depois do styles.css, que define as
+   variáveis de cor e o .container. */
+
+.case { padding: 140px 0 100px; }
+
+.case-trilha { font-size: 13px; color: var(--ink-2); margin-bottom: 28px; }
+.case-trilha a { color: var(--ink-2); text-decoration: none; }
+.case-trilha a:hover { text-decoration: underline; }
+.case-trilha span { margin: 0 6px; }
+
+.case-selo {
+  display: inline-block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-2);
+}
+.case-selo--mensal { background: var(--paper-2); }
+
+.case-titulo { font-size: clamp(30px, 5vw, 52px); line-height: 1.1; margin: 18px 0 10px; max-width: 16ch; }
+.case-local { font-size: 16px; color: var(--ink-2); margin-bottom: 40px; }
+
+.case-ficha {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 48px;
+}
+.case-ficha__linha { background: var(--paper-2); padding: 18px 20px; }
+.case-ficha dt { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-2); margin-bottom: 6px; }
+.case-ficha dd { font-size: 16px; margin: 0; }
+
+.case-midia { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 56px; }
+/* Mídia real é retrato (720x1280 vídeo, 900x1200 foto) — 3/4, não 4/3, senão
+   o object-fit: cover corta a maior parte de cada imagem. */
+.case-midia__item { margin: 0; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 4px; background: var(--paper-2); }
+.case-midia__item img,
+.case-midia__item video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.case-bloco { max-width: 620px; margin-bottom: 36px; }
+.case-bloco h2 { font-size: 22px; margin-bottom: 10px; }
+.case-bloco p { font-size: 17px; color: var(--ink-2); }
+
+.case-cta { border-top: 1px solid var(--line); margin-top: 56px; padding-top: 48px; max-width: 620px; }
+.case-cta h2 { font-size: 26px; margin-bottom: 10px; }
+.case-cta p { font-size: 17px; color: var(--ink-2); margin-bottom: 22px; }
+
+.case-irmaos { border-top: 1px solid var(--line); margin-top: 64px; padding-top: 48px; }
+.case-irmaos h2 { font-size: 20px; margin-bottom: 22px; }
+.case-irmaos__grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 28px; }
+.case-irmaos__card { text-decoration: none; color: inherit; display: block; }
+.case-irmaos__card img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 4px; margin-bottom: 10px; display: block; }
+.case-irmaos__card strong { display: block; font-size: 16px; }
+.case-irmaos__card span { font-size: 13px; color: var(--ink-2); }
+.case-voltar { font-size: 15px; text-decoration: none; color: var(--ink-2); }
+.case-voltar:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .case { padding: 110px 0 72px; }
+  .case-ficha { grid-template-columns: 1fr 1fr; }
+}
+
+/* Listagem /eventos */
+
+.lista { padding: 140px 0 100px; }
+.lista__titulo { font-size: clamp(32px, 5.5vw, 56px); line-height: 1.08; margin: 18px 0 12px; }
+.lista__sub { font-size: 17px; color: var(--ink-2); max-width: 560px; margin-bottom: 36px; }
+
+.lista__filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+.lista__filtro {
+  font: inherit; font-size: 14px; cursor: pointer;
+  padding: 9px 16px; border-radius: 999px;
+  border: 1px solid var(--line); background: transparent; color: var(--ink-2);
+}
+.lista__filtro:hover { background: var(--paper-2); }
+.lista__filtro.is-ativo { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.lista__grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+.lista__card { text-decoration: none; color: inherit; display: block; }
+.lista__card[hidden] { display: none; }
+/* Mídia real é retrato (900x1200 foto) — 3/4, não 4/3, senão o
+   object-fit: cover corta a maior parte de cada imagem. */
+.lista__card img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 4px; margin-bottom: 12px; display: block; }
+.lista__card-selo { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--ink-2); display: block; margin-bottom: 4px; }
+.lista__card strong { display: block; font-size: 17px; margin-bottom: 2px; }
+.lista__card-local { font-size: 14px; color: var(--ink-2); }
+
+.lista__vazio { font-size: 16px; color: var(--ink-2); padding: 40px 0; }
+
+@media (max-width: 640px) {
+  .lista { padding: 110px 0 72px; }
+  .lista__grade { grid-template-columns: 1fr 1fr; gap: 16px; }
+}

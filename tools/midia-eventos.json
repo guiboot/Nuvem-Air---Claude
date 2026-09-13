@@ -1,0 +1,127 @@
+{
+  "motor-classic": {
+    "origem": "Eventos/Motor Classic",
+    "arquivos": [
+      "06E35254-917C-42A8-B58C-E41A9F14EF7E.MP4",
+      "IMG_1943.MOV",
+      "IMG_1952.MOV",
+      "IMG_1948.MOV"
+    ]
+  },
+  "companhia-de-melhoramentos": {
+    "origem": "Eventos/Evento Compahia de Melhoramentos ",
+    "arquivos": [
+      "IMG_2297.MOV",
+      "IMG_2281.MOV",
+      "IMG_2296.MOV",
+      "IMG_2285.MOV"
+    ]
+  },
+  "rotary-sicredi": {
+    "origem": "Eventos/Rotary Sicreed",
+    "arquivos": [
+      "IMG_0883.MOV",
+      "IMG_0899.MOV",
+      "IMG_0870 2.HEIC",
+      "IMG_0889.MOV"
+    ]
+  },
+  "rotary-acema": {
+    "origem": "Eventos/Evento Rotary Acema",
+    "arquivos": [
+      "IMG_2180.HEIC",
+      "IMG_2181.MOV",
+      "IMG_2182.MOV"
+    ]
+  },
+  "hospital-universitario": {
+    "origem": "Eventos/Hospital Universitario",
+    "arquivos": [
+      "IMG_1271.MOV",
+      "IMG_1272.MOV",
+      "IMG_1270.MOV",
+      "IMG_1269.MOV"
+    ]
+  },
+  "weld-vision": {
+    "origem": "Eventos/Evento Weld Vision 03",
+    "arquivos": [
+      "IMG_0019.MOV",
+      "IMG_0021.MOV",
+      "IMG_0022.MOV"
+    ]
+  },
+  "agro-semente": {
+    "origem": "Eventos/Evento Agro Semente",
+    "arquivos": [
+      "IMG_1702.HEIC",
+      "IMG_1703.MOV",
+      "IMG_1705.HEIC"
+    ]
+  },
+  "havam": {
+    "origem": "Eventos/Havam",
+    "arquivos": [
+      "IMG_1758.MOV",
+      "IMG_1757.MOV",
+      "IMG_1755.MOV"
+    ]
+  },
+  "ecospeed": {
+    "origem": "Eventos/Ecospeed",
+    "arquivos": [
+      "IMG_1882.MOV"
+    ]
+  },
+  "ciacollor": {
+    "origem": "Eventos/Ciacollor",
+    "arquivos": [
+      "IMG_1716.MOV",
+      "IMG_1717.MOV",
+      "IMG_1718.MOV",
+      "IMG_1719.MOV"
+    ]
+  },
+  "quinta-dos-mouroes": {
+    "origem": "Eventos/Quinta dos Mouroes",
+    "arquivos": [
+      "IMG_1978.MOV",
+      "IMG_1980 2.HEIC",
+      "IMG_1982.MOV",
+      "IMG_1983.MOV"
+    ]
+  },
+  "chacara-jandaia": {
+    "origem": "Eventos/Evento Chacara Jandaia",
+    "arquivos": [
+      "D566D3B8-D7EE-4F03-B060-48E55CA06435.MP4",
+      "IMG_1652.MOV",
+      "IMG_1653.MOV",
+      "IMG_1654.HEIC"
+    ]
+  },
+  "confraternizacao-empresa-jandaia": {
+    "origem": "Eventos/Confraterzinaçao Empresa Jandaia",
+    "arquivos": [
+      "IMG_1510.MOV",
+      "IMG_1511.MOV"
+    ]
+  },
+  "casamento-em-loanda": {
+    "origem": "Eventos/Casamento Loanda",
+    "arquivos": [
+      "IMG_1473 2.HEIC",
+      "IMG_1474 2.MOV",
+      "IMG_1475 2.MOV"
+    ]
+  },
+  "soft-dream-tecelagem": {
+    "origem": "Mensal/Soft Dream Tecelagem",
+    "arquivos": [
+      "climatizador-fixo.MOV",
+      "climatizador-industrial-portatil.MOV",
+      "climatizador-industrial.MOV",
+      "climatizador-maringa.HEIC"
+    ]
+  }
+}

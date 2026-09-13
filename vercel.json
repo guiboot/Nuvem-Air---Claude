@@ -1,13 +1,48 @@
 {
   "cleanUrls": false,
   "rewrites": [
-    { "source": "/home", "destination": "/index.html" }
+    {
+      "source": "/home",
+      "destination": "/index.html"
+    }
   ],
   "redirects": [
-    { "source": "/comprar", "destination": "https://vendas.nuvemair.com.br/", "permanent": true },
-    { "source": "/painel-de-led", "destination": "/", "permanent": true },
-    { "source": "/painel-de-led.html", "destination": "/", "permanent": true },
-    { "source": "/totem-de-led", "destination": "/", "permanent": true },
-    { "source": "/totem-de-led.html", "destination": "/", "permanent": true }
-  ]
+    {
+      "source": "/comprar",
+      "destination": "https://vendas.nuvemair.com.br/",
+      "permanent": true
+    },
+    {
+      "source": "/painel-de-led",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/painel-de-led.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/totem-de-led",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/totem-de-led.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/eventos/index.html",
+      "destination": "/eventos",
+      "permanent": true
+    },
+    {
+      "source": "/eventos/:slug/index.html",
+      "destination": "/eventos/:slug",
+      "permanent": true
+    }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "."
 }
