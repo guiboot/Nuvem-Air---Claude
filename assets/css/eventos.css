@@ -86,3 +86,9 @@
   .lista { padding: 110px 0 72px; }
   .lista__grade { grid-template-columns: 1fr 1fr; gap: 16px; }
 }
+
+/* O vídeo do case responde ao toque (ver VIDEO_JS no gerador). O cursor e a
+   área de toque confortável sinalizam isso; quando o navegador recusa o
+   autoplay, o script liga os controles nativos e a afordância vira deles. */
+.case-midia__item video { cursor: pointer; }
+.case-midia__item video:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }

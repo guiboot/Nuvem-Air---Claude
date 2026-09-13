@@ -74,8 +74,11 @@ ${jsonld.map((o) => `  <script type="application/ld+json">\n${JSON.stringify(o, 
 `;
 }
 
-/* Um item de mídia. Vídeo reaproveita o lazy-load que o assets/js/app.js já
-   faz (IntersectionObserver com rootMargin de 300px) — nenhum JS novo.
+/* Um item de mídia. O vídeo sai sem `src` e quem o carrega é o VIDEO_JS logo
+   abaixo — não o assets/js/app.js. Esta seção já foi publicada num site cujo
+   app.js não tinha carregador de lazy-video, e o resultado foram 43 vídeos
+   que nunca chegavam a carregar. Agora a seção não depende mais de qual
+   versão do app.js a branch tem.
    Mídia toda em retrato (900x1200 foto, 720x1280 vídeo) — daí width/height
    e o aspect-ratio do CSS em 3/4, não 4/3. */
 function midia(c, m, primeiro) {
@@ -89,6 +92,62 @@ function midia(c, m, primeiro) {
           <img src="${base}${esc(m.arquivo)}" alt="${esc(m.alt)}" width="900" height="1200" decoding="async" loading="${primeiro ? 'eager' : 'lazy'}" />
         </figure>`;
 }
+
+/* Carrega e toca os vídeos do case, sem depender do assets/js/app.js.
+ *
+ * Dois problemas que este script resolve:
+ *
+ * 1. O vídeo sai do gerador sem `src`, só com `data-src`, para a página não
+ *    puxar dezenas de megabytes de uma vez. Alguém precisa promover
+ *    data-src a src quando o vídeo entra na tela.
+ *
+ * 2. No celular o autoplay é recusado com frequência — modo de baixo
+ *    consumo do iPhone, economia de dados, preferência de movimento
+ *    reduzido. Como o vídeo não tem `controls`, ele ficava inerte: poster
+ *    na tela e nada acontecia ao tocar. Agora, quando o autoplay é
+ *    recusado, ele ganha os controles nativos e passa a responder.
+ */
+const VIDEO_JS = `  <script>
+    (function () {
+      var videos = [].slice.call(document.querySelectorAll('video[data-src]'));
+      if (!videos.length) return;
+
+      function tocar(v) {
+        if (v.dataset.src) { v.src = v.dataset.src; delete v.dataset.src; }
+        var p = v.play();
+        /* Safari antigo devolve undefined em vez de Promise. */
+        if (p && p.catch) {
+          p.catch(function () {
+            /* Autoplay recusado. Sem controles, o vídeo seria inassistível. */
+            v.controls = true;
+          });
+        }
+      }
+
+      videos.forEach(function (v) {
+        v.addEventListener('click', function () {
+          /* Com os controles nativos à mostra, quem manda é o próprio
+             navegador — senão o toque no botão de play chegaria aqui
+             também e pausaria em seguida. */
+          if (v.controls) return;
+          if (v.paused) { tocar(v); } else { v.pause(); }
+        });
+      });
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entradas) {
+          entradas.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            tocar(e.target);
+            obs.unobserve(e.target);
+          });
+        }, { rootMargin: '300px' });
+        videos.forEach(function (v) { obs.observe(v); });
+      } else {
+        videos.forEach(tocar);
+      }
+    })();
+  </script>`;
 
 function ficha(c) {
   const linhas = [
@@ -195,6 +254,7 @@ ${vizinhos.map((v) => {
 
 ` + partes.rodape + `
   <script src="/assets/js/app.js?v=20260905-5"></script>
+${VIDEO_JS}
 </body>
 </html>
 `;

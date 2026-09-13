@@ -348,5 +348,46 @@
   </a>
   
   <script src="/assets/js/app.js?v=20260905-5"></script>
+  <script>
+    (function () {
+      var videos = [].slice.call(document.querySelectorAll('video[data-src]'));
+      if (!videos.length) return;
+
+      function tocar(v) {
+        if (v.dataset.src) { v.src = v.dataset.src; delete v.dataset.src; }
+        var p = v.play();
+        /* Safari antigo devolve undefined em vez de Promise. */
+        if (p && p.catch) {
+          p.catch(function () {
+            /* Autoplay recusado. Sem controles, o vídeo seria inassistível. */
+            v.controls = true;
+          });
+        }
+      }
+
+      videos.forEach(function (v) {
+        v.addEventListener('click', function () {
+          /* Com os controles nativos à mostra, quem manda é o próprio
+             navegador — senão o toque no botão de play chegaria aqui
+             também e pausaria em seguida. */
+          if (v.controls) return;
+          if (v.paused) { tocar(v); } else { v.pause(); }
+        });
+      });
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entradas) {
+          entradas.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            tocar(e.target);
+            obs.unobserve(e.target);
+          });
+        }, { rootMargin: '300px' });
+        videos.forEach(function (v) { obs.observe(v); });
+      } else {
+        videos.forEach(tocar);
+      }
+    })();
+  </script>
 </body>
 </html>
