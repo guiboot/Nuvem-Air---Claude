@@ -85,7 +85,7 @@ function midia(c, m, primeiro) {
   const base = `/assets/eventos/${c.slug}/`;
   if (m.tipo === 'video') {
     return `        <figure class="case-midia__item">
-          <video poster="${base}${esc(m.poster)}" class="lazy-video" data-src="${base}${esc(m.arquivo)}" muted loop playsinline preload="none" aria-label="${esc(m.alt)}"></video>
+          <video poster="${base}${esc(m.poster)}" data-src="${base}${esc(m.arquivo)}" muted loop playsinline preload="none" aria-label="${esc(m.alt)}"></video>
         </figure>`;
   }
   return `        <figure class="case-midia__item">
