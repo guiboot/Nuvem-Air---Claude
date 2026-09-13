@@ -257,13 +257,13 @@
 
       <div class="case-midia">
         <figure class="case-midia__item">
-          <video poster="/assets/eventos/weld-vision/weld-vision-1.webp" class="lazy-video" data-src="/assets/eventos/weld-vision/weld-vision-1.mp4" muted loop playsinline preload="none" aria-label="Climatizador evaporativo industrial com difusor duplo de aletas ao lado da máquina de corte, dentro do galpão de telha metálica"></video>
+          <video poster="/assets/eventos/weld-vision/weld-vision-1.webp" data-src="/assets/eventos/weld-vision/weld-vision-1.mp4" muted loop playsinline preload="none" aria-label="Climatizador evaporativo industrial com difusor duplo de aletas ao lado da máquina de corte, dentro do galpão de telha metálica"></video>
         </figure>
         <figure class="case-midia__item">
-          <video poster="/assets/eventos/weld-vision/weld-vision-2.webp" class="lazy-video" data-src="/assets/eventos/weld-vision/weld-vision-2.mp4" muted loop playsinline preload="none" aria-label="Painel digital do climatizador em operação no chão de fábrica, com a máquina azul da Weld Vision ao lado"></video>
+          <video poster="/assets/eventos/weld-vision/weld-vision-2.webp" data-src="/assets/eventos/weld-vision/weld-vision-2.mp4" muted loop playsinline preload="none" aria-label="Painel digital do climatizador em operação no chão de fábrica, com a máquina azul da Weld Vision ao lado"></video>
         </figure>
         <figure class="case-midia__item">
-          <video poster="/assets/eventos/weld-vision/weld-vision-3.webp" class="lazy-video" data-src="/assets/eventos/weld-vision/weld-vision-3.mp4" muted loop playsinline preload="none" aria-label="Máquina de corte azul da Weld Vision instalada no galpão de estrutura metálica"></video>
+          <video poster="/assets/eventos/weld-vision/weld-vision-3.webp" data-src="/assets/eventos/weld-vision/weld-vision-3.mp4" muted loop playsinline preload="none" aria-label="Máquina de corte azul da Weld Vision instalada no galpão de estrutura metálica"></video>
         </figure>
       </div>
 
@@ -352,5 +352,46 @@
   </a>
   
   <script src="/assets/js/app.js?v=20260905-5"></script>
+  <script>
+    (function () {
+      var videos = [].slice.call(document.querySelectorAll('video[data-src]'));
+      if (!videos.length) return;
+
+      function tocar(v) {
+        if (v.dataset.src) { v.src = v.dataset.src; delete v.dataset.src; }
+        var p = v.play();
+        /* Safari antigo devolve undefined em vez de Promise. */
+        if (p && p.catch) {
+          p.catch(function () {
+            /* Autoplay recusado. Sem controles, o vídeo seria inassistível. */
+            v.controls = true;
+          });
+        }
+      }
+
+      videos.forEach(function (v) {
+        v.addEventListener('click', function () {
+          /* Com os controles nativos à mostra, quem manda é o próprio
+             navegador — senão o toque no botão de play chegaria aqui
+             também e pausaria em seguida. */
+          if (v.controls) return;
+          if (v.paused) { tocar(v); } else { v.pause(); }
+        });
+      });
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entradas) {
+          entradas.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            tocar(e.target);
+            obs.unobserve(e.target);
+          });
+        }, { rootMargin: '300px' });
+        videos.forEach(function (v) { obs.observe(v); });
+      } else {
+        videos.forEach(tocar);
+      }
+    })();
+  </script>
 </body>
 </html>

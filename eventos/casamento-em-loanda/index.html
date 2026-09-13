@@ -261,10 +261,10 @@
           <img src="/assets/eventos/casamento-em-loanda/casamento-em-loanda-1.webp" alt="Climatizador evaporativo industrial no salão de tijolo aparente do casamento, com as mesas postas e as cadeiras transparentes ao lado" width="900" height="1200" decoding="async" loading="eager" />
         </figure>
         <figure class="case-midia__item">
-          <video poster="/assets/eventos/casamento-em-loanda/casamento-em-loanda-2.webp" class="lazy-video" data-src="/assets/eventos/casamento-em-loanda/casamento-em-loanda-2.mp4" muted loop playsinline preload="none" aria-label="Dois climatizadores evaporativos industriais encostados na parede de tijolo do salão do casamento"></video>
+          <video poster="/assets/eventos/casamento-em-loanda/casamento-em-loanda-2.webp" data-src="/assets/eventos/casamento-em-loanda/casamento-em-loanda-2.mp4" muted loop playsinline preload="none" aria-label="Dois climatizadores evaporativos industriais encostados na parede de tijolo do salão do casamento"></video>
         </figure>
         <figure class="case-midia__item">
-          <video poster="/assets/eventos/casamento-em-loanda/casamento-em-loanda-3.webp" class="lazy-video" data-src="/assets/eventos/casamento-em-loanda/casamento-em-loanda-3.mp4" muted loop playsinline preload="none" aria-label="Climatizador com duto em cotovelo ao lado das mesas de toalha verde, sob o telhado de telha cerâmica"></video>
+          <video poster="/assets/eventos/casamento-em-loanda/casamento-em-loanda-3.webp" data-src="/assets/eventos/casamento-em-loanda/casamento-em-loanda-3.mp4" muted loop playsinline preload="none" aria-label="Climatizador com duto em cotovelo ao lado das mesas de toalha verde, sob o telhado de telha cerâmica"></video>
         </figure>
       </div>
 
@@ -353,5 +353,46 @@
   </a>
   
   <script src="/assets/js/app.js?v=20260905-5"></script>
+  <script>
+    (function () {
+      var videos = [].slice.call(document.querySelectorAll('video[data-src]'));
+      if (!videos.length) return;
+
+      function tocar(v) {
+        if (v.dataset.src) { v.src = v.dataset.src; delete v.dataset.src; }
+        var p = v.play();
+        /* Safari antigo devolve undefined em vez de Promise. */
+        if (p && p.catch) {
+          p.catch(function () {
+            /* Autoplay recusado. Sem controles, o vídeo seria inassistível. */
+            v.controls = true;
+          });
+        }
+      }
+
+      videos.forEach(function (v) {
+        v.addEventListener('click', function () {
+          /* Com os controles nativos à mostra, quem manda é o próprio
+             navegador — senão o toque no botão de play chegaria aqui
+             também e pausaria em seguida. */
+          if (v.controls) return;
+          if (v.paused) { tocar(v); } else { v.pause(); }
+        });
+      });
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entradas) {
+          entradas.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            tocar(e.target);
+            obs.unobserve(e.target);
+          });
+        }, { rootMargin: '300px' });
+        videos.forEach(function (v) { obs.observe(v); });
+      } else {
+        videos.forEach(tocar);
+      }
+    })();
+  </script>
 </body>
 </html>

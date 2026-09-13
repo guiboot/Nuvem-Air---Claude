@@ -257,13 +257,13 @@
 
       <div class="case-midia">
         <figure class="case-midia__item">
-          <video poster="/assets/eventos/havam/havam-1.webp" class="lazy-video" data-src="/assets/eventos/havam/havam-1.mp4" muted loop playsinline preload="none" aria-label="Climatizador evaporativo industrial com duto em cotovelo dentro do galpão, diante dos porta-paletes carregados"></video>
+          <video poster="/assets/eventos/havam/havam-1.webp" data-src="/assets/eventos/havam/havam-1.mp4" muted loop playsinline preload="none" aria-label="Climatizador evaporativo industrial com duto em cotovelo dentro do galpão, diante dos porta-paletes carregados"></video>
         </figure>
         <figure class="case-midia__item">
-          <video poster="/assets/eventos/havam/havam-2.webp" class="lazy-video" data-src="/assets/eventos/havam/havam-2.mp4" muted loop playsinline preload="none" aria-label="Fachada do galpão com painéis pintados e pátio de manobra, em dia de céu aberto"></video>
+          <video poster="/assets/eventos/havam/havam-2.webp" data-src="/assets/eventos/havam/havam-2.mp4" muted loop playsinline preload="none" aria-label="Fachada do galpão com painéis pintados e pátio de manobra, em dia de céu aberto"></video>
         </figure>
         <figure class="case-midia__item">
-          <video poster="/assets/eventos/havam/havam-3.webp" class="lazy-video" data-src="/assets/eventos/havam/havam-3.mp4" muted loop playsinline preload="none" aria-label="Dois climatizadores evaporativos industriais lado a lado no corredor do galpão, encostados no porta-paletes azul"></video>
+          <video poster="/assets/eventos/havam/havam-3.webp" data-src="/assets/eventos/havam/havam-3.mp4" muted loop playsinline preload="none" aria-label="Dois climatizadores evaporativos industriais lado a lado no corredor do galpão, encostados no porta-paletes azul"></video>
         </figure>
       </div>
 
@@ -352,5 +352,46 @@
   </a>
   
   <script src="/assets/js/app.js?v=20260905-5"></script>
+  <script>
+    (function () {
+      var videos = [].slice.call(document.querySelectorAll('video[data-src]'));
+      if (!videos.length) return;
+
+      function tocar(v) {
+        if (v.dataset.src) { v.src = v.dataset.src; delete v.dataset.src; }
+        var p = v.play();
+        /* Safari antigo devolve undefined em vez de Promise. */
+        if (p && p.catch) {
+          p.catch(function () {
+            /* Autoplay recusado. Sem controles, o vídeo seria inassistível. */
+            v.controls = true;
+          });
+        }
+      }
+
+      videos.forEach(function (v) {
+        v.addEventListener('click', function () {
+          /* Com os controles nativos à mostra, quem manda é o próprio
+             navegador — senão o toque no botão de play chegaria aqui
+             também e pausaria em seguida. */
+          if (v.controls) return;
+          if (v.paused) { tocar(v); } else { v.pause(); }
+        });
+      });
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entradas) {
+          entradas.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            tocar(e.target);
+            obs.unobserve(e.target);
+          });
+        }, { rootMargin: '300px' });
+        videos.forEach(function (v) { obs.observe(v); });
+      } else {
+        videos.forEach(tocar);
+      }
+    })();
+  </script>
 </body>
 </html>
