@@ -327,7 +327,7 @@ const skus = Object.keys(cat.produtos);
 const BANNER_PECAS = [
   { sku: 'NU56DS', plano: 'fundo', arquivo: 'banner-ni56ds', w: 542, h: 676, altura: 66 },
   { sku: 'AQ-PIRAMIDE-INOX', plano: 'meio', arquivo: 'banner-aq-piramide-inox', w: 295, h: 1078, altura: 100 },
-  { sku: 'NU23', plano: 'frente', arquivo: 'banner-ni23', w: 302, h: 533, altura: 72 },
+  { sku: 'NU23', plano: 'frente', arquivo: 'banner-nu23', w: 271, h: 533, altura: 72 },
 ];
 
 const bannerFotos = BANNER_PECAS
