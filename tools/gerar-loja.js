@@ -22,7 +22,7 @@ const eventosDados = require('./eventos-dados.js');
 const { SITE, esc, wa } = require('./site-comum.js');
 
 const RAIZ = path.join(__dirname, '..');
-const CSS_V = '20261112-1';
+const CSS_V = '20261119-1';
 
 /* A loja está temporariamente fora do ar. Quem fecha a porta é o vercel.json
    (tudo em /loja redireciona para /loja-indisponivel) e o api/checkout.js, que

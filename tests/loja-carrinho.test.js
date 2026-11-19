@@ -98,3 +98,31 @@ test('storage indisponível não derruba a página', () => {
   assert.deepStrictEqual(c.ler(), []);
   assert.doesNotThrow(() => c.adicionar('NU18'));
 });
+
+/* Carrinho guardado de uma versão antiga da loja (SKUs NI…, produto que saiu
+   do catálogo) chegava ao checkout e travava o pagamento com
+   "Produto desconhecido". */
+const catSanear = {
+  categorias: { portateis: {}, fixos: { oculta: true } },
+  produtos: {
+    NU9PRO: { categoria: 'portateis', precoCentavos: 420000 },
+    NU18: { categoria: 'portateis', precoCentavos: 449000 },
+    NU21BS: { categoria: 'fixos', precoCentavos: 529000 },
+    AQ: { categoria: 'portateis', precoCentavos: null, esgotado: true }
+  }
+};
+
+test('sanear troca o SKU antigo NI pelo NU e soma com o que já existe', () => {
+  const s = storageFalso({ 'nuvemair.carrinho': JSON.stringify([{ sku: 'NI9PRO', qtd: 1 }, { sku: 'NU9PRO', qtd: 2 }]) });
+  const c = criarCarrinho(s);
+  assert.deepStrictEqual(c.sanear(catSanear), [{ sku: 'NU9PRO', qtd: 3 }]);
+  assert.deepStrictEqual(c.ler(), [{ sku: 'NU9PRO', qtd: 3 }]);
+});
+
+test('sanear descarta o que não pode ser comprado', () => {
+  const s = storageFalso({ 'nuvemair.carrinho': JSON.stringify([
+    { sku: 'NIXPTO', qtd: 1 }, { sku: 'NI21BS', qtd: 1 }, { sku: 'AQ', qtd: 1 }, { sku: 'NI18', qtd: 1 }
+  ]) });
+  const c = criarCarrinho(s);
+  assert.deepStrictEqual(c.sanear(catSanear), [{ sku: 'NU18', qtd: 1 }]);
+});

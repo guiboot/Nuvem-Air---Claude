@@ -56,6 +56,23 @@
       return [];
     }
 
+    /* Acerta o carrinho guardado com o catálogo atual. Quem visitou a loja
+       antiga tem SKUs que não existem mais (NI9PRO virou NU9PRO) ou produtos
+       que saíram de venda. A página escondia esses itens, mas eles iam para
+       o checkout e o pagamento travava com "Produto desconhecido". */
+    function sanear(catalogo) {
+      var saida = [];
+      ler().forEach(function (i) {
+        var sku = i.sku;
+        if (!LojaCore.produto(catalogo, sku) && /^NI/.test(sku)) sku = 'NU' + sku.slice(2);
+        if (!LojaCore.disponivel(catalogo, sku) || !LojaCore.temPrecoDefinido(catalogo, sku)) return;
+        var existente = saida.find(function (x) { return x.sku === sku; });
+        if (existente) existente.qtd = Math.min(existente.qtd + i.qtd, QTD_MAX);
+        else saida.push({ sku: sku, qtd: i.qtd });
+      });
+      return gravar(saida);
+    }
+
     function totalItens() {
       return ler().reduce(function (s, i) { return s + i.qtd; }, 0);
     }
@@ -66,6 +83,7 @@
       definirQtd: definirQtd,
       remover: remover,
       limpar: limpar,
+      sanear: sanear,
       totalItens: totalItens
     };
   }

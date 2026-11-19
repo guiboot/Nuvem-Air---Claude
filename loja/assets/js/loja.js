@@ -311,6 +311,7 @@
     var caixaErro = raiz.querySelector('.loja-erro');
 
     catalogo().then(function (cat) {
+      carrinho.sanear(cat);
       /* Cotação por transportadora (api/frete.js → Melhor Envio). Vale só
          para o CEP e os itens com que foi feita: mudou um dos dois, cota de
          novo. Sem cotação válida, cai na tabela de faixas do catálogo e,
