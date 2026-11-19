@@ -41,8 +41,43 @@
       "source": "/eventos/:slug/index.html",
       "destination": "/eventos/:slug",
       "permanent": true
+    },
+    {
+      "source": "/loja/ni18",
+      "destination": "/loja/nu18",
+      "permanent": true
+    },
+    {
+      "source": "/loja/ni23",
+      "destination": "/loja/nu23",
+      "permanent": true
+    },
+    {
+      "source": "/loja/ni9pro",
+      "destination": "/loja/nu9pro",
+      "permanent": true
     }
   ],
   "buildCommand": "npm run build",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "headers": [
+    {
+      "source": "/loja/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/loja/catalogo.json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
 }

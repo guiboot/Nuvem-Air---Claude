@@ -1,0 +1,341 @@
+{
+  "moeda": "BRL",
+  "descontoPixPercentual": 0,
+  "parcelamentoMax": 4,
+  "produtos": {
+    "NU6PRO": {
+      "nome": "Climatizador Portátil NU6PRO",
+      "slug": "nu6pro",
+      "tag": "Linha PRO · NU6PRO",
+      "precoCentavos": 199000,
+      "pesoKg": 19,
+      "freteGratisAteCentavos": 18000,
+      "embalagem": {
+        "larguraCm": 71,
+        "alturaCm": 130,
+        "comprimentoCm": 46,
+        "pesoKg": 23,
+        "estimada": true
+      },
+      "imagem": "/loja/assets/img/nu6pro-capa.webp",
+      "galeria": [
+        "/loja/assets/img/nu6pro-capa.webp",
+        "/loja/assets/img/nu6pro-frente.webp",
+        "/loja/assets/img/nu6pro-perspectiva.webp",
+        "/loja/assets/img/nu6pro-painel.webp",
+        "/loja/assets/img/nu6pro-lateral.webp",
+        "/loja/assets/img/nu6pro-lateral-2.webp"
+      ],
+      "resumo": "Portátil da Linha PRO com reservatório de 60 L e painel digital com Timer, Ânion e Oscilação. Gasta só 130 W e chega pronto para usar.",
+      "specs": [
+        "Vazão de 6.000 m³/h · 30–50 m²",
+        "Reservatório de 60 L · cerca de 12 h de autonomia",
+        "Painel digital com Timer, Ânion e Oscilação",
+        "130 W · 110V ou 220V",
+        "Medidas: 66 × 41 × 125 cm · 19 kg"
+      ],
+      "categoria": "portateis"
+    },
+    "NU6PD-PRETO": {
+      "nome": "Climatizador Portátil Smart NU6PD Preto",
+      "slug": "nu6pd-preto",
+      "tag": "Smart · NU6PD Preto",
+      "precoCentavos": 159000,
+      "pesoKg": 13,
+      "freteGratisAteCentavos": 18000,
+      "embalagem": {
+        "larguraCm": 58,
+        "alturaCm": 110,
+        "comprimentoCm": 43,
+        "pesoKg": 16,
+        "estimada": true
+      },
+      "imagem": "/loja/assets/img/nu6pd-preto-capa.webp",
+      "galeria": [
+        "/loja/assets/img/nu6pd-preto-frente.webp",
+        "/loja/assets/img/nu6pd-preto-ambiente.webp",
+        "/loja/assets/img/nu6pd-preto-wifi.webp",
+        "/loja/assets/img/nu6pd-preto-perspectiva.webp",
+        "/loja/assets/img/nu6pd-preto-medidas.webp"
+      ],
+      "resumo": "Portátil smart com Wi-Fi, compatível com Alexa e com controle remoto. Reservatório de 60 L, consumo de só 160 W e rodízios com trava. Chega pronto para usar.",
+      "specs": [
+        "Vazão de 6.000 m³/h · 20–40 m²",
+        "Reservatório de 60 L · cerca de 12 h de autonomia",
+        "Wi-Fi (app Smart Life), Alexa e controle remoto",
+        "Painel touch com Timer, Oscilação e 3 velocidades",
+        "160 W · 110V ou 220V",
+        "Medidas: 53 × 38 × 105 cm · 13 kg"
+      ],
+      "categoria": "portateis"
+    },
+    "NU9PRO": {
+      "nome": "Climatizador Portátil NU9PRO",
+      "slug": "nu9pro",
+      "tag": "Linha PRO · NU9PRO",
+      "precoDeCentavos": 490000,
+      "precoCentavos": 420000,
+      "pesoKg": null,
+      "freteGratisAteCentavos": 18000,
+      "embalagem": {
+        "larguraCm": 70,
+        "alturaCm": 140,
+        "comprimentoCm": 50,
+        "pesoKg": 35,
+        "estimada": true
+      },
+      "imagem": "/loja/assets/img/nu9pro-capa.webp",
+      "galeria": [
+        "/loja/assets/img/nu9pro-capa.webp",
+        "/loja/assets/img/nu9pro.webp",
+        "/loja/assets/img/nu9pro-perspectiva.webp",
+        "/loja/assets/img/nu9pro-perspectiva-2.webp",
+        "/loja/assets/img/nu9pro-lateral.webp",
+        "/loja/assets/img/nu9pro-painel.webp"
+      ],
+      "resumo": "Portátil robusto da Linha PRO, resistente ao uso intenso, com conexão à rede hidráulica para abastecimento contínuo.",
+      "specs": [
+        "Vazão de 9.000 m³/h · 50–70 m²",
+        "Reservatório de 100 L",
+        "Alimentação manual ou rede hidráulica",
+        "Estrutura reforçada · 110V ou 220V"
+      ],
+      "categoria": "portateis"
+    },
+    "NU18": {
+      "nome": "Climatizador Móvel Big Tank NU18",
+      "slug": "nu18",
+      "tag": "Big Tank · NU18",
+      "precoDeCentavos": 550000,
+      "precoCentavos": 449000,
+      "pesoKg": 30,
+      "freteGratisAteCentavos": 18000,
+      "embalagem": {
+        "larguraCm": 102,
+        "alturaCm": 109,
+        "comprimentoCm": 102,
+        "pesoKg": 42,
+        "estimada": true
+      },
+      "imagem": "/loja/assets/img/nu18.webp",
+      "resumo": "Versão móvel compacta com reservatório de 150 L, fácil de deslocar entre ambientes e pronta para uso imediato.",
+      "specs": [
+        "Vazão de 18.000 m³/h · 100–150 m²",
+        "Reservatório de 150 L",
+        "Móvel com duto e rodízios",
+        "Motor fase simples · 750 W"
+      ],
+      "categoria": "portateis"
+    },
+    "NU21": {
+      "nome": "Climatizador Móvel Big Tank NU21",
+      "slug": "nu21",
+      "tag": "Big Tank · NU21",
+      "precoCentavos": 490000,
+      "pesoKg": 80,
+      "freteGratisAteCentavos": 18000,
+      "embalagem": {
+        "larguraCm": 113,
+        "alturaCm": 130,
+        "comprimentoCm": 113,
+        "pesoKg": 95,
+        "estimada": true
+      },
+      "imagem": "/loja/assets/img/nu21-capa.webp",
+      "galeria": [
+        "/loja/assets/img/nu21-capa.webp",
+        "/loja/assets/img/nu21-frente.webp",
+        "/loja/assets/img/nu21-lateral.webp",
+        "/loja/assets/img/nu21-duto.webp",
+        "/loja/assets/img/nu21-traseira.webp",
+        "/loja/assets/img/nu21-galpao.webp"
+      ],
+      "resumo": "Móvel com reservatório Big Tank de 200 L e duto direcionável, para refrescar galpões, eventos e áreas de até 250 m² sem obra.",
+      "specs": [
+        "Vazão de 21.000 m³/h · até 250 m²",
+        "Reservatório Big Tank de 200 L",
+        "Duto direcionável e rodízios inclusos",
+        "Motor monofásico 1.100 W · 220V",
+        "Medidas: 1,08 × 1,08 × 1,25 m (sem o duto) · 80 kg"
+      ],
+      "categoria": "portateis"
+    },
+    "NU23": {
+      "nome": "Climatizador Móvel Big Tank NU23",
+      "slug": "nu23",
+      "tag": "Big Tank · NU23",
+      "precoDeCentavos": 810000,
+      "precoCentavos": 749000,
+      "pesoKg": null,
+      "freteGratisAteCentavos": 18000,
+      "embalagem": {
+        "larguraCm": 115,
+        "alturaCm": 140,
+        "comprimentoCm": 115,
+        "pesoKg": 100,
+        "estimada": true
+      },
+      "imagem": "/loja/assets/img/nu23.webp",
+      "resumo": "Móvel com duto direcionável e reservatório de 300 L — alta autonomia para áreas grandes sem ponto de água próximo.",
+      "specs": [
+        "Vazão de 23.000 m³/h · 250–300 m²",
+        "Reservatório Big Tank de 300 L",
+        "Rodízios e duto direcionável inclusos",
+        "Motor trifásico 1.500 W · 220V"
+      ],
+      "categoria": "portateis"
+    },
+    "NU21BS": {
+      "nome": "Climatizador Industrial NU21BS",
+      "slug": "nu21bs",
+      "tag": "Teto · NU21BS",
+      "categoria": "climatizadores-fixos",
+      "precoDeCentavos": 820000,
+      "precoCentavos": 529000,
+      "observacao": "Valor do equipamento, sem instalação e sem duto. Instalação e duto têm orçamento personalizado.",
+      "pesoKg": 72,
+      "imagem": "/loja/assets/img/ni21bs.webp",
+      "resumo": "Modelo de teto com saída de ar lateral, para distribuir ar resfriado ao longo de corredores, linhas de produção e galpões amplos.",
+      "specs": [
+        "Vazão de 21.000 m³/h",
+        "Cobertura de 150 a 180 m²",
+        "Motor trifásico 1.500 W (220V)",
+        "Painel digital, controle remoto e sensor de água",
+        "Reservatório de 30 L · 72 kg"
+      ]
+    },
+    "NU23DS": {
+      "nome": "Climatizador Industrial NU23DS",
+      "slug": "nu23ds",
+      "tag": "Teto · NU23DS",
+      "categoria": "climatizadores-fixos",
+      "precoDeCentavos": 850000,
+      "precoCentavos": 539000,
+      "observacao": "Valor do equipamento, sem instalação e sem duto. Instalação e duto têm orçamento personalizado.",
+      "pesoKg": 72,
+      "imagem": "/loja/assets/img/industrial-inferior.webp",
+      "resumo": "Modelo de teto com direção do ar para baixo, para resfriamento direto sobre linhas de produção e postos de trabalho.",
+      "specs": [
+        "Vazão de 23.000 m³/h",
+        "Cobertura de 250 a 300 m²",
+        "Motor trifásico 1.500 W (220V)",
+        "Painel digital, controle remoto e sensor de água",
+        "Reservatório de 30 L · 72 kg"
+      ]
+    },
+    "NU56DS": {
+      "nome": "Climatizador Industrial NU56DS",
+      "slug": "nu56ds",
+      "tag": "Alta vazão · NU56DS",
+      "categoria": "climatizadores-fixos",
+      "precoDeCentavos": 1550000,
+      "precoCentavos": 1350000,
+      "observacao": "Valor do equipamento, sem instalação e sem duto. Instalação e duto têm orçamento personalizado.",
+      "pesoKg": 119,
+      "imagem": "/loja/assets/img/industrial-frontal.webp",
+      "resumo": "O mais potente da linha, para grandes galpões e centros de distribuição de alto pé-direito que exigem máxima renovação de ar.",
+      "specs": [
+        "Vazão de 56.000 m³/h",
+        "Cobertura de 350 a 400 m²",
+        "Motor trifásico 3.500 W (220V)",
+        "Reservatório de 60 L · hélice balanceada",
+        "119 kg"
+      ]
+    },
+    "AQ-CHAPEU-INOX": {
+      "nome": "Aquecedor Torre Chapéu a Gás — Inox",
+      "slug": "aquecedor-chapeu-inox",
+      "tag": "Torre Chapéu · Inox",
+      "categoria": "aquecedores",
+      "precoCentavos": null,
+      "pesoKg": null,
+      "imagem": "/loja/assets/img/aquecedor-chapeu-inox.webp",
+      "resumo": "Refletor de calor 360° e alto rendimento térmico — para restaurantes, áreas externas e eventos com grande circulação de pessoas.",
+      "specs": [
+        "Potência de até 13 kW",
+        "Refletor de calor 360°",
+        "Cilindro de gás GLP embutido (P13)",
+        "Sistema de segurança antiqueda",
+        "Acendimento eletrônico (piezoelétrico)",
+        "Altura: 2,21 m · Diâmetro do chapéu: 81 cm"
+      ],
+      "esgotado": true
+    },
+    "AQ-CHAPEU-PRETO": {
+      "nome": "Aquecedor Torre Chapéu a Gás — Preto",
+      "slug": "aquecedor-chapeu-preto",
+      "tag": "Torre Chapéu · Preto",
+      "categoria": "aquecedores",
+      "precoCentavos": null,
+      "pesoKg": null,
+      "imagem": "/loja/assets/img/aquecedor-chapeu-preto.webp",
+      "resumo": "Refletor de calor 360° e alto rendimento térmico — para restaurantes, áreas externas e eventos com grande circulação de pessoas.",
+      "specs": [
+        "Potência de até 13 kW",
+        "Refletor de calor 360°",
+        "Cilindro de gás GLP embutido (P13)",
+        "Sistema de segurança antiqueda",
+        "Acendimento eletrônico (piezoelétrico)",
+        "Altura: 2,21 m · Diâmetro do chapéu: 81 cm"
+      ],
+      "esgotado": true
+    },
+    "AQ-PIRAMIDE-INOX": {
+      "nome": "Aquecedor Torre Pirâmide a Gás — Inox",
+      "slug": "aquecedor-piramide-inox",
+      "tag": "Pirâmide · Inox",
+      "categoria": "aquecedores",
+      "precoCentavos": null,
+      "pesoKg": null,
+      "imagem": "/loja/assets/img/aquecedor-piramide-inox.webp",
+      "resumo": "Chama viva decorativa em tubo de vidro temperado — calor e design para casamentos, bares e restaurantes ao ar livre.",
+      "specs": [
+        "Chama viva real em tubo de vidro temperado",
+        "Potência de até 11 kW",
+        "Raio de aquecimento de 4 metros",
+        "Cilindro de gás GLP embutido (P13)",
+        "Acendimento seguro e estável",
+        "Altura: 2,28 m · Base: 52 cm × 52 cm"
+      ],
+      "esgotado": true
+    },
+    "AQ-PIRAMIDE-PRETO": {
+      "nome": "Aquecedor Torre Pirâmide a Gás — Preto",
+      "slug": "aquecedor-piramide-preto",
+      "tag": "Pirâmide · Preto",
+      "categoria": "aquecedores",
+      "precoCentavos": null,
+      "pesoKg": null,
+      "imagem": "/loja/assets/img/aquecedor-piramide-preto.webp",
+      "resumo": "Chama viva decorativa em tubo de vidro temperado — calor e design para casamentos, bares e restaurantes ao ar livre.",
+      "specs": [
+        "Chama viva real em tubo de vidro temperado",
+        "Potência de até 11 kW",
+        "Raio de aquecimento de 4 metros",
+        "Cilindro de gás GLP embutido (P13)",
+        "Acendimento seguro e estável",
+        "Altura: 2,28 m · Base: 52 cm × 52 cm"
+      ],
+      "esgotado": true
+    }
+  },
+  "frete": {
+    "cepOrigem": "87015-001",
+    "faixas": []
+  },
+  "categorias": {
+    "portateis": {
+      "titulo": "Portáteis e móveis",
+      "resumo": "Com rodízios e reservatório próprio. Chegam prontos para usar, sem obra."
+    },
+    "climatizadores-fixos": {
+      "titulo": "Climatizadores fixos",
+      "resumo": "Modelos de teto para galpões e linhas de produção. Instalação e duto sob orçamento.",
+      "oculta": true
+    },
+    "aquecedores": {
+      "titulo": "Aquecedores a gás",
+      "resumo": "Torres a gás GLP para áreas externas, com cilindro P13 embutido."
+    }
+  }
+}
