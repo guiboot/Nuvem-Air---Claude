@@ -14,8 +14,7 @@
         "larguraCm": 71,
         "alturaCm": 130,
         "comprimentoCm": 46,
-        "pesoKg": 23,
-        "estimada": true
+        "pesoKg": 23
       },
       "imagem": "/loja/assets/img/nu6pro-capa.webp",
       "galeria": [
@@ -47,8 +46,7 @@
         "larguraCm": 58,
         "alturaCm": 110,
         "comprimentoCm": 43,
-        "pesoKg": 16,
-        "estimada": true
+        "pesoKg": 16
       },
       "imagem": "/loja/assets/img/nu6pd-preto-capa.webp",
       "galeria": [
@@ -81,8 +79,7 @@
         "larguraCm": 70,
         "alturaCm": 140,
         "comprimentoCm": 50,
-        "pesoKg": 35,
-        "estimada": true
+        "pesoKg": 35
       },
       "imagem": "/loja/assets/img/nu9pro-capa.webp",
       "galeria": [
@@ -114,8 +111,7 @@
         "larguraCm": 102,
         "alturaCm": 109,
         "comprimentoCm": 102,
-        "pesoKg": 42,
-        "estimada": true
+        "pesoKg": 42
       },
       "imagem": "/loja/assets/img/nu18.webp",
       "resumo": "Versão móvel compacta com reservatório de 150 L, fácil de deslocar entre ambientes e pronta para uso imediato.",
@@ -138,8 +134,7 @@
         "larguraCm": 113,
         "alturaCm": 130,
         "comprimentoCm": 113,
-        "pesoKg": 95,
-        "estimada": true
+        "pesoKg": 95
       },
       "imagem": "/loja/assets/img/nu21-capa.webp",
       "galeria": [
@@ -172,8 +167,7 @@
         "larguraCm": 115,
         "alturaCm": 140,
         "comprimentoCm": 115,
-        "pesoKg": 100,
-        "estimada": true
+        "pesoKg": 100
       },
       "imagem": "/loja/assets/img/nu23.webp",
       "resumo": "Móvel com duto direcionável e reservatório de 300 L — alta autonomia para áreas grandes sem ponto de água próximo.",
